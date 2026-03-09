@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jan Vítek – Vnitrozemský surfař</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/xjh6vlt.css" />
+  <script src="resources/cs.js"></script>
+  <script src="resources/en.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            /* Fluid typography — scales smoothly from 390px to 1440px viewport.
+               Formula: clamp(mobile, m*vw + b, desktop)
+               No breakpoint jumps. */
+            'h1-display': ['clamp(48px, 6.86vw + 21px, 120px)', { lineHeight: '1' }],
+            'h1':         ['clamp(40px, 3.81vw + 25px, 80px)',  { lineHeight: '1.4' }],
+            'h2':         ['clamp(34px, 2.48vw + 24px, 60px)',  { lineHeight: '1.3' }],
+            'h3':         ['clamp(28px, 1.33vw + 23px, 42px)',  { lineHeight: '1.3' }],
+            'body':       ['clamp(18px, 0.38vw + 16.5px, 22px)', { lineHeight: '1.8' }],
+            'link':       ['18px', { lineHeight: '1' }],
+            'menu':       ['24px', { lineHeight: '1' }],
+            'nav':        ['clamp(14.4px, 0.72vw + 11.6px, 22px)', { lineHeight: '1' }],
+          },
+          fontFamily: {
+            'body':    ['"realist"', 'sans-serif'],
+            'heading': ['"realistwide"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Base fonts — body inherits "realist", headings use Tailwind class font-heading */
+    body { font-family: "realist", sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: #f0f1ea; color: #0c1313; }
+
+    /* Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    /* Carousel auto-scroll */
+    @keyframes carousel-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-track {
+      display: flex;
+      animation: carousel-scroll 15s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Video modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    /* Link underline */
+    a.accent-link {
+      text-decoration: underline;
+      text-decoration-color: #0c1313;
+      text-underline-offset: 4px;
+    }
+    a.accent-link:hover {
+      opacity: 0.7;
+    }
+
+    /* Play button overlay */
+    .play-btn {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Lang toggle in header */
+    .lang-btn { cursor: pointer; background: none; border: none; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn:not(.active) { opacity: 0.4; }
+    .lang-btn:hover { opacity: 0.7; }
+  </style>
+</head>
+<body class="overflow-x-hidden font-body">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full">
+    <div class="flex items-center justify-between px-4 lg:px-6 py-3 lg:py-4">
+      <!-- Left: wonderway of j [symbol] jan vítek — click scrolls to top -->
+      <a href="#" class="flex items-center gap-1.5 lg:gap-3 no-underline" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">wonderway of j</span>
+        <svg class="w-auto flex-shrink-0" style="height: clamp(15.6px, 0.99vw + 11.7px, 26px)" viewBox="222 17.5 98 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M235 17.5C242.18 17.5 248 23.3203 248 30.5C248 37.6797 242.18 43.5 235 43.5C227.82 43.5 222 37.6797 222 30.5C222 23.3203 227.82 17.5 235 17.5ZM271 17.5C278.18 17.5 284 23.3203 284 30.5C284 37.6797 278.18 43.5 271 43.5C263.82 43.5 258 37.6797 258 30.5C258 23.3203 263.82 17.5 271 17.5ZM307 17.5C314.18 17.5 320 23.3203 320 30.5C320 37.6797 314.18 43.5 307 43.5C299.82 43.5 294 37.6797 294 30.5C294 23.3203 299.82 17.5 307 17.5ZM235 34.7734C231.752 34.7734 228.853 35.9728 226.824 37.8584C228.838 40.094 231.754 41.5 235 41.5C238.245 41.5 241.161 40.0938 243.175 37.8584C241.146 35.9731 238.248 34.7734 235 34.7734ZM264.378 39.2822C266.22 40.6736 268.513 41.5 271 41.5C276.738 41.5 281.448 37.1064 281.953 31.5H272.161L264.378 39.2822ZM306.527 24.6904C303.092 24.6906 300.621 27.4507 298.615 30.5391C298.335 30.9701 297.88 31.6183 297.37 32.2412C297.072 32.6055 296.728 32.995 296.37 33.332C297.62 38.0345 301.904 41.5 307 41.5C310.264 41.5 313.194 40.0765 315.209 37.8184C314.098 38.2684 312.904 38.4775 311.524 38.4775C307.858 38.4774 304.662 35.9112 304.662 32.1201C304.662 30.2678 305.412 28.6867 306.678 27.5811C307.581 26.7918 308.722 26.2673 309.991 26.0352C309.78 25.7676 309.53 25.5405 309.239 25.3555C308.589 24.9414 307.688 24.6905 306.527 24.6904ZM262.896 23.0635C261.098 25.0215 260 27.6324 260 30.5C260 33.3674 261.098 35.9775 262.896 37.9355L270.332 30.5L262.896 23.0635ZM307 19.5C300.925 19.5 296 24.4249 296 30.5C296 30.581 296.004 30.6616 296.006 30.7422C296.387 30.2577 296.726 29.7773 296.938 29.4502C298.935 26.3762 301.932 22.6906 306.527 22.6904C307.965 22.6905 309.264 23.001 310.313 23.6689C311.377 24.3463 312.122 25.3546 312.485 26.623L312.851 27.8975H311.524C310.053 27.8975 308.832 28.3555 307.994 29.0869C307.168 29.8088 306.662 30.8388 306.662 32.1201C306.662 34.5976 308.741 36.4774 311.524 36.4775C312.86 36.4775 313.895 36.2506 314.829 35.8027C315.709 35.3806 316.549 34.7354 317.494 33.8027C317.822 32.7601 318 31.6509 318 30.5C318 24.4249 313.075 19.5 307 19.5ZM235 19.5C228.925 19.5 224 24.4249 224 30.5C224 32.6071 224.594 34.5752 225.621 36.248C228.022 34.0916 231.349 32.7734 235 32.7734C238.651 32.7734 241.977 34.0919 244.378 36.248C245.406 34.5751 246 32.6073 246 30.5C246 24.4249 241.075 19.5 235 19.5ZM271 19.5C268.514 19.5 266.22 20.3256 264.378 21.7168L272.161 29.5H281.953C281.448 23.8936 276.738 19.5 271 19.5Z" fill="#0C1313"/>
+        </svg>
+        <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">jan vítek</span>
+      </a>
+      <!-- Right: cz | en   → kontakt -->
+      <div class="flex items-center gap-8 lg:gap-16">
+        <div class="flex items-center gap-1 lg:gap-2">
+          <button class="lang-btn active font-heading font-semibold text-nav text-[#0c1313]" data-lang="cs">cz</button>
+          <span class="font-heading font-semibold text-nav text-[#0c1313]">|</span>
+          <button class="lang-btn font-heading font-semibold text-nav text-[#0c1313]" data-lang="en">en</button>
+        </div>
+        <a href="#contact" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap">
+          <span data-key="nav_contact" data-cs="→ kontakt" data-en="→ contact">→ kontakt</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- B. Hero -->
+  <section class="relative w-full h-[calc(100vh-32px)] overflow-hidden">
+    <img src="Assets/rectangle-1665.jpeg" alt="Surfing hero" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="relative z-10 flex flex-col justify-center h-full px-6 lg:px-[168px] gap-10 lg:gap-[60px]">
+      <div class="flex flex-col gap-6 lg:gap-[60px]">
+        <h1 class="text-h1-display font-semibold font-heading text-[#0c1313]">
+          <span data-key="hero_headline" data-cs="vnitrozemský surfař,<br>mezinárodní ambice" data-en="landlocked surfer,<br>international ambitions">vnitrozemský surfař,<br>mezinárodní ambice</span>
+        </h1>
+        <p class="text-body font-semibold text-[#0c1313]">
+          <span data-key="hero_subtext" data-cs="Čech na cestě na mezinárodní závody ISA World Surfing Games v El Salvadoru" data-en="A Czech on his way to the ISA World Surfing Games in El Salvador">Čech na cestě na mezinárodní závody ISA World Surfing Games v El Salvadoru</span>
+        </p>
+      </div>
+      <a href="#plan" class="text-body font-semibold text-[#0c1313] hover:opacity-70 transition-opacity w-fit">
+        <span data-key="hero_cta" data-cs="→ mrkni na plán" data-en="→ check the plan">→ mrkni na plán</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- A. Red Marquee Bar (below hero) -->
+  <div class="bg-[#ff4448] py-2 overflow-hidden">
+    <div class="marquee-track">
+      <span class="text-body font-semibold text-[#0c1313] px-8">wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp;</span>
+      <span class="text-body font-semibold text-[#0c1313] px-8">wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- C. Kdo je Jan Vítek? -->
+  <section class="px-6 lg:px-[168px] py-20 lg:py-[260px]">
+    <div class="flex flex-col gap-10 lg:gap-[60px]">
+      <h2 class="text-h3 font-semibold font-heading">
+        <span data-key="who_title" data-cs="kdo je jan vítek?" data-en="who is jan vítek?">kdo je jan vítek?</span>
+      </h2>
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Left column -->
+        <div class="flex flex-col gap-12 lg:w-1/2">
+          <div class="flex flex-col gap-10">
+            <p class="text-h1 font-semibold font-heading">
+              <span data-key="who_heading" data-cs='<a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">tvůrce></a>,<br>a reprezentant<br>mířící na ISA' data-en='<a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">creator></a>,<br>a national team<br>member heading to ISA'><a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">tvůrce></a>,<br>a reprezentant<br>mířící na ISA</span>
+            </p>
+            <p class="text-body font-semibold">
+              <span data-key="who_body" data-cs='Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.' data-en='I&apos;ve been self-funding my surfing until now. I work remotely. Now I&apos;m looking for a sponsor/partner. I train between Portugal, France and Czechia. Heading to the <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.'>Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.</span>
+            </p>
+          </div>
+          <!-- Video teaser thumbnail -->
+          <div class="cursor-pointer video-trigger" data-video="teaser">
+            <div class="relative w-full max-w-[375px]">
+              <img src="Assets/screenshot-2026-02-05-at-17.50.36-2.png" alt="Video teaser" class="w-full h-auto rounded-3xl object-cover" />
+              <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 play-btn" width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33 19.0525L0 38.1051L0 0L33 19.0525Z" fill="#FF4448"/>
+              </svg>
+            </div>
+            <p class="text-body font-semibold mt-2">
+              <span data-key="who_video_cta" data-cs="→ pusť si teaser" data-en="→ watch the teaser">→ pusť si teaser</span>
+            </p>
+          </div>
+        </div>
+        <!-- Right column: portrait -->
+        <div class="lg:w-1/2">
+          <img src="Assets/512781322_1298145042312699_4287436275555202032_n-1.jpeg" alt="Jan Vítek" class="w-full aspect-square object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. Proč to dělám? -->
+  <section class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
+    <div class="flex flex-col gap-10 lg:gap-[60px]">
+      <h2 class="text-h3 font-semibold font-heading">
+        <span data-key="why_title" data-cs="proč to dělám?" data-en="why do I do this?">proč to dělám?</span>
+      </h2>
+      <p class="text-h2 font-semibold font-heading">
+        <span data-key="why_text" data-cs="🏄🏼 surfování je velkou součástí mého života. je to moje cesta poznání ✨, posouvám své limity a objevuji, kdo jsem 🧘‍♂️. baví mě tím inspirovat ostatní – plnit si své sny a cíle 🌊." data-en="🏄🏼 surfing is a huge part of my life. it's my path of discovery ✨, I push my limits and find out who I am 🧘‍♂️. I love inspiring others along the way – to chase their dreams and goals 🌊.">🏄🏼 surfování je velkou součástí mého života. je to moje cesta poznání ✨, posouvám své limity a objevuji, kdo jsem 🧘‍♂️. baví mě tím inspirovat ostatní – plnit si své sny a cíle 🌊.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- E. Výsledky -->
+  <section class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <!-- Left: results -->
+      <div class="flex flex-col gap-12 lg:w-1/2 lg:px-20 py-10">
+        <h2 class="text-h1 font-semibold font-heading">
+          <span data-key="results_title" data-cs="výsledky" data-en="results">výsledky</span>
+        </h2>
+        <div class="text-body font-semibold space-y-1">
+          <p><span data-key="result_1" data-cs="🥈 2. místo Berber Cup 2025 Maroko CZ/SK" data-en="🥈 2nd place Berber Cup 2025 Morocco CZ/SK">🥈 2. místo Berber Cup 2025 Maroko CZ/SK</span></p>
+          <p><span data-key="result_2" data-cs="🥈 2. místo Berber Cup 2026 Maroko CZ/SK" data-en="🥈 2nd place Berber Cup 2026 Morocco CZ/SK">🥈 2. místo Berber Cup 2026 Maroko CZ/SK</span></p>
+          <p><span data-key="result_3" data-cs="🥉 3. místo v žebříčku CZ/SK Surf Cup 24–25" data-en="🥉 3rd place in CZ/SK Surf Cup 24–25 rankings">🥉 3. místo v žebříčku CZ/SK Surf Cup 24–25</span></p>
+          <p><span data-key="result_4" data-cs="🌊 Semifinále Bali Big Wave 2024" data-en="🌊 Semifinal Bali Big Wave 2024">🌊 Semifinále Bali Big Wave 2024</span></p>
+        </div>
+        <div class="text-body font-semibold space-y-1">
+          <p class="mb-2"><span data-key="goals_label" data-cs="Pro co si jdu?" data-en="What am I going for?">Pro co si jdu?</span></p>
+          <p><span data-key="goal_1" data-cs='🥇 1. místo <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp 2026 Francie></a>' data-en='🥇 1st place <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp 2026 France></a>'>🥇 1. místo <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp 2026 Francie></a></span></p>
+          <p><span data-key="goal_2" data-cs='🌎 <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a>' data-en='🌎 <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a>'>🌎 <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a></span></p>
+        </div>
+      </div>
+      <!-- Right: vertical video thumbnail -->
+      <div class="lg:w-1/2 flex justify-center lg:px-20 py-10">
+        <div class="relative w-[280px] lg:w-[360px] cursor-pointer video-trigger" data-video="results">
+          <img src="Assets/frame-2100.png" alt="Results video" class="w-full h-auto rounded-3xl object-cover" />
+          <svg class="absolute top-1/2 right-8 -translate-y-1/2 play-btn" width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M48 27.7129L0 55.4257L0 0L48 27.7129Z" fill="#FF4448"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- F. Photo Carousel Strip 1 -->
+  <section class="w-full overflow-hidden">
+    <div class="carousel-track h-[300px] lg:h-[720px]" id="carousel1">
+      <img src="Assets/dsc04607-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/sm_surfmaroco_day3_505-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/screenshot-2026-02-06-at-15.43.13-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/30537209-54a6-444e-98e4-20c451e78436_1_105_c-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/rectangle-1665.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/sm_surfmaroco_day3_482-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <!-- Duplicated for seamless loop -->
+      <img src="Assets/dsc04607-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/sm_surfmaroco_day3_505-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/screenshot-2026-02-06-at-15.43.13-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/30537209-54a6-444e-98e4-20c451e78436_1_105_c-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/rectangle-1665.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/sm_surfmaroco_day3_482-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+    </div>
+  </section>
+
+  <!-- G. Plán 2026 -->
+  <section id="plan" class="px-6 lg:px-[168px] py-20 lg:py-[180px]">
+    <div class="flex flex-col gap-10 lg:gap-[60px]">
+      <h2 class="text-h1 font-semibold font-heading">
+        <span data-key="plan_title" data-cs="plán 2026" data-en="plan 2026">plán 2026</span>
+      </h2>
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Part 1 -->
+        <div class="flex flex-col gap-10 lg:w-1/2 py-6">
+          <h3 class="text-h3 font-semibold font-heading">
+            <span data-key="plan_part1_title" data-cs="1. část – kvalifikace" data-en="part 1 – qualification">1. část – kvalifikace</span>
+          </h3>
+          <div class="text-body font-semibold space-y-1">
+            <p><span data-key="plan_1" data-cs="🏋️ březen/duben – suchá příprava ČR" data-en="🏋️ march/april – dry training in Czechia">🏋️ březen/duben – suchá příprava ČR</span></p>
+            <p><span data-key="plan_2" data-cs="🏄🏼‍️️ duben/květen – trénink ve Španělsku" data-en="🏄🏼‍️️ april/may – training in Spain">🏄🏼‍️️ duben/květen – trénink ve Španělsku</span></p>
+            <p><span data-key="plan_3" data-cs='📍 19. 5. – <a href="https://www.prazskejserf.cz/serfovej-open" target="_blank" class="accent-link">PSK wavepool závod v Mnichově></a>' data-en='📍 May 19 – <a href="https://www.prazskejserf.cz/serfovej-open" target="_blank" class="accent-link">PSK wavepool contest in Munich></a>'>📍 19. 5. – <a href="https://www.prazskejserf.cz/serfovej-open" target="_blank" class="accent-link">PSK wavepool závod v Mnichově></a></span></p>
+            <p><span data-key="plan_4" data-cs="🏄 květen/červen – tréning ve Francii" data-en="🏄 may/june – training in France">🏄 květen/červen – tréning ve Francii</span></p>
+            <p><span data-key="plan_5" data-cs='🏆 20. 6. – <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp surf závod ve Francii (ISA kvalifikace)></a>' data-en='🏆 June 20 – <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp surf contest in France (ISA qualification)></a>'>🏆 20. 6. – <a href="https://www.surfchamp.cz/" target="_blank" class="accent-link">Surfchamp surf závod ve Francii (ISA kvalifikace)></a></span></p>
+          </div>
+        </div>
+        <!-- Part 2 -->
+        <div class="flex flex-col gap-10 lg:w-1/2 py-6">
+          <h3 class="text-h3 font-semibold font-heading">
+            <span data-key="plan_part2_title" data-cs="2. část – příprava na ISA" data-en="part 2 – ISA preparation">2. část – příprava na ISA</span>
+          </h3>
+          <div class="text-body font-semibold space-y-1">
+            <p><span data-key="plan_6" data-cs="🏄‍ červenec/srpen – trénink Ericeira, Portugalsko" data-en="🏄‍ july/august – training in Ericeira, Portugal">🏄‍ červenec/srpen – trénink Ericeira, Portugalsko</span></p>
+            <p><span data-key="plan_7" data-cs="🏄‍ srpen/září – tréning El Salvador" data-en="🏄‍ august/september – training in El Salvador">🏄‍ srpen/září – tréning El Salvador</span></p>
+            <p><span data-key="plan_8" data-cs='🌎 září – <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a>' data-en='🌎 september – <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a>'>🌎 září – <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games El Salvador></a></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H. Sponsorship -->
+  <section class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <!-- Left: wetsuit image with placeholders -->
+      <div class="lg:w-1/2 relative">
+        <img src="Assets/f8eedcc9-0dca-4a45-ab0c-933ff6442fbc_1_105_c-2.png" alt="Wetsuit with logo spots" class="w-full h-auto object-contain" />
+        <div class="absolute top-[40%] left-[30%] text-sm lg:text-xl font-semibold text-[#0c1313] text-center leading-tight">your<br>logo<br>here</div>
+        <div class="absolute top-[40%] right-[10%] text-sm lg:text-xl font-semibold text-[#0c1313] text-center leading-tight">your<br>logo<br>here</div>
+        <div class="absolute top-[58%] left-[32%] text-[10px] lg:text-sm font-semibold text-[#0c1313] text-center leading-tight">your<br>logo<br>here</div>
+        <div class="absolute top-[22%] left-[50%] text-xs lg:text-base font-semibold text-[#0c1313] text-center leading-tight">your<br>logo<br>here</div>
+      </div>
+      <!-- Right: pricing + CTA -->
+      <div class="lg:w-1/2 flex flex-col gap-14 p-6 lg:p-10">
+        <div class="flex flex-col gap-10">
+          <p class="text-h2 font-semibold font-heading">
+            <span data-key="sponsor_heading" data-cs="kolik dáš, tak velký logo budeš :)" data-en="the more you give, the bigger your logo gets :)">kolik dáš, tak velký logo budeš :)</span>
+          </p>
+          <div class="flex flex-col gap-10">
+            <p class="text-body font-semibold">
+              <span data-key="sponsor_body" data-cs="Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody." data-en="I've managed on my own until now, but I'd like to focus on an intensive three-month training with professionals to qualify for the world championships.">Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody.</span>
+            </p>
+            <div class="text-body font-semibold space-y-1">
+              <p><span data-key="sponsor_cost_1" data-cs="1. část mě výjde přibližně na 5 000 Eur 💸" data-en="part 1 costs approximately 5,000 EUR 💸">1. část mě výjde přibližně na 5 000 Eur 💸</span></p>
+              <p><span data-key="sponsor_cost_2" data-cs="2. část mě výjde přibližně na 6 000 Eur 💸" data-en="part 2 costs approximately 6,000 EUR 💸">2. část mě výjde přibližně na 6 000 Eur 💸</span></p>
+            </div>
+          </div>
+        </div>
+        <a href="mailto:wonderwayofj@gmail.com" class="inline-block bg-[#ff4448] px-8 py-4 text-h3 font-semibold font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity">
+          <span data-key="sponsor_cta" data-cs="→ podpoř mě 🙏" data-en="→ support me 🙏">→ podpoř mě 🙏</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- I. Collaboration Text -->
+  <section class="px-6 lg:px-[168px] pb-10 lg:pb-[60px]">
+    <p class="text-h2 font-semibold font-heading">
+      <span data-key="collab_text" data-cs='umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor,<br>jsem model → <a href="https://www.elitelisbon.com/en/jan-vitek/" target="_blank" class="accent-link">Elite Lisbon></a>' data-en='I know how to collaborate with brands like surfr, captain kombucha, jdi do hor,<br>I&apos;m a model → <a href="https://www.elitelisbon.com/en/jan-vitek/" target="_blank" class="accent-link">Elite Lisbon></a>'>umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor,<br>jsem model → <a href="https://www.elitelisbon.com/en/jan-vitek/" target="_blank" class="accent-link">Elite Lisbon></a></span>
+    </p>
+  </section>
+
+  <!-- J. Photo Carousel Strip 2 -->
+  <section class="w-full overflow-hidden">
+    <div class="carousel-track h-[300px] lg:h-[600px]" id="carousel2" style="animation-duration: 12s;">
+      <img src="Assets/2e8a8529-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/2e8a8355-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/screenshot-2026-02-11-at-17.21.38-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/33_surfchamp_2025-day6-59-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <!-- Duplicated -->
+      <img src="Assets/2e8a8529-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/2e8a8355-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/screenshot-2026-02-11-at-17.21.38-1.png" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/33_surfchamp_2025-day6-59-1.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+    </div>
+  </section>
+
+  <!-- K. Contact CTA -->
+  <section id="contact" class="flex flex-col items-center gap-10 px-6 py-20 lg:py-[160px]">
+    <h2 class="text-h3 font-semibold font-heading text-center">
+      <span data-key="contact_title" data-cs="podpoř mě a pojďme inspirovat spolu 🙏" data-en="support me and let's inspire together 🙏">podpoř mě a pojďme inspirovat spolu 🙏</span>
+    </h2>
+    <div class="flex items-center gap-4 lg:gap-6">
+      <div class="bg-[#ff4448] px-4 lg:px-14 py-2 lg:py-4">
+        <p class="text-h1 font-semibold font-heading text-center text-[#0c1313]">wonderwayofj@gmail.com</p>
+      </div>
+      <button id="copyEmail" class="flex-shrink-0 hover:opacity-70 transition-opacity" title="Kopírovat email">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip_copy)">
+            <path d="M21.3334 1.33301H5.33341C3.86675 1.33301 2.66675 2.53301 2.66675 3.99967V22.6663H5.33341V3.99967H21.3334V1.33301ZM25.3334 6.66634H10.6667C9.20008 6.66634 8.00008 7.86634 8.00008 9.33301V27.9997C8.00008 29.4663 9.20008 30.6663 10.6667 30.6663H25.3334C26.8001 30.6663 28.0001 29.4663 28.0001 27.9997V9.33301C28.0001 7.86634 26.8001 6.66634 25.3334 6.66634ZM25.3334 27.9997H10.6667V9.33301H25.3334V27.9997Z" fill="#0C1313"/>
+          </g>
+          <defs><clipPath id="clip_copy"><rect width="32" height="32" fill="white"/></clipPath></defs>
+        </svg>
+      </button>
+    </div>
+    <span id="copyFeedback" class="text-sm font-semibold text-[#ff4448] opacity-0 transition-opacity duration-300">
+      <span data-key="copy_feedback" data-cs="Zkopírováno!" data-en="Copied!">Zkopírováno!</span>
+    </span>
+  </section>
+
+  <!-- L. Social Links -->
+  <section class="flex flex-col items-center gap-12 px-6 pb-20 lg:pb-[160px]">
+    <h2 class="text-h3 font-semibold font-heading text-center">
+      <span data-key="social_title" data-cs="sleduj moji cestu 👣" data-en="follow my journey 👣">sleduj moji cestu 👣</span>
+    </h2>
+    <div class="flex flex-col items-center gap-8">
+      <a href="https://www.instagram.com/wonderwayofj/" target="_blank" class="text-body font-semibold hover:opacity-70 transition-opacity">→ instagram</a>
+      <a href="https://linktr.ee/janvitek" target="_blank" class="text-body font-semibold hover:opacity-70 transition-opacity">→ linktr.ee/janvitek</a>
+    </div>
+  </section>
+
+  <!-- M. Media -->
+  <section class="flex flex-col items-center gap-11 px-6 pb-20 lg:pb-[160px]">
+    <h2 class="text-h3 font-semibold font-heading text-center">media 📰</h2>
+    <div class="flex flex-col items-center gap-6 lg:gap-11">
+      <a href="https://zdarsky.denik.cz/volny-cas/neuveritelny-pribeh-kluk-svratka-zdarsko-surfing-cesko-slovensky-pohar-cestovani.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://zdarsky.denik.cz/volny-cas/neuveritelny-pribeh-kluk-svratka-zdarsko-surfing-cesko-slovensky-pohar-cestovani.html</a>
+      <a href="https://zdarsky.denik.cz/ostatni_region/jan-vitek-svratka-surfing-cesko-slovensky-pohar-druhe-misto-celkove-vedeni.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://zdarsky.denik.cz/ostatni_region/jan-vitek-svratka-surfing-cesko-slovensky-pohar-druhe-misto-celkove-vedeni.html</a>
+      <a href="https://www.czech.surf/post/berber-cup-posouva-hranice-cesko-slovenskeho-surfingu" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://www.czech.surf/post/berber-cup-posouva-hranice-cesko-slovenskeho-surfingu</a>
+    </div>
+  </section>
+
+  <!-- N. Sponsor Logos Footer -->
+  <section class="bg-white py-12 lg:py-20 px-6 lg:px-20">
+    <div class="flex flex-wrap justify-center items-center gap-10 lg:gap-[97px]">
+      <img src="Assets/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
+      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
+      <img src="Assets/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
+      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
+      <img src="Assets/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
+      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
+      <img src="Assets/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
+      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
+    </div>
+  </section>
+
+  <!-- O. Red Marquee Bar (footer) -->
+  <footer class="bg-[#ff4448] py-2 overflow-hidden">
+    <div class="marquee-track">
+      <span class="text-body font-semibold text-[#0c1313] px-8">wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp;</span>
+      <span class="text-body font-semibold text-[#0c1313] px-8">wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp; wonderway of j &nbsp;&middot;&nbsp; jan vítek &nbsp;&middot;&nbsp; humans &nbsp;&middot;&nbsp;</span>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="modal-backdrop" id="videoModal">
+    <div class="relative w-[90vw] max-w-[900px] aspect-video bg-black rounded-2xl overflow-hidden">
+      <button id="closeModal" class="absolute top-4 right-4 z-10 text-white text-4xl leading-none hover:opacity-70">&times;</button>
+      <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Load translations from JS files (works with file:// and HTTP)
+    var currentLang = 'cs';
+    var translations = { cs: TRANSLATIONS_CS, en: TRANSLATIONS_EN };
+    document.querySelectorAll('[data-key]').forEach(function(el) {
+      var key = el.getAttribute('data-key');
+      if (translations.cs[key] !== undefined) el.setAttribute('data-cs', translations.cs[key]);
+      if (translations.en[key] !== undefined) el.setAttribute('data-en', translations.en[key]);
+      el.innerHTML = el.getAttribute('data-' + currentLang);
+    });
+
+    // Language toggle (header buttons)
+    var langBtns = document.querySelectorAll('.lang-btn');
+
+    langBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentLang = btn.getAttribute('data-lang');
+        document.documentElement.lang = currentLang;
+        // Update all translatable text
+        document.querySelectorAll('[data-cs][data-en]').forEach(function(el) {
+          el.innerHTML = el.getAttribute('data-' + currentLang);
+        });
+        // Update active button state
+        langBtns.forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
+        });
+      });
+    });
+
+    // Copy to clipboard
+    document.getElementById('copyEmail').addEventListener('click', function() {
+      navigator.clipboard.writeText('wonderwayofj@gmail.com').then(function() {
+        var fb = document.getElementById('copyFeedback');
+        fb.style.opacity = '1';
+        setTimeout(function() { fb.style.opacity = '0'; }, 2000);
+      });
+    });
+
+    // Video modal
+    var modal = document.getElementById('videoModal');
+    var iframe = document.getElementById('videoIframe');
+    var placeholderURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+
+    document.querySelectorAll('.video-trigger').forEach(function(el) {
+      el.addEventListener('click', function() {
+        iframe.src = placeholderURL + '?autoplay=1';
+        modal.classList.add('active');
+      });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      iframe.src = '';
+    }
+
+    // Carousel drag/touch support
+    function initCarouselDrag(track) {
+      var isDragging = false;
+      var startX = 0;
+      var currentTranslate = 0;
+
+      function getTranslateX() {
+        var style = window.getComputedStyle(track);
+        var matrix = new DOMMatrix(style.transform);
+        return matrix.m41;
+      }
+
+      function onPointerDown(e) {
+        isDragging = true;
+        startX = e.clientX || e.touches[0].clientX;
+        currentTranslate = getTranslateX();
+        track.style.animationPlayState = 'paused';
+        track.style.transform = 'translateX(' + currentTranslate + 'px)';
+        track.style.animation = 'none';
+      }
+
+      function onPointerMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        var x = e.clientX || (e.touches && e.touches[0].clientX);
+        var diff = x - startX;
+        track.style.transform = 'translateX(' + (currentTranslate + diff) + 'px)';
+      }
+
+      function onPointerUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        var tx = getTranslateX();
+        var totalWidth = track.scrollWidth / 2;
+        var normalized = ((tx % totalWidth) + totalWidth) % totalWidth;
+        var progress = normalized / totalWidth;
+        var duration = parseFloat(track.style.animationDuration) || (track.id === 'carousel2' ? 12 : 15);
+
+        track.style.transform = '';
+        track.style.animation = '';
+        track.style.animationDelay = '-' + (progress * duration) + 's';
+      }
+
+      track.addEventListener('mousedown', onPointerDown);
+      track.addEventListener('mousemove', onPointerMove);
+      track.addEventListener('mouseup', onPointerUp);
+      track.addEventListener('mouseleave', onPointerUp);
+      track.addEventListener('touchstart', onPointerDown, { passive: false });
+      track.addEventListener('touchmove', onPointerMove, { passive: false });
+      track.addEventListener('touchend', onPointerUp);
+    }
+
+    document.querySelectorAll('.carousel-track').forEach(initCarouselDrag);
+  </script>
+
+</body>
+</html>
