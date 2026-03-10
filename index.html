@@ -101,10 +101,17 @@
       background: rgba(0,0,0,0);
       transition: background 0.25s;
       pointer-events: none;
-      z-index: 1;
+      z-index: 10;
     }
     .video-trigger:hover .thumb-wrap::after {
-      background: rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.25);
+    }
+    /* Text below thumbnail fades like accent-link */
+    .video-trigger > p {
+      transition: opacity 0.25s;
+    }
+    .video-trigger:hover > p {
+      opacity: 0.7;
     }
 
     /* Lang toggle in header */
