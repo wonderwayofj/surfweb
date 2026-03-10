@@ -19,6 +19,7 @@ var TRANSLATIONS_CS = {
   "goals_label": "Pro co si jdu?",
   "goal_1": "🥇 1. místo <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp 2026 Francie</a>",
   "goal_2": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
+  "results_video_cta": "→ 2. místo Berber Cup 2026",
 
   "plan_title": "plán 2026",
   "plan_part1_title": "1. část – kvalifikace",

@@ -19,6 +19,7 @@ var TRANSLATIONS_EN = {
   "goals_label": "What am I going for?",
   "goal_1": "🥇 1st place <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp 2026 France</a>",
   "goal_2": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
+  "results_video_cta": "→ 2nd place Berber Cup 2026",
 
   "plan_title": "plan 2026",
   "plan_part1_title": "part 1 – qualification",
