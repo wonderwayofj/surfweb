@@ -59,8 +59,8 @@
       display: flex;
       animation: carousel-scroll 15s linear infinite;
     }
-    .carousel-track:hover {
-      animation-play-state: paused;
+    .carousel-track.dragging {
+      animation: none !important;
     }
 
     /* Video modal */
@@ -480,6 +480,7 @@
       var isDragging = false;
       var startX = 0;
       var currentTranslate = 0;
+      var duration = track.id === 'carousel2' ? 12 : 15;
 
       function getTranslateX() {
         var style = window.getComputedStyle(track);
@@ -491,9 +492,8 @@
         isDragging = true;
         startX = e.clientX || e.touches[0].clientX;
         currentTranslate = getTranslateX();
-        track.style.animationPlayState = 'paused';
+        track.classList.add('dragging');
         track.style.transform = 'translateX(' + currentTranslate + 'px)';
-        track.style.animation = 'none';
       }
 
       function onPointerMove(e) {
@@ -508,13 +508,24 @@
         if (!isDragging) return;
         isDragging = false;
         var tx = getTranslateX();
-        var totalWidth = track.scrollWidth / 2;
-        var normalized = ((tx % totalWidth) + totalWidth) % totalWidth;
-        var progress = normalized / totalWidth;
-        var duration = parseFloat(track.style.animationDuration) || (track.id === 'carousel2' ? 12 : 15);
+        var halfWidth = track.scrollWidth / 2;
 
+        // Normalize position into valid range (0 to -halfWidth)
+        var normalized = tx % halfWidth;
+        if (normalized > 0) normalized -= halfWidth;
+
+        // Calculate how far through the animation cycle we are (0–1)
+        var progress = -normalized / halfWidth;
+
+        // Remove dragging state and inline transform
         track.style.transform = '';
-        track.style.animation = '';
+        track.classList.remove('dragging');
+
+        // Force reflow so the browser registers the animation restart
+        void track.offsetHeight;
+
+        // Resume CSS animation from the dragged position
+        track.style.animation = 'carousel-scroll ' + duration + 's linear infinite';
         track.style.animationDelay = '-' + (progress * duration) + 's';
       }
 
