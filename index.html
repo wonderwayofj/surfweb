@@ -252,14 +252,14 @@
       </div>
       <!-- Right: vertical video thumbnail -->
       <div class="lg:w-1/2 flex justify-center lg:px-20 lg:py-10">
-        <div class="relative w-[280px] lg:w-[360px] cursor-pointer video-trigger" data-video="results">
+        <div class="relative w-[280px] lg:w-[360px] cursor-pointer video-trigger" data-video-url="https://www.instagram.com/reel/DUlXaRpApkg/embed/" data-video-aspect="portrait">
           <div class="thumb-wrap relative rounded-3xl overflow-hidden">
             <img src="Assets/frame-2100.png" alt="Results video" class="w-full h-auto object-cover" />
             <svg class="absolute top-1/2 right-8 -translate-y-1/2 play-btn z-[2]" width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M48 27.7129L0 55.4257L0 0L48 27.7129Z" fill="#FF4448"/>
             </svg>
           </div>
-      </div>
+        </div>
     </div>
   </section>
 
@@ -431,7 +431,7 @@
 
   <!-- Video Modal -->
   <div class="modal-backdrop" id="videoModal">
-    <div class="relative w-[90vw] max-w-[900px] aspect-video bg-black rounded-2xl overflow-hidden">
+    <div id="modalContainer" class="relative bg-black rounded-2xl overflow-hidden" style="width:90vw; max-width:900px; aspect-ratio:16/9;">
       <button id="closeModal" class="absolute top-4 right-4 z-10 text-white text-4xl leading-none hover:opacity-70">&times;</button>
       <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
@@ -478,11 +478,28 @@
     // Video modal
     var modal = document.getElementById('videoModal');
     var iframe = document.getElementById('videoIframe');
-    var placeholderURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+    var container = document.getElementById('modalContainer');
+    var defaultURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
 
     document.querySelectorAll('.video-trigger').forEach(function(el) {
       el.addEventListener('click', function() {
-        iframe.src = placeholderURL + '?autoplay=1';
+        var url = el.getAttribute('data-video-url') || defaultURL;
+        var aspect = el.getAttribute('data-video-aspect') || 'landscape';
+
+        // Adjust modal size for portrait (Instagram Reels) vs landscape (YouTube)
+        if (aspect === 'portrait') {
+          container.style.width = '90vw';
+          container.style.maxWidth = '420px';
+          container.style.aspectRatio = '9/16';
+          container.style.maxHeight = '85vh';
+        } else {
+          container.style.width = '90vw';
+          container.style.maxWidth = '900px';
+          container.style.aspectRatio = '16/9';
+          container.style.maxHeight = '';
+        }
+
+        iframe.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
         modal.classList.add('active');
       });
     });
