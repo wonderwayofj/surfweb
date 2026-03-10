@@ -38,7 +38,7 @@ var TRANSLATIONS_EN = {
   "sponsor_cost_2": "part 2 costs approximately 6,000 EUR 💸",
   "sponsor_cta": "→ support me 🙏",
 
-  "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor,i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
+  "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
   "contact_title": "support me and let's inspire together 🙏",
   "copy_feedback": "Copied!",
