@@ -24,9 +24,10 @@
    - [Images & Assets](#61-images--assets)
    - [Bilingual Content (Czech / English)](#62-bilingual-content-czech--english)
    - [Translation Files](#63-translation-files)
-   - [Video Modal](#64-video-modal)
-   - [Photo Carousels](#65-photo-carousels)
-   - [Sponsor Logos](#66-sponsor-logos)
+   - [Hero Background Video](#64-hero-background-video)
+   - [Video Modal](#65-video-modal)
+   - [Photo Carousels](#66-photo-carousels)
+   - [Sponsor Logos](#67-sponsor-logos)
 7. [Reusable Components](#7-reusable-components)
 8. [External Links Reference](#8-external-links-reference)
 
@@ -52,7 +53,8 @@ SurfWeb/
 ├── index.html              ← Main (and currently only) page
 ├── DOCS.md                 ← This file
 ├── Assets/                 ← All images used on the site
-│   ├── rectangle-1665.jpeg          (hero background)
+│   ├── hero.mp4                     (hero looping background video, H.264, 3.6 MB)
+│   ├── rectangle-1665.jpeg          (hero poster/fallback image)
 │   ├── 512781322_...jpeg            (Jan's portrait)
 │   ├── f8eedcc9-...png              (wetsuit sponsorship image)
 │   ├── frame-2100.png               (results video thumbnail)
@@ -70,6 +72,7 @@ SurfWeb/
 ├── resources/
 │   ├── cs.js               ← Czech translations (editable)
 │   ├── en.js               ← English translations (editable)
+│   ├── symboly.svg         (three-circle "humans" logo, used inline in marquees)
 │   ├── index.html          (Figma export — reference only)
 │   ├── Desktop.jpg         (desktop mockup)
 │   ├── Mobile.jpg          (mobile mockup)
@@ -226,12 +229,12 @@ tailwind.config = {
 
 ### 4.2 HTML Sections
 
-The page starts with a sticky `<header>`, followed by sections labeled A through O:
+The page starts with a fixed `<header>` (overlays the hero), followed by sections labeled A through O:
 
 | ID   | Section                | Anchor     |
 |------|------------------------|------------|
-| —    | **Header (sticky)**    | —          |
-| B    | Hero                   | —          |
+| —    | **Header (fixed)**     | —          |
+| B    | Hero (looping video)   | —          |
 | A    | Red Marquee (top)      | —          |
 | C    | About (Who is Jan?)    | —         |
 | D    | Why I do this          | —         |
@@ -254,8 +257,8 @@ The page starts with a sticky `<header>`, followed by sections labeled A through
 Custom CSS lives in the `<style>` block in `<head>`. It covers only non-Tailwind things:
 
 - `body` — base font-family fallback
-- `.marquee-track` — infinite horizontal scroll animation
-- `.carousel-track` — auto-scrolling photo strip (pauses on hover)
+- `.marquee-track` — infinite horizontal scroll animation; text uses RealistWide Medium (`font-heading font-medium`); words separated by inline SVG three-circle symbols from `resources/symboly.svg`
+- `.carousel-track` — auto-scrolling photo strip (pauses on drag via `.dragging` class)
 - `.modal-backdrop` / `.modal-backdrop.active` — video overlay
 - `a.accent-link` — underline in font color (`#0c1313`), fades on hover
 - `.play-btn` — scale-up hover for video play icons
@@ -281,8 +284,10 @@ All JS is in a single `<script>` block at the bottom of `<body>`.
 // Updates all [data-cs][data-en] elements and toggles .active class
 ```
 
-**Copy to clipboard**
+**Copy to clipboard (email)**
 ```js
+// Clicking the red email box (#copyEmail) copies the email address
+// No separate copy icon — the entire box is clickable
 navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // Shows #copyFeedback for 2 seconds
 ```
@@ -294,10 +299,12 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // ESC key and backdrop click close the modal
 ```
 
-**Carousel drag**
+**Carousel drag/swipe**
 ```js
 initCarouselDrag(track)
 // Handles mousedown/move/up and touchstart/move/end
+// Adds .dragging class to pause CSS animation during drag
+// Uses forced reflow (void track.offsetHeight) to restart animation after release
 // Normalizes position on release so loop stays seamless
 ```
 
@@ -307,17 +314,21 @@ initCarouselDrag(track)
 
 ### 5.1 Header (Navigation)
 
-The site has a sticky transparent header with fluid typography (`text-nav`). Structure:
+The site has a fixed transparent header overlaying the hero, with fluid typography (`text-nav`). Structure:
 
 ```
-Left:  "wonderway of j" [humans symbol SVG] "jan vítek"
-Right: "cz | en"  "→ kontakt"
+Left:   "wonderway of j" [humans symbol SVG] "jan vítek"
+Right:  "→ kontakt"        ← top line on mobile
+        "cz | en"          ← second line on mobile (stacked below)
 ```
 
-- **Position:** `sticky top-0 z-50` — stays at top on scroll, transparent background
-- **Font:** RealistWide Medium (`font-heading font-semibold text-nav`)
+- **Position:** `fixed top-0 left-0 z-50` — overlays the hero section, transparent background
+- **Font:** RealistWide Medium (`font-heading font-medium text-nav`)
 - **Symbol:** inline SVG (three circles / humans logo), height scales with `clamp(15.6px, 0.99vw + 11.7px, 26px)`
 - **Padding:** `px-4 lg:px-6` (16px mobile, 24px desktop)
+- **Logo alignment:** `items-start lg:items-center` — top-aligned on mobile (so logo doesn't center between stacked nav lines)
+- **Right nav (mobile):** `flex-col-reverse` stacks "cz | en" below "→ kontakt" with `gap-3` for easy tapping
+- **Right nav (desktop):** `flex-row items-center gap-16` — single horizontal line
 - **Language toggle:** two `<button class="lang-btn">` elements; active one gets `.active` class
 - **Contact link:** scrolls to `#contact` section, text is translatable (`nav_contact` key)
 
@@ -472,14 +483,39 @@ Text content can be edited via JS files without touching HTML:
 
 **Works everywhere** — no HTTP server needed. Files load via `<script>` tags, so they work with `file://` protocol too.
 
-### 6.4 Video Modal
+### 6.4 Hero Background Video
+
+The hero section uses a looping background video instead of a static image:
+
+```html
+<video class="absolute inset-0 w-full h-full object-cover"
+       autoplay muted loop playsinline
+       poster="Assets/rectangle-1665.jpeg">
+  <source src="Assets/hero.mp4" type="video/mp4">
+  <img src="Assets/rectangle-1665.jpeg" alt="Surfing hero" class="w-full h-full object-cover" />
+</video>
+```
+
+**Key attributes:**
+- `autoplay muted` — required pair for autoplay in all browsers
+- `loop` — seamless looping
+- `playsinline` — prevents fullscreen on iOS
+- `poster` — shown while video loads (original hero JPEG)
+- `<img>` fallback — shown in browsers without video support
+
+**To replace the video:**
+1. Compress to H.264 MP4, no audio, target ≤ 4 MB
+2. Use `ffmpeg -i input.mov -c:v libx264 -preset veryslow -crf 28 -vf "scale=1280:720" -an -movflags +faststart -y Assets/hero.mp4`
+3. Keep `poster` pointing to a representative frame as JPEG fallback
+
+### 6.5 Video Modal
 
 Both video triggers open a placeholder URL. To use real videos:
 
 1. Upload to YouTube and get embed URL: `https://www.youtube.com/embed/VIDEO_ID`
 2. Replace `placeholderURL` in the `<script>` block
 
-### 6.5 Photo Carousels
+### 6.6 Photo Carousels
 
 Each carousel contains **images doubled** for seamless looping. To add a photo:
 1. Put image in `Assets/`
@@ -487,7 +523,7 @@ Each carousel contains **images doubled** for seamless looping. To add a photo:
 
 To change speed, adjust `animation-duration` (lower = faster).
 
-### 6.6 Sponsor Logos
+### 6.7 Sponsor Logos
 
 Replace "your logo here" text with `<img>` tags pointing to sponsor logos in `Assets/`.
 
@@ -498,10 +534,11 @@ Replace "your logo here" text with `<img>` tags pointing to sponsor logos in `As
 ### Red CTA Button
 ```html
 <a href="mailto:wonderwayofj@gmail.com"
-   class="inline-block bg-[#ff4448] px-8 py-4 text-h3 font-semibold font-heading text-[#0c1313] hover:opacity-90 transition-opacity">
+   class="inline-block bg-[#ff4448] px-8 py-4 text-h3 font-medium font-heading text-[#0c1313] hover:opacity-90 transition-opacity">
   → text here
 </a>
 ```
+Note: CTA buttons ("mrkni na plán", "pusť si teaser") use **RealistWide Medium** (`font-medium font-heading`).
 
 ### Accent Link (underline in font color)
 ```html
