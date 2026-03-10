@@ -90,10 +90,21 @@
     /* Play button overlay */
     .play-btn {
       cursor: pointer;
-      transition: transform 0.2s;
     }
-    .play-btn:hover {
-      transform: scale(1.1);
+
+    /* Video teaser hover – darken thumbnail + play button together */
+    .video-trigger .thumb-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: rgba(0,0,0,0);
+      transition: background 0.25s;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .video-trigger:hover .thumb-wrap::after {
+      background: rgba(0,0,0,0.15);
     }
 
     /* Lang toggle in header */
@@ -178,9 +189,12 @@
           </div>
           <!-- Video teaser thumbnail -->
           <div class="cursor-pointer video-trigger" data-video="teaser">
-            <div class="relative w-full max-w-[375px]">
-              <img src="Assets/screenshot-2026-02-05-at-17.50.36-2.png" alt="Video teaser" class="w-full h-auto rounded-3xl object-cover" />
-              <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 play-btn" width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="thumb-wrap relative w-full max-w-[375px] rounded-3xl overflow-hidden">
+              <video class="w-full h-auto object-cover" autoplay muted loop playsinline poster="Assets/screenshot-2026-02-05-at-17.50.36-2.png">
+                <source src="Assets/hero.mp4" type="video/mp4">
+                <img src="Assets/screenshot-2026-02-05-at-17.50.36-2.png" alt="Video teaser" class="w-full h-auto object-cover" />
+              </video>
+              <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 play-btn z-[2]" width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M33 19.0525L0 38.1051L0 0L33 19.0525Z" fill="#FF4448"/>
               </svg>
             </div>
@@ -232,11 +246,12 @@
       <!-- Right: vertical video thumbnail -->
       <div class="lg:w-1/2 flex justify-center lg:px-20 lg:py-10">
         <div class="relative w-[280px] lg:w-[360px] cursor-pointer video-trigger" data-video="results">
-          <img src="Assets/frame-2100.png" alt="Results video" class="w-full h-auto rounded-3xl object-cover" />
-          <svg class="absolute top-1/2 right-8 -translate-y-1/2 play-btn" width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M48 27.7129L0 55.4257L0 0L48 27.7129Z" fill="#FF4448"/>
-          </svg>
-        </div>
+          <div class="thumb-wrap relative rounded-3xl overflow-hidden">
+            <img src="Assets/frame-2100.png" alt="Results video" class="w-full h-auto object-cover" />
+            <svg class="absolute top-1/2 right-8 -translate-y-1/2 play-btn z-[2]" width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 27.7129L0 55.4257L0 0L48 27.7129Z" fill="#FF4448"/>
+            </svg>
+          </div>
       </div>
     </div>
   </section>
