@@ -252,7 +252,7 @@
       </div>
       <!-- Right: vertical video thumbnail -->
       <div class="lg:w-1/2 flex justify-center lg:px-20 lg:py-10">
-        <div class="relative w-[320px] lg:w-[420px] cursor-pointer video-trigger" data-video-url="https://www.instagram.com/reel/DUlXaRpApkg/embed/" data-video-aspect="portrait">
+        <div class="relative w-[320px] lg:w-[420px] cursor-pointer video-trigger" data-video-url="Assets/results.mp4" data-video-type="native" data-video-aspect="portrait">
           <div class="thumb-wrap relative rounded-3xl overflow-hidden">
             <img src="Assets/frame-2100.png" alt="Results video" class="w-full h-auto object-cover" />
             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 play-btn z-[2]" width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -434,6 +434,7 @@
     <div id="modalContainer" class="relative bg-black rounded-2xl overflow-hidden" style="width:90vw; max-width:900px; aspect-ratio:16/9;">
       <button id="closeModal" class="absolute top-4 right-4 z-10 text-white text-4xl leading-none hover:opacity-70">&times;</button>
       <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <video id="videoNative" class="w-full h-full hidden" controls playsinline></video>
     </div>
   </div>
 
@@ -478,6 +479,7 @@
     // Video modal
     var modal = document.getElementById('videoModal');
     var iframe = document.getElementById('videoIframe');
+    var nativeVideo = document.getElementById('videoNative');
     var container = document.getElementById('modalContainer');
     var defaultURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
 
@@ -485,8 +487,9 @@
       el.addEventListener('click', function() {
         var url = el.getAttribute('data-video-url') || defaultURL;
         var aspect = el.getAttribute('data-video-aspect') || 'landscape';
+        var type = el.getAttribute('data-video-type') || 'iframe';
 
-        // Adjust modal size for portrait (Instagram Reels) vs landscape (YouTube)
+        // Adjust modal size for portrait vs landscape
         if (aspect === 'portrait') {
           container.style.width = '90vw';
           container.style.maxWidth = '420px';
@@ -499,7 +502,18 @@
           container.style.maxHeight = '';
         }
 
-        iframe.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
+        // Native MP4 video or iframe embed
+        if (type === 'native') {
+          iframe.classList.add('hidden');
+          nativeVideo.classList.remove('hidden');
+          nativeVideo.src = url;
+          nativeVideo.play();
+        } else {
+          nativeVideo.classList.add('hidden');
+          iframe.classList.remove('hidden');
+          iframe.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
+        }
+
         modal.classList.add('active');
       });
     });
@@ -515,6 +529,10 @@
     function closeModal() {
       modal.classList.remove('active');
       iframe.src = '';
+      nativeVideo.pause();
+      nativeVideo.src = '';
+      nativeVideo.classList.add('hidden');
+      iframe.classList.remove('hidden');
     }
 
     // Carousel drag/touch support
