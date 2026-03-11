@@ -54,6 +54,7 @@ SurfWeb/
 ├── DOCS.md                 ← This file
 ├── Assets/                 ← All images used on the site
 │   ├── hero.mp4                     (hero looping background video, H.264, 3.6 MB)
+│   ├── results.mp4                  (results video, H.264 + AAC audio, 4.7 MB, 720×1280 portrait)
 │   ├── rectangle-1665.jpeg          (hero poster/fallback image)
 │   ├── 512781322_...jpeg            (Jan's portrait)
 │   ├── f8eedcc9-...png              (wetsuit sponsorship image)
@@ -229,7 +230,7 @@ tailwind.config = {
 
 ### 4.2 HTML Sections
 
-The page starts with a fixed `<header>` (overlays the hero), followed by sections labeled A through O:
+The page starts with a fixed `<header>` (overlays the hero), followed by sections labeled A through O. Note: Photo Carousel 2 (J) appears before Stats (I2) in the HTML:
 
 | ID   | Section                | Anchor     |
 |------|------------------------|------------|
@@ -243,6 +244,7 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | G    | Plan 2026              | `#plan`   |
 | H    | Sponsorship            | —         |
 | I    | Collaboration Text     | —         |
+| I2   | Sponsor Stats (reach)  | `#stats`  |
 | J    | Photo Carousel 2       | —         |
 | K    | Contact CTA            | `#contact` |
 | L    | Social Links           | —         |
@@ -297,6 +299,13 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // Any element with class .video-trigger opens the modal
 // data-video attribute can be used to load different videos
 // ESC key and backdrop click close the modal
+```
+
+**Scroll to email (centered)**
+```js
+// Both .scroll-to-email links and a[href="#contact"] (nav) scroll to #copyEmail
+// Element is centered vertically in the viewport
+// Uses window.scrollTo with behavior: 'smooth'
 ```
 
 **Carousel drag/swipe**
@@ -477,6 +486,7 @@ Text content can be edited via JS files without touching HTML:
 - `plan_*` — Plan section
 - `sponsor_*` — Sponsorship section
 - `collab_*` — Collaboration section
+- `stats_*` — Sponsor stats / reach & audience section
 - `contact_*`, `copy_*` — Contact section
 - `social_*` — Social links section
 - `nav_*` — Header / navigation
@@ -510,10 +520,23 @@ The hero section uses a looping background video instead of a static image:
 
 ### 6.5 Video Modal
 
-Both video triggers open a placeholder URL. To use real videos:
+The modal supports two modes configured via data attributes on `.video-trigger` elements:
 
-1. Upload to YouTube and get embed URL: `https://www.youtube.com/embed/VIDEO_ID`
-2. Replace `placeholderURL` in the `<script>` block
+| Attribute           | Values                    | Default     |
+|---------------------|---------------------------|-------------|
+| `data-video-url`    | URL to video/embed        | YouTube placeholder |
+| `data-video-type`   | `native` or `iframe`      | `iframe`    |
+| `data-video-aspect` | `portrait` or `landscape` | `landscape` |
+
+**Native video** (self-hosted MP4): uses HTML5 `<video>` with controls and playsinline.
+**Iframe** (YouTube etc.): uses `<iframe>` with autoplay parameter.
+
+Portrait mode sets the modal to 9:16 aspect ratio (max 420px wide, max 85vh tall).
+
+Example:
+```html
+<div class="video-trigger" data-video-url="Assets/results.mp4" data-video-type="native" data-video-aspect="portrait">
+```
 
 ### 6.6 Photo Carousels
 
