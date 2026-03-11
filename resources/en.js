@@ -43,7 +43,7 @@ var TRANSLATIONS_EN = {
 
   "stats_title": "reach & audience",
   "stats_subtitle": "why work together",
-  "stats_views": "organic monthly views",
+  "stats_views": "organic views monthly",
   "stats_followers": "active followers",
   "stats_engagement": "engagement rate",
   "stats_media": "media features",

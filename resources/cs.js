@@ -43,7 +43,7 @@ var TRANSLATIONS_CS = {
 
   "stats_title": "reach & audience",
   "stats_subtitle": "proč spolupracovat",
-  "stats_views": "organické měsíční zhlédnutí",
+  "stats_views": "organické zhlédnutí měsíčně",
   "stats_followers": "aktivní sledující",
   "stats_engagement": "míra zapojení",
   "stats_media": "zmínky v médiích",
