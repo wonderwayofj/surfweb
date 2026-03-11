@@ -244,8 +244,9 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | G    | Plan 2026              | `#plan`   |
 | H    | Sponsorship            | —         |
 | I    | Collaboration Text     | —         |
-| I2   | Sponsor Stats (reach)  | `#stats`  |
+| I3   | Partner Benefits (dropdown) | —    |
 | J    | Photo Carousel 2       | —         |
+| I2   | Sponsor Stats (reach)  | `#stats`  |
 | K    | Contact CTA            | `#contact` |
 | L    | Social Links           | —         |
 | M    | Media / Press          | —         |
@@ -265,6 +266,8 @@ Custom CSS lives in the `<style>` block in `<head>`. It covers only non-Tailwind
 - `a.accent-link` — underline in font color (`#0c1313`), fades on hover
 - `.play-btn` — scale-up hover for video play icons
 - `.lang-btn` / `.lang-btn.active` — header language toggle buttons (active = full opacity, inactive = 0.4)
+- `.partner-arrow` / `.partner-open .partner-arrow` — dropdown chevron with 180° rotation on open
+- `.partner-content` — collapsible container with `max-height` transition (JS-controlled)
 
 **Fonts are NOT set in CSS.** They are controlled by Tailwind classes `font-body` and `font-heading`.
 
@@ -306,6 +309,14 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // Both .scroll-to-email links and a[href="#contact"] (nav) scroll to #copyEmail
 // Element is centered vertically in the viewport
 // Uses window.scrollTo with behavior: 'smooth'
+```
+
+**Partner dropdown toggle**
+```js
+// Clicking #partnerDropdown toggles #partnerContent visibility
+// Uses JS-set style.maxHeight (overrides Tailwind CDN specificity)
+// CSS class .partner-open on wrapper rotates the chevron arrow 180°
+// Chevron is an SVG with sharp corners (stroke-linecap="square", stroke-linejoin="miter")
 ```
 
 **Carousel drag/swipe**
@@ -486,6 +497,7 @@ Text content can be edited via JS files without touching HTML:
 - `plan_*` — Plan section
 - `sponsor_*` — Sponsorship section
 - `collab_*` — Collaboration section
+- `partner_*` — Partner benefits dropdown section
 - `stats_*` — Sponsor stats / reach & audience section
 - `contact_*`, `copy_*` — Contact section
 - `social_*` — Social links section
