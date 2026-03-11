@@ -275,21 +275,21 @@
   <section class="w-full overflow-hidden">
     <div class="carousel-track h-[300px] lg:h-[720px]" id="carousel1">
       <img src="Assets/Jan Vitek Hero Surf.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Fitnes JV.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Solid Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Victory Feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Top Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <!-- Duplicated for seamless loop -->
       <img src="Assets/Jan Vitek Hero Surf.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Fitnes JV.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Solid Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Victory Feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Top Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
     </div>
   </section>
@@ -677,65 +677,77 @@
 
     // Carousel drag/touch support
     function initCarouselDrag(track) {
-      var isDragging = false;
+      var isDown = false;
+      var locked = false;       // true once we decide horizontal vs vertical
+      var isHorizontal = false; // was the gesture horizontal?
       var startX = 0;
-      var currentTranslate = 0;
+      var startY = 0;
+      var savedTx = 0;
       var duration = track.id === 'carousel2' ? 12 : 15;
+      var THRESHOLD = 8; // px before locking direction
 
       function getTranslateX() {
-        var style = window.getComputedStyle(track);
-        var matrix = new DOMMatrix(style.transform);
+        var matrix = new DOMMatrix(getComputedStyle(track).transform);
         return matrix.m41;
       }
 
-      function onPointerDown(e) {
-        isDragging = true;
-        startX = e.clientX || e.touches[0].clientX;
-        currentTranslate = getTranslateX();
-        track.classList.add('dragging');
-        track.style.transform = 'translateX(' + currentTranslate + 'px)';
+      function onDown(e) {
+        isDown = true;
+        locked = false;
+        isHorizontal = false;
+        var pt = e.touches ? e.touches[0] : e;
+        startX = pt.clientX;
+        startY = pt.clientY;
+        savedTx = getTranslateX();
       }
 
-      function onPointerMove(e) {
-        if (!isDragging) return;
+      function onMove(e) {
+        if (!isDown) return;
+        var pt = e.touches ? e.touches[0] : e;
+        var dx = pt.clientX - startX;
+        var dy = pt.clientY - startY;
+
+        // Lock direction after threshold
+        if (!locked && (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD)) {
+          locked = true;
+          isHorizontal = Math.abs(dx) > Math.abs(dy);
+          if (isHorizontal) {
+            track.classList.add('dragging');
+            track.style.transform = 'translateX(' + savedTx + 'px)';
+          }
+        }
+
+        if (!locked || !isHorizontal) return;
         e.preventDefault();
-        var x = e.clientX || (e.touches && e.touches[0].clientX);
-        var diff = x - startX;
-        track.style.transform = 'translateX(' + (currentTranslate + diff) + 'px)';
+        track.style.transform = 'translateX(' + (savedTx + dx) + 'px)';
       }
 
-      function onPointerUp() {
-        if (!isDragging) return;
-        isDragging = false;
+      function onUp() {
+        if (!isDown) return;
+        isDown = false;
+        if (!isHorizontal) { locked = false; return; }
+
         var tx = getTranslateX();
         var halfWidth = track.scrollWidth / 2;
-
-        // Normalize position into valid range (0 to -halfWidth)
         var normalized = tx % halfWidth;
         if (normalized > 0) normalized -= halfWidth;
-
-        // Calculate how far through the animation cycle we are (0–1)
         var progress = -normalized / halfWidth;
 
-        // Remove dragging state and inline transform
         track.style.transform = '';
         track.classList.remove('dragging');
-
-        // Force reflow so the browser registers the animation restart
         void track.offsetHeight;
-
-        // Resume CSS animation from the dragged position
         track.style.animation = 'carousel-scroll ' + duration + 's linear infinite';
         track.style.animationDelay = '-' + (progress * duration) + 's';
+        locked = false;
       }
 
-      track.addEventListener('mousedown', onPointerDown);
-      track.addEventListener('mousemove', onPointerMove);
-      track.addEventListener('mouseup', onPointerUp);
-      track.addEventListener('mouseleave', onPointerUp);
-      track.addEventListener('touchstart', onPointerDown, { passive: false });
-      track.addEventListener('touchmove', onPointerMove, { passive: false });
-      track.addEventListener('touchend', onPointerUp);
+      track.addEventListener('mousedown', onDown);
+      track.addEventListener('mousemove', onMove);
+      track.addEventListener('mouseup', onUp);
+      track.addEventListener('mouseleave', onUp);
+      track.addEventListener('touchstart', onDown, { passive: true });
+      track.addEventListener('touchmove', onMove, { passive: false });
+      track.addEventListener('touchend', onUp);
     }
 
     document.querySelectorAll('.carousel-track').forEach(initCarouselDrag);
