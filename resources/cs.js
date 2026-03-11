@@ -41,6 +41,15 @@ var TRANSLATIONS_CS = {
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
+  "stats_title": "reach & audience",
+  "stats_subtitle": "proč spolupracovat",
+  "stats_views": "organické měsíční zhlédnutí",
+  "stats_followers": "aktivní sledující",
+  "stats_engagement": "míra zapojení",
+  "stats_media": "zmínky v médiích",
+  "stats_desc": "Moje publikum tvoří lidé, kteří mají blízko k přírodě, dobrodružství a vlastní tvorbě. Jsou to lidé, kteří chtějí žít aktivně, objevovat svět a hledat vlastní cestu – ať už skrze sport, cestování nebo projekty, které tvoří. Sdílím dobrodružství od oceánu, z hor a vlastních projektů, abych inspiroval k aktivnímu a svobodnému životu.",
+  "stats_cta": "→ spolupracujme",
+
   "contact_title": "podpoř mě a pojďme inspirovat spolu 🙏",
   "copy_feedback": "Zkopírováno!",
 

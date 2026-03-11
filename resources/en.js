@@ -41,6 +41,15 @@ var TRANSLATIONS_EN = {
 
   "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
+  "stats_title": "reach & audience",
+  "stats_subtitle": "why work together",
+  "stats_views": "organic monthly views",
+  "stats_followers": "active followers",
+  "stats_engagement": "engagement rate",
+  "stats_media": "media features",
+  "stats_desc": "My audience are people who are close to nature, adventure and their own creative work. They want to live actively, explore the world and find their own path – whether through sport, travel or projects they create. I share adventures from the ocean, mountains and my own projects to inspire an active and free life.",
+  "stats_cta": "→ let's work together",
+
   "contact_title": "support me and let's inspire together 🙏",
   "copy_feedback": "Copied!",
 
