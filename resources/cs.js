@@ -41,6 +41,19 @@ var TRANSLATIONS_CS = {
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
+  "partner_title": "co nabízím partnerům",
+  "partner_cat1": "zážitky & obsah",
+  "partner_talk": "🎤 přednáška/workshop ve firmě — osobní rozvoj, překonávání překážek, cesta za cílem",
+  "partner_content": "📸 společný obsah — partnerská značka v reels/stories přímo z tréninků a závodů",
+  "partner_bts": "🎥 behind-the-scenes série — autentický content z přípravy, který partner může sdílet",
+  "partner_cat2": "pro zaměstnance partnera",
+  "partner_surf": "🏄 surf experience den — teambuilding s úvodem do surfingu (wavepool v Mnichově?)",
+  "partner_qa": "💪 motivační Q&A — online nebo naživo, ideální pro firemní eventy",
+  "partner_cat3": "viditelnost",
+  "partner_logo": "👕 logo na surfboardu a případně oblečení — viditelné v médiích a na závodech",
+  "partner_social": "📱 zmínky na sociálních sítích — tagování partnera v postech z cest a závodů",
+  "partner_web": "🌐 logo na webu — připravená sekce \"your logo here\"",
+
   "stats_title": "reach & audience",
   "stats_subtitle": "proč spolupracovat",
   "stats_views": "organické zhlédnutí měsíčně",

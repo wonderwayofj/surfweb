@@ -41,6 +41,19 @@ var TRANSLATIONS_EN = {
 
   "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
+  "partner_title": "what I offer partners",
+  "partner_cat1": "experiences & content",
+  "partner_talk": "🎤 talk/workshop at your company — personal growth, overcoming obstacles, chasing goals",
+  "partner_content": "📸 co-created content — your brand in reels/stories straight from training and competitions",
+  "partner_bts": "🎥 behind-the-scenes series — authentic prep content your brand can share",
+  "partner_cat2": "for your team",
+  "partner_surf": "🏄 surf experience day — team building with an intro to surfing (Munich wavepool?)",
+  "partner_qa": "💪 motivational Q&A — online or in-person, ideal for corporate events",
+  "partner_cat3": "visibility",
+  "partner_logo": "👕 logo on surfboard and apparel — visible in media and at competitions",
+  "partner_social": "📱 social media mentions — tagging your brand in posts from trips and competitions",
+  "partner_web": "🌐 logo on the website — dedicated \"your logo here\" section",
+
   "stats_title": "reach & audience",
   "stats_subtitle": "why work together",
   "stats_views": "organic views monthly",
