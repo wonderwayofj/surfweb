@@ -53,8 +53,13 @@ SurfWeb/
 ├── index.html              ← Main (and currently only) page
 ├── DOCS.md                 ← This file
 ├── Assets/                 ← All images used on the site
-│   ├── hero.mp4                     (hero looping background video, H.264, 3.6 MB)
-│   ├── results.mp4                  (results video, H.264 + AAC audio, 4.7 MB, 720×1280 portrait)
+│   ├── Video/
+│   │   ├── hero surf jan vitek.mp4  (hero looping background video, H.264)
+│   │   └── results.mp4              (results video, H.264 + AAC, 720×1280 portrait)
+│   ├── Logos/
+│   │   └── image-27.png             (sponsor logo placeholder)
+│   ├── carousel_1/                  (source images for carousel 1)
+│   ├── carousel_2/                  (source images for carousel 2)
 │   ├── rectangle-1665.jpeg          (hero poster/fallback image)
 │   ├── Jan Vitek Face.jpg           (Jan's portrait — About section)
 │   ├── Logos Partners Jan Vitek.jpg (surfboard with "your logo here" spots — Sponsorship)
@@ -74,8 +79,7 @@ SurfWeb/
 │   ├── Cheeky Jan Vitek.JPG         (carousel 2)
 │   ├── Car Jan Vitek.jpg            (carousel 2)
 │   ├── Speedoes Jan Vitek.jpg       (carousel 2)
-│   ├── Surfr Jan Vitek.jpg          (carousel 2)
-│   └── image-27.png                 (sponsor logo placeholder)
+│   └── Surfr Jan Vitek.jpg          (carousel 2)
 ├── resources/
 │   ├── cs.js               ← Czech translations (editable)
 │   ├── en.js               ← English translations (editable)
