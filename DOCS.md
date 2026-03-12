@@ -56,19 +56,25 @@ SurfWeb/
 │   ├── hero.mp4                     (hero looping background video, H.264, 3.6 MB)
 │   ├── results.mp4                  (results video, H.264 + AAC audio, 4.7 MB, 720×1280 portrait)
 │   ├── rectangle-1665.jpeg          (hero poster/fallback image)
-│   ├── 512781322_...jpeg            (Jan's portrait)
-│   ├── f8eedcc9-...png              (wetsuit sponsorship image)
-│   ├── frame-2100.png               (results video thumbnail)
+│   ├── Jan Vitek Face.jpg           (Jan's portrait — About section)
+│   ├── Logos Partners Jan Vitek.jpg (surfboard with "your logo here" spots — Sponsorship)
+│   ├── Nahled Champion...jpg        (results video thumbnail — podium photo)
 │   ├── screenshot-2026-02-05-...png (teaser video thumbnail)
-│   ├── dsc04607-1.png               (carousel photo)
-│   ├── sm_surfmaroco_day3_505.jpeg  (carousel photo)
-│   ├── sm_surfmaroco_day3_482.jpeg  (carousel photo)
-│   ├── screenshot-2026-02-06-...png (carousel photo)
-│   ├── 30537209-...jpeg             (carousel photo)
-│   ├── 2e8a8529-1.jpeg              (carousel 2 photo)
-│   ├── 2e8a8355-1.jpeg              (carousel 2 photo)
-│   ├── 33_surfchamp_2025-...jpeg    (carousel 2 photo)
-│   ├── screenshot-2026-02-11-...png (carousel 2 photo)
+│   ├── Jan Vitek Hero Surf.jpg      (carousel 1)
+│   ├── Fitnes JV.jpg                (carousel 1)
+│   ├── Backside Turn Jan Vitek.jpg  (carousel 1)
+│   ├── 2nd place feeling...jpg      (carousel 1)
+│   ├── Solid Turn Jan Vitek.jpg     (carousel 1)
+│   ├── Victory Feeling...jpg        (carousel 1)
+│   ├── Jan Surf Reentry.jpg         (carousel 1)
+│   ├── Top Turn Jan Vitek.jpg       (carousel 1)
+│   ├── Surf Morocco Jan Vitek.jpg   (carousel 2)
+│   ├── Kombucha Jan Vitek.jpeg      (carousel 2)
+│   ├── Wetsuit Jan Vitek.jpg        (carousel 2)
+│   ├── Cheeky Jan Vitek.JPG         (carousel 2)
+│   ├── Car Jan Vitek.jpg            (carousel 2)
+│   ├── Speedoes Jan Vitek.jpg       (carousel 2)
+│   ├── Surfr Jan Vitek.jpg          (carousel 2)
 │   └── image-27.png                 (sponsor logo placeholder)
 ├── resources/
 │   ├── cs.js               ← Czech translations (editable)
@@ -322,10 +328,11 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 **Carousel drag/swipe**
 ```js
 initCarouselDrag(track)
-// Handles mousedown/move/up and touchstart/move/end
-// Adds .dragging class to pause CSS animation during drag
-// Uses forced reflow (void track.offsetHeight) to restart animation after release
-// Normalizes position on release so loop stays seamless
+// Direction-lock: 8px threshold detects horizontal vs vertical gesture
+// Horizontal swipe: pauses CSS animation, tracks finger/mouse position
+// Vertical scroll: passes through normally (no preventDefault)
+// touchstart is passive (no scroll jank)
+// On release: normalizes position and resumes CSS animation from dragged offset
 ```
 
 ---
