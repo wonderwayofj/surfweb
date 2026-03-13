@@ -39,8 +39,8 @@ var TRANSLATIONS_EN = {
 
   "sponsor_heading": "the more you give, the bigger your logo gets :)",
   "sponsor_body": "I've managed on my own until now, but I'd like to focus on an intensive three-month training with professionals to qualify for the world championships.",
-  "sponsor_cost_1": "part 1 costs approximately 5,500 EUR 💸",
-  "sponsor_cost_2": "part 2 costs approximately 7,500 EUR 💸",
+  "sponsor_cost_1": "part 1 costs approximately 6,000 EUR 💸",
+  "sponsor_cost_2": "part 2 costs approximately 8,500 EUR 💸",
   "sponsor_cta": "→ support me 💪",
 
   "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
