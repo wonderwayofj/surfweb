@@ -300,6 +300,15 @@
       <img src="Assets/Victory Feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Top Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <!-- Duplicates for seamless loop -->
+      <img src="Assets/Jan Vitek Hero Surf.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Fitnes JV.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Solid Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Victory Feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Top Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
     </div>
   </section>
 
@@ -426,6 +435,14 @@
   <!-- J. Photo Carousel Strip 2 -->
   <section class="w-full carousel-section" id="carouselSection2">
     <div class="carousel-track h-[300px] lg:h-[600px]" id="carousel2">
+      <img src="Assets/Surf Morocco Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Kombucha Jan Vitek.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Wetsuit Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Cheeky Jan Vitek.JPG" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Car Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Speedoes Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <img src="Assets/Surfr Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
+      <!-- Duplicates for seamless loop -->
       <img src="Assets/Surf Morocco Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Kombucha Jan Vitek.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Wetsuit Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
@@ -760,22 +777,48 @@
       iframe.classList.remove('hidden');
     }
 
-    // Carousel mouse-drag support (touch/swipe handled natively by overflow-x: scroll)
+    // Carousel: gentle auto-scroll + mouse drag + touch swipe
     document.querySelectorAll('.carousel-section').forEach(function(section) {
+      var paused = false;
+      var resumeTimer = null;
+      var speed = 0.6; // px per frame
+
+      // Auto-scroll loop — loops seamlessly using duplicated images
+      function tick() {
+        if (!paused) {
+          section.scrollLeft += speed;
+          var half = section.scrollWidth / 2;
+          if (section.scrollLeft >= half) section.scrollLeft -= half;
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      function pause() {
+        paused = true;
+        if (resumeTimer) clearTimeout(resumeTimer);
+      }
+      function resume() {
+        if (resumeTimer) clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function() { paused = false; }, 800);
+      }
+
+      // Mouse drag
       var isDown = false, startX, scrollLeft;
       section.addEventListener('mousedown', function(e) {
         isDown = true;
+        pause();
         section.classList.add('grabbing');
         startX = e.pageX - section.offsetLeft;
         scrollLeft = section.scrollLeft;
       });
       section.addEventListener('mouseleave', function() {
-        isDown = false;
-        section.classList.remove('grabbing');
+        if (isDown) { isDown = false; section.classList.remove('grabbing'); resume(); }
       });
       section.addEventListener('mouseup', function() {
         isDown = false;
         section.classList.remove('grabbing');
+        resume();
       });
       section.addEventListener('mousemove', function(e) {
         if (!isDown) return;
@@ -783,6 +826,11 @@
         var x = e.pageX - section.offsetLeft;
         section.scrollLeft = scrollLeft - (x - startX) * 1.5;
       });
+
+      // Touch: pause during swipe, resume after momentum settles
+      section.addEventListener('touchstart', function() { pause(); }, { passive: true });
+      section.addEventListener('touchend', function() { resume(); });
+      section.addEventListener('touchcancel', function() { resume(); });
     });
   </script>
 
