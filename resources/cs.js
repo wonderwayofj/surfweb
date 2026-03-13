@@ -16,8 +16,8 @@ var TRANSLATIONS_CS = {
   "why_text": "🏄🏼 surfování je velkou součástí mého života. je to moje cesta poznání ✨, posouvám své limity a objevuji, kdo jsem 🧘‍♂️. baví mě tím inspirovat ostatní – plnit si své sny a cíle 🌊.",
 
   "results_title": "výsledky",
-  "result_1": "🥈 2. místo Berber Cup 2025 Maroko CZ/SK",
-  "result_2": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
+  "result_1": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
+  "result_2": "🥈 2. místo Berber Cup 2025 Maroko CZ/SK",
   "result_3": "🥉 3. místo v žebříčku CZ/SK Surf Cup 24–25",
   "result_4": "🌊 Semifinále Bali Big Wave 2024",
   "goals_label": "Pro co si jdu?",
