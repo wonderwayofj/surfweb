@@ -13,7 +13,7 @@ var TRANSLATIONS_CS = {
   "who_video_cta": "→ pusť si teaser",
 
   "why_title": "moje cesta",
-  "why_text": "🏄 surfování je moje cesta poznání. posouvám své limity ✨, objevuji svět 🌍 a sdílím tuhle cestu s ostatními 🧘. protože věřím, že dobrodružství může inspirovat lidi plnit si své sny. 🌊",
+  "why_text": "🏄 surfování je moje cesta poznání. posouvám své limity ✨, objevuji svět 🌍 a sdílím tuhle cestu s ostatními 🧘. protože věřím, že dobrodružství může inspirovat lidi plnit si své sny 🌊.",
 
   "results_title": "výsledky",
   "result_1": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
