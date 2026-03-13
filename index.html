@@ -168,11 +168,11 @@
           <span data-key="hero_subtext" data-cs="Čech na cestě na mezinárodní závody ISA World Surfing Games v El Salvadoru" data-en="A Czech on his way to the ISA World Surfing Games in El Salvador">Čech na cestě na mezinárodní závody ISA World Surfing Games v El Salvadoru</span>
         </p>
       </div>
-      <div class="flex flex-col gap-4 items-start">
-        <a href="#contact" class="scroll-to-email inline-block bg-[#ff4448] px-8 py-4 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity no-underline">
+      <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-baseline">
+        <a href="#contact" class="scroll-to-email inline-block bg-[#ff4448] px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity no-underline">
           <span data-key="hero_support_cta" data-cs="→ podpoř mě 💪" data-en="→ support me 💪">→ podpoř mě 💪</span>
         </a>
-        <a href="#plan" class="text-body font-medium font-heading text-[#0c1313] hover:opacity-70 transition-opacity w-fit">
+        <a href="#plan" class="inline-block bg-transparent px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-70 transition-opacity no-underline">
           <span data-key="hero_cta" data-cs="→ mrkni na plán" data-en="→ check the plan">→ mrkni na plán</span>
         </a>
       </div>
@@ -490,7 +490,7 @@
     </div>
 
     <!-- Description -->
-    <p class="text-sm lg:text-link leading-[1.8] lg:leading-[1.8] font-semibold max-w-[600px] mx-auto mb-4">
+    <p class="text-sm lg:text-link leading-[1.8] lg:leading-[1.8] font-semibold max-w-[600px] lg:max-w-[620px] mx-auto mb-4">
       <span data-key="stats_desc" data-cs='Moje publikum tvoří lidé, kteří mají blízko k přírodě, dobrodružství a vlastní tvorbě. Jsou to lidé, kteří chtějí žít aktivně, objevovat svět a hledat vlastní cestu – ať už skrze sport, cestování nebo projekty, které tvoří. Sdílím dobrodružství od oceánu, z hor a vlastních projektů, abych inspiroval k aktivnímu a svobodnému životu.' data-en='My audience are people who are close to nature, adventure and their own creative work. They want to live actively, explore the world and find their own path – whether through sport, travel or projects they create. I share adventures from the ocean, mountains and my own projects to inspire an active and free life.'>Moje publikum tvoří lidé, kteří mají blízko k přírodě, dobrodružství a vlastní tvorbě. Jsou to lidé, kteří chtějí žít aktivně, objevovat svět a hledat vlastní cestu – ať už skrze sport, cestování nebo projekty, které tvoří. Sdílím dobrodružství od oceánu, z hor a vlastních projektů, abych inspiroval k aktivnímu a svobodnému životu.</span>
     </p>
 
@@ -499,7 +499,7 @@
   <!-- K. Contact CTA -->
   <section id="contact" class="flex flex-col items-center gap-10 px-6 pt-10 pb-20 lg:pt-10 lg:pb-[160px]">
     <h2 class="text-h3 font-semibold font-heading text-center">
-      <span data-key="contact_title" data-cs="podpoř mě a pojďme inspirovat spolu 🙏" data-en="support me and let's inspire together 🙏">podpoř mě a pojďme inspirovat spolu 🙏</span>
+      <span data-key="contact_title" data-cs="podpoř mě a pojďme inspirovat spolu 💪" data-en="support me and let's inspire together 💪">podpoř mě a pojďme inspirovat spolu 💪</span>
     </h2>
     <div id="copyEmail" class="bg-[#ff4448] w-full lg:w-auto px-4 lg:px-14 py-2 lg:py-4 cursor-pointer hover:opacity-90 transition-opacity">
       <p class="text-[clamp(24px,5.8vw,42px)] lg:text-h1 font-semibold font-heading text-center text-[#0c1313] leading-[1.3]">wonderwayofj@gmail.com</p>
@@ -572,6 +572,24 @@
       el.innerHTML = el.getAttribute('data-' + currentLang);
     });
 
+    // Czech/English typographic orphan fix – prevent 1-2 letter words at end of line
+    function fixOrphans() {
+      var shortWords = /(\s|^)(a|i|k|s|v|z|o|u|na|do|od|se|ve|za|ke|ku|po|ze|si|je|an|in|at|by|if|is|it|of|on|or|so|to|up|we|no)\s/gi;
+      document.querySelectorAll('[data-cs][data-en]').forEach(function(el) {
+        var text = el.getAttribute('data-' + currentLang);
+        if (!text) return;
+        // Replace space after short words with non-breaking space (multiple passes for adjacent matches)
+        var fixed = text;
+        for (var pass = 0; pass < 3; pass++) {
+          fixed = fixed.replace(shortWords, function(match, before, word) {
+            return before + word + '\u00A0';
+          });
+        }
+        el.innerHTML = fixed;
+      });
+    }
+    fixOrphans();
+
     // Language toggle (header buttons)
     var langBtns = document.querySelectorAll('.lang-btn');
 
@@ -587,6 +605,7 @@
         langBtns.forEach(function(b) {
           b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
         });
+        fixOrphans();
       });
     });
 

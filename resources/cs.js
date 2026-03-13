@@ -37,7 +37,7 @@ var TRANSLATIONS_CS = {
   "sponsor_body": "Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody.",
   "sponsor_cost_1": "1. část mě výjde přibližně na 5 000 Eur 💸",
   "sponsor_cost_2": "2. část mě výjde přibližně na 6 000 Eur 💸",
-  "sponsor_cta": "→ podpoř mě 🙏",
+  "sponsor_cta": "→ podpoř mě 💪",
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
@@ -63,7 +63,7 @@ var TRANSLATIONS_CS = {
   "stats_desc": "Moje publikum tvoří lidé, kteří mají blízko k přírodě, dobrodružství a vlastní tvorbě. Jsou to lidé, kteří chtějí žít aktivně, objevovat svět a hledat vlastní cestu – ať už skrze sport, cestování nebo projekty, které tvoří. Sdílím dobrodružství od oceánu, z hor a vlastních projektů, abych inspiroval k aktivnímu a svobodnému životu.",
   "stats_cta": "→ spolupracujme",
 
-  "contact_title": "podpoř mě a pojďme inspirovat spolu 🙏",
+  "contact_title": "podpoř mě a pojďme inspirovat spolu 💪",
   "copy_feedback": "Zkopírováno!",
 
   "social_title": "sleduj moji cestu 👣",

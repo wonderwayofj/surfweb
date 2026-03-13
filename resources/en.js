@@ -37,7 +37,7 @@ var TRANSLATIONS_EN = {
   "sponsor_body": "I've managed on my own until now, but I'd like to focus on an intensive three-month training with professionals to qualify for the world championships.",
   "sponsor_cost_1": "part 1 costs approximately 5,000 EUR 💸",
   "sponsor_cost_2": "part 2 costs approximately 6,000 EUR 💸",
-  "sponsor_cta": "→ support me 🙏",
+  "sponsor_cta": "→ support me 💪",
 
   "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
@@ -63,7 +63,7 @@ var TRANSLATIONS_EN = {
   "stats_desc": "My audience are people who are close to nature, adventure and their own creative work. They want to live actively, explore the world and find their own path – whether through sport, travel or projects they create. I share adventures from the ocean, mountains and my own projects to inspire an active and free life.",
   "stats_cta": "→ let's work together",
 
-  "contact_title": "support me and let's inspire together 🙏",
+  "contact_title": "support me and let's inspire together 💪",
   "copy_feedback": "Copied!",
 
   "social_title": "follow my journey 👣",
