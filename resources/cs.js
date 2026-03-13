@@ -12,8 +12,8 @@ var TRANSLATIONS_CS = {
   "who_tab_pribeh": "<p>Pocházím ze Svratky na Vysočině – místa daleko od oceánu. Právě proto pro mě surfování vždycky znamenalo víc než jen sport. Byla to cesta, která mě naučila vytrvalosti, trpělivosti a odvaze jít za svým.</p><p>Díky surfingu jsem postupně procestoval různé části světa – od evropských pobřeží až po surfové destinace jako Nový Zéland nebo Hawaii. Surfování jsem si do teď financoval sám a kombinoval ho s prací na dálku jako brand designér a <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">podnikatel</a>.</p><p>Většinu času trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Závodím v česko-slovenském surfovém poháru a mým cílem je kvalifikace na ISA World Surfing Games v El Salvadoru.</p><p>Surfování je pro mě způsob, jak poznávat svět i sebe. Rád tím inspiruji ostatní – píle a trpělivost přináší výsledky.</p><p>Teď hledám partnera, který chce být součástí téhle cesty.</p>",
   "who_video_cta": "→ pusť si teaser",
 
-  "why_title": "proč to dělám?",
-  "why_text": "🏄🏼 surfování je velkou součástí mého života. je to moje cesta poznání ✨, posouvám své limity a objevuji, kdo jsem 🧘‍♂️. baví mě tím inspirovat ostatní – plnit si své sny a cíle 🌊.",
+  "why_title": "moje cesta",
+  "why_text": "🏄 Surfování je moje cesta poznání. Posouvám své limity ✨, objevuji svět 🌍 a sdílím tuhle cestu s ostatními 🧘. Protože věřím, že dobrodružství může inspirovat lidi plnit si své sny. 🌊",
 
   "results_title": "výsledky",
   "result_1": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
