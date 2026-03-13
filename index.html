@@ -200,9 +200,17 @@
             <p class="text-h1 font-semibold font-heading">
               <span data-key="who_heading" data-cs='<a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">tvůrce></a>,<br>a reprezentant<br>mířící na ISA' data-en='<a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">creator></a>,<br>a national team<br>member heading to ISA'><a href="https://humanscollective.com/" target="_blank" class="accent-link">designer></a>, <a href="https://linktr.ee/janvitek" target="_blank" class="accent-link">tvůrce></a>,<br>a reprezentant<br>mířící na ISA</span>
             </p>
-            <p class="text-body font-semibold">
-              <span data-key="who_body" data-cs='Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.' data-en='I&apos;ve been self-funding my surfing until now. I work remotely. Now I&apos;m looking for a sponsor/partner. I train between Portugal, France and Czechia. Heading to the <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.'>Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href="https://isasurf.org/" target="_blank" class="accent-link">ISA World Surfing Games></a>.</span>
-            </p>
+            <div class="flex flex-col gap-4">
+              <!-- Tab buttons -->
+              <div class="flex gap-4">
+                <button class="who-tab who-tab-active text-body font-semibold underline" data-tab="kratce" data-key="who_tab_btn_kratce">Krátce</button>
+                <button class="who-tab text-body font-semibold opacity-40" data-tab="pribeh" data-key="who_tab_btn_pribeh">Příběh</button>
+              </div>
+              <!-- Krátce content -->
+              <div id="who-tab-kratce" class="who-tab-content text-body font-semibold flex flex-col gap-4" data-key="who_tab_kratce"></div>
+              <!-- Příběh content -->
+              <div id="who-tab-pribeh" class="who-tab-content text-body font-semibold flex flex-col gap-4" style="display:none;" data-key="who_tab_pribeh"></div>
+            </div>
           </div>
           <!-- Video teaser thumbnail -->
           <div class="cursor-pointer video-trigger" data-video="teaser">
@@ -606,6 +614,24 @@
           b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
         });
         fixOrphans();
+      });
+    });
+
+    // Who section tabs (Krátce / Příběh)
+    document.querySelectorAll('.who-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = btn.getAttribute('data-tab');
+        // Switch active button styles
+        document.querySelectorAll('.who-tab').forEach(function(b) {
+          var isActive = b.getAttribute('data-tab') === tab;
+          b.classList.toggle('who-tab-active', isActive);
+          b.classList.toggle('underline', isActive);
+          b.classList.toggle('opacity-40', !isActive);
+        });
+        // Show/hide content
+        document.querySelectorAll('.who-tab-content').forEach(function(panel) {
+          panel.style.display = panel.id === 'who-tab-' + tab ? '' : 'none';
+        });
       });
     });
 

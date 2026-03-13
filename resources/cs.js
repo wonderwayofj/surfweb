@@ -6,6 +6,10 @@ var TRANSLATIONS_CS = {
   "who_title": "kdo je jan vítek?",
   "who_heading": "<a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a>, <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">tvůrce</a>,<br>a reprezentant<br>mířící na ISA",
   "who_body": "Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>.",
+  "who_tab_btn_kratce": "Krátce",
+  "who_tab_btn_pribeh": "Příběh",
+  "who_tab_kratce": "<p>Jsem surfař z Česka. Trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Pracuji jako brand designér a tvořím projekty. Procestoval jsem Nový Zéland, oceánii, Kalifornii a okolí Evropy.</p><p>Teď mířím na kvalifikaci na ISA World Surfing Games. Hledám partnera, který chce být součástí téhle cesty.</p>",
+  "who_tab_pribeh": "<p>Pocházím ze Svratky na Vysočině – místa daleko od oceánu. Právě proto pro mě surfování vždycky znamenalo víc než jen sport. Byla to cesta, která mě naučila vytrvalosti, trpělivosti a odvaze jít za svým.</p><p>Díky surfingu jsem postupně procestoval různé části světa – od evropských pobřeží až po surfové destinace jako Nový Zéland nebo Hawaii. Surfování jsem si do teď financoval sám a kombinoval ho s prací na dálku jako brand designér a <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">podnikatel</a>.</p><p>Většinu času trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Závodím v česko-slovenském surfovém poháru a mým cílem je kvalifikace na ISA World Surfing Games v El Salvadoru.</p><p>Surfování je pro mě způsob, jak poznávat svět i sebe. Rád tím inspiruji ostatní – píle a trpělivost přináší výsledky.</p><p>Teď hledám partnera, který chce být součástí téhle cesty.</p>",
   "who_video_cta": "→ pusť si teaser",
 
   "why_title": "proč to dělám?",
