@@ -50,17 +50,17 @@
       white-space: nowrap;
     }
 
-    /* Carousel auto-scroll */
-    @keyframes carousel-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    /* Carousel — swipe/drag only, no auto-animation */
+    .carousel-section {
+      overflow-x: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
     }
+    .carousel-section::-webkit-scrollbar { display: none; }
+    .carousel-section.grabbing { cursor: grabbing; }
     .carousel-track {
       display: flex;
-      animation: carousel-scroll 15s linear infinite;
-    }
-    .carousel-track.dragging {
-      animation: none !important;
     }
 
     /* Video modal */
@@ -285,17 +285,8 @@
   </section>
 
   <!-- F. Photo Carousel Strip 1 -->
-  <section class="w-full overflow-hidden">
+  <section class="w-full carousel-section" id="carouselSection1">
     <div class="carousel-track h-[300px] lg:h-[720px]" id="carousel1">
-      <img src="Assets/Jan Vitek Hero Surf.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Fitnes JV.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/2nd place feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Solid Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Victory Feeling Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Jan Surf Reentry.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Top Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <!-- Duplicated for seamless loop -->
       <img src="Assets/Jan Vitek Hero Surf.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Fitnes JV.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Backside Turn Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
@@ -428,16 +419,8 @@
   </section>
 
   <!-- J. Photo Carousel Strip 2 -->
-  <section class="w-full overflow-hidden">
-    <div class="carousel-track h-[300px] lg:h-[600px]" id="carousel2" style="animation-duration: 12s;">
-      <img src="Assets/Surf Morocco Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Kombucha Jan Vitek.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Wetsuit Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Cheeky Jan Vitek.JPG" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Car Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Speedoes Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <img src="Assets/Surfr Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
-      <!-- Duplicated for seamless loop -->
+  <section class="w-full carousel-section" id="carouselSection2">
+    <div class="carousel-track h-[300px] lg:h-[600px]" id="carousel2">
       <img src="Assets/Surf Morocco Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Kombucha Jan Vitek.jpeg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
       <img src="Assets/Wetsuit Jan Vitek.jpg" class="h-full w-auto object-cover flex-shrink-0" alt="" />
@@ -478,7 +461,7 @@
         </div>
       </div>
       <div class="bg-[#f5f2ed] py-8 px-4">
-        <div class="text-[clamp(2rem,5vw,3rem)] font-medium tracking-tighter leading-none" style="font-family:'RealistWide',sans-serif;">3+</div>
+        <div class="text-[clamp(2rem,5vw,3rem)] font-medium tracking-tighter leading-none" style="font-family:'RealistWide',sans-serif;">5+</div>
         <div class="text-[0.72rem] uppercase tracking-wide text-[#888] mt-1 font-body">
           <span data-key="stats_media" data-cs="zmínky v médiích" data-en="media features">zmínky v médiích</span>
         </div>
@@ -531,10 +514,10 @@
   <!-- M. Media -->
   <section class="flex flex-col items-center gap-11 px-6 pb-20 lg:pb-[160px]">
     <h2 class="text-h3 font-semibold font-heading text-center">media 📰</h2>
-    <div class="flex flex-col items-center gap-6 lg:gap-11">
-      <a href="https://zdarsky.denik.cz/volny-cas/neuveritelny-pribeh-kluk-svratka-zdarsko-surfing-cesko-slovensky-pohar-cestovani.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://zdarsky.denik.cz/volny-cas/neuveritelny-pribeh-kluk-svratka-zdarsko-surfing-cesko-slovensky-pohar-cestovani.html</a>
-      <a href="https://zdarsky.denik.cz/ostatni_region/jan-vitek-svratka-surfing-cesko-slovensky-pohar-druhe-misto-celkove-vedeni.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://zdarsky.denik.cz/ostatni_region/jan-vitek-svratka-surfing-cesko-slovensky-pohar-druhe-misto-celkove-vedeni.html</a>
-      <a href="https://www.czech.surf/post/berber-cup-posouva-hranice-cesko-slovenskeho-surfingu" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity break-all">https://www.czech.surf/post/berber-cup-posouva-hranice-cesko-slovenskeho-surfingu</a>
+    <div class="flex flex-col items-center gap-6 lg:gap-8 w-full max-w-2xl">
+      <a href="https://zdarsky.denik.cz/volny-cas/neuveritelny-pribeh-kluk-svratka-zdarsko-surfing-cesko-slovensky-pohar-cestovani.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity">Neuvěřitelný příběh kluka ze Svratky. Surfing mu změnil život</a>
+      <a href="https://zdarsky.denik.cz/ostatni_region/jan-vitek-svratka-surfing-cesko-slovensky-pohar-druhe-misto-celkove-vedeni.html" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity">Český pohár v surfingu vede rodák ze Svratky. Jan Vítek zažívá průlomovou sezónu</a>
+      <a href="https://www.czech.surf/post/berber-cup-posouva-hranice-cesko-slovenskeho-surfingu" target="_blank" class="text-sm lg:text-link font-semibold text-center underline hover:opacity-70 transition-opacity">BERBER CUP posouvá hranice česko-slovenského surfingu</a>
     </div>
   </section>
 
@@ -772,82 +755,30 @@
       iframe.classList.remove('hidden');
     }
 
-    // Carousel drag/touch support
-    function initCarouselDrag(track) {
-      var isDown = false;
-      var locked = false;       // true once we decide horizontal vs vertical
-      var isHorizontal = false; // was the gesture horizontal?
-      var startX = 0;
-      var startY = 0;
-      var savedTx = 0;
-      var duration = track.id === 'carousel2' ? 12 : 15;
-      var THRESHOLD = 8; // px before locking direction
-
-      function getTranslateX() {
-        var matrix = new DOMMatrix(getComputedStyle(track).transform);
-        return matrix.m41;
-      }
-
-      function onDown(e) {
+    // Carousel mouse-drag support (touch/swipe handled natively by overflow-x: scroll)
+    document.querySelectorAll('.carousel-section').forEach(function(section) {
+      var isDown = false, startX, scrollLeft;
+      section.addEventListener('mousedown', function(e) {
         isDown = true;
-        locked = false;
-        isHorizontal = false;
-        var pt = e.touches ? e.touches[0] : e;
-        startX = pt.clientX;
-        startY = pt.clientY;
-        savedTx = getTranslateX();
-      }
-
-      function onMove(e) {
-        if (!isDown) return;
-        var pt = e.touches ? e.touches[0] : e;
-        var dx = pt.clientX - startX;
-        var dy = pt.clientY - startY;
-
-        // Lock direction after threshold
-        if (!locked && (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD)) {
-          locked = true;
-          isHorizontal = Math.abs(dx) > Math.abs(dy);
-          if (isHorizontal) {
-            track.classList.add('dragging');
-            track.style.transform = 'translateX(' + savedTx + 'px)';
-          }
-        }
-
-        if (!locked || !isHorizontal) return;
-        e.preventDefault();
-        track.style.transform = 'translateX(' + (savedTx + dx) + 'px)';
-      }
-
-      function onUp() {
-        if (!isDown) return;
+        section.classList.add('grabbing');
+        startX = e.pageX - section.offsetLeft;
+        scrollLeft = section.scrollLeft;
+      });
+      section.addEventListener('mouseleave', function() {
         isDown = false;
-        if (!isHorizontal) { locked = false; return; }
-
-        var tx = getTranslateX();
-        var halfWidth = track.scrollWidth / 2;
-        var normalized = tx % halfWidth;
-        if (normalized > 0) normalized -= halfWidth;
-        var progress = -normalized / halfWidth;
-
-        track.style.transform = '';
-        track.classList.remove('dragging');
-        void track.offsetHeight;
-        track.style.animation = 'carousel-scroll ' + duration + 's linear infinite';
-        track.style.animationDelay = '-' + (progress * duration) + 's';
-        locked = false;
-      }
-
-      track.addEventListener('mousedown', onDown);
-      track.addEventListener('mousemove', onMove);
-      track.addEventListener('mouseup', onUp);
-      track.addEventListener('mouseleave', onUp);
-      track.addEventListener('touchstart', onDown, { passive: true });
-      track.addEventListener('touchmove', onMove, { passive: false });
-      track.addEventListener('touchend', onUp);
-    }
-
-    document.querySelectorAll('.carousel-track').forEach(initCarouselDrag);
+        section.classList.remove('grabbing');
+      });
+      section.addEventListener('mouseup', function() {
+        isDown = false;
+        section.classList.remove('grabbing');
+      });
+      section.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - section.offsetLeft;
+        section.scrollLeft = scrollLeft - (x - startX) * 1.5;
+      });
+    });
   </script>
 
 </body>
