@@ -29,7 +29,8 @@
    - [Photo Carousels](#66-photo-carousels)
    - [Sponsor Logos](#67-sponsor-logos)
 7. [Reusable Components](#7-reusable-components)
-8. [External Links Reference](#8-external-links-reference)
+8. [Deployment](#8-deployment)
+9. [External Links Reference](#9-external-links-reference)
 
 ---
 
@@ -54,24 +55,21 @@ SurfWeb/
 ├── DOCS.md                 ← This file
 ├── Assets/                 ← All images used on the site
 │   ├── Video/
-│   │   ├── hero surf jan vitek.mp4  (hero looping background video, H.264)
-│   │   └── results.mp4              (results video, H.264 + AAC, 720×1280 portrait)
+│   │   ├── hero surf jan vitek.mp4  (hero looping background video, H.264, 720p, ~1.1 MB)
+│   │   └── results.mp4              (results video, H.264 + AAC, 720×1280 portrait, ~4.7 MB — loads on click only)
 │   ├── Logos/
-│   │   └── image-27.png             (sponsor logo placeholder)
-│   ├── carousel_1/                  (source images for carousel 1)
-│   ├── carousel_2/                  (source images for carousel 2)
-│   ├── rectangle-1665.jpeg          (hero poster/fallback image)
+│   │   ├── captain-kombucha.png     (Captain Kombucha — oficiální partner)
+│   │   └── jdidohor.png             (Jdi do hor — oficiální partner)
 │   ├── Jan Vitek Face.jpg           (Jan's portrait — About section)
 │   ├── Logos Partners Jan Vitek.jpg (surfboard with "your logo here" spots — Sponsorship)
-│   ├── Nahled Champion...jpg        (results video thumbnail — podium photo)
-│   ├── screenshot-2026-02-05-...png (teaser video thumbnail)
+│   ├── Nahled Champion...jpg        (results video thumbnail — podium photo, ~170 KB)
+│   ├── Top Turn Jan Vitek.jpg       (carousel 1 + hero video poster/fallback)
 │   ├── Fitnes JV.jpg                (carousel 1)
 │   ├── Backside Turn Jan Vitek.jpg  (carousel 1)
 │   ├── 2nd place feeling...jpg      (carousel 1)
 │   ├── Solid Turn Jan Vitek.jpg     (carousel 1)
 │   ├── Victory Feeling...jpg        (carousel 1)
 │   ├── Jan Surf Reentry.jpg         (carousel 1)
-│   ├── Top Turn Jan Vitek.jpg       (carousel 1)
 │   ├── Surf Morocco Jan Vitek.jpg   (carousel 2)
 │   ├── Kombucha Jan Vitek.jpeg      (carousel 2)
 │   ├── Wetsuit Jan Vitek.jpg        (carousel 2)
@@ -320,6 +318,14 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // Uses window.scrollTo with behavior: 'smooth'
 ```
 
+**Krátce / Příběh tab switcher (About section)**
+```js
+// Two .who-tab buttons switch between #who-tab-kratce and #who-tab-pribeh panels
+// Active tab: underline class + no opacity. Inactive: opacity-40
+// Content is bilingual — stored in cs.js / en.js under keys who_tab_kratce / who_tab_pribeh
+// HTML content (paragraphs, links) inserted via innerHTML by the translation loader
+```
+
 **Partner dropdown toggle**
 ```js
 // Clicking #partnerDropdown toggles #partnerContent visibility
@@ -465,10 +471,21 @@ SurfWeb/
 
 ### 6.1 Images & Assets
 
-- Store all images in `Assets/`
-- Use `.jpeg` for photos, `.png` for transparency
-- Consider optimising large images with [Squoosh](https://squoosh.app/)
+- Store all images in `Assets/`, logos in `Assets/Logos/`
+- Use `.jpeg` for photos, `.png` for logos/transparency
+- **Compress images** before adding: [Squoosh](https://squoosh.app/) for photos, `sips` for quick macOS compression
+- **Compress videos** with ffmpeg: `ffmpeg -i input.mp4 -vcodec libx264 -crf 32 -preset slow -vf "scale=-2:720" -movflags +faststart -an output.mp4`
 - Ideal carousel image dimensions: any width, 720px tall
+- All carousel images use `loading="lazy"` — only load when scrolled into view
+- Add `loading="lazy"` to any new non-hero images
+
+**Performance budget (current state):**
+| Asset | Size |
+|---|---|
+| hero video | ~1.1 MB |
+| results video | ~4.7 MB (loads on click only) |
+| carousel images (14 unique) | ~2.5 MB total (lazy loaded) |
+| thumbnails + logos | ~350 KB |
 
 ### 6.2 Bilingual Content (Czech / English)
 
@@ -523,9 +540,9 @@ The hero section uses a looping background video instead of a static image:
 ```html
 <video class="absolute inset-0 w-full h-full object-cover"
        autoplay muted loop playsinline
-       poster="Assets/rectangle-1665.jpeg">
-  <source src="Assets/hero.mp4" type="video/mp4">
-  <img src="Assets/rectangle-1665.jpeg" alt="Surfing hero" class="w-full h-full object-cover" />
+       poster="Assets/Top Turn Jan Vitek.jpg">
+  <source src="Assets/Video/hero surf jan vitek.mp4" type="video/mp4">
+  <img src="Assets/Top Turn Jan Vitek.jpg" alt="Surfing hero" class="w-full h-full object-cover" />
 </video>
 ```
 
@@ -533,12 +550,14 @@ The hero section uses a looping background video instead of a static image:
 - `autoplay muted` — required pair for autoplay in all browsers
 - `loop` — seamless looping
 - `playsinline` — prevents fullscreen on iOS
-- `poster` — shown while video loads (original hero JPEG)
+- `poster` — shown while video loads (`Top Turn Jan Vitek.jpg`, ~120 KB)
 - `<img>` fallback — shown in browsers without video support
 
+**Current file:** `hero surf jan vitek.mp4` — 720p, H.264, no audio, ~1.1 MB (compressed with ffmpeg CRF 35)
+
 **To replace the video:**
-1. Compress to H.264 MP4, no audio, target ≤ 4 MB
-2. Use `ffmpeg -i input.mov -c:v libx264 -preset veryslow -crf 28 -vf "scale=1280:720" -an -movflags +faststart -y Assets/hero.mp4`
+1. Compress to H.264 MP4, no audio, target ≤ 2 MB
+2. Use: `ffmpeg -i input.mov -vcodec libx264 -crf 32 -preset slow -vf "scale=-2:720" -movflags +faststart -an output.mp4`
 3. Keep `poster` pointing to a representative frame as JPEG fallback
 
 ### 6.5 Video Modal
@@ -577,7 +596,37 @@ Each carousel uses **native `overflow-x: scroll`** with `requestAnimationFrame` 
 
 ### 6.7 Sponsor Logos
 
-Replace "your logo here" text with `<img>` tags pointing to sponsor logos in `Assets/`.
+The footer sponsor section (Section N) is split into **three tiers**:
+
+| Tier | Czech | English | Layout |
+|------|-------|---------|--------|
+| Hlavní partneři | hlavní partneři | main partners | Left column — large logos |
+| Oficiální partneři | oficiální partneři | official partners | Right column top — medium logos |
+| Mediální partneři | mediální partneři | media partners | Right column bottom — small logos |
+
+**Current official partners:**
+- **Captain Kombucha** — `Assets/Logos/captain-kombucha.png` → links to `https://www.gutsycaptain.cz/`
+- **Jdi do hor** — `Assets/Logos/jdidohor.png` → links to `https://www.jdidohor.cz/home`
+
+**To add a logo:** place file in `Assets/Logos/` and add an `<img>` inside the appropriate tier section.
+Wrap in `<a href="..." target="_blank" class="hover:opacity-70 transition-opacity">` for a clickable link.
+
+**Logo sizes by tier:**
+- Hlavní: `class="w-40 lg:w-56 h-20 object-contain"`
+- Oficiální: `class="h-16 w-auto object-contain"`
+- Mediální: `class="w-12 lg:w-20 h-8 object-contain"`
+
+**Desktop/mobile alignment:**
+- Desktop: headings + logos left-aligned (`items-start`, `justify-start`)
+- Mobile: headings + logos centered (`items-center`, `justify-center`)
+
+**Partner logos also appear in the hero section** (bottom-left corner, absolute position):
+```html
+<div class="absolute bottom-8 left-6 lg:left-[168px] flex items-center gap-12 z-20">
+  <a href="..."><img src="Assets/Logos/captain-kombucha.png" class="h-12 lg:h-16 w-auto object-contain" /></a>
+  <a href="..."><img src="Assets/Logos/jdidohor.png" class="h-12 lg:h-16 w-auto object-contain" /></a>
+</div>
+```
 
 ---
 
@@ -616,7 +665,36 @@ Note: CTA buttons ("mrkni na plán", "pusť si teaser") use **RealistWide Medium
 
 ---
 
-## 8. External Links Reference
+## 8. Deployment
+
+### Hosting: Netlify (free)
+
+The site is deployed at **[wonderwayofj.com](https://wonderwayofj.com)** via Netlify connected to GitHub.
+
+**Automatic deploys:** every `git push` to `main` → Netlify builds and deploys within ~30 seconds.
+
+**Setup:**
+- GitHub repo: `wonderwayofj/surfweb`
+- Netlify site: connected to the repo, no build command, publish directory `.`
+- Domain: `wonderwayofj.com` registered at [Active24.cz](https://active24.cz)
+- DNS: `A` records at Active24 pointing to Netlify's load balancer
+- SSL: automatic via Let's Encrypt (free)
+
+**To update the live site:**
+```bash
+git add .
+git commit -m "description of change"
+git push
+```
+
+### Local development
+
+Open `index.html` directly in any browser — no server needed.
+Or run a simple server: `python3 -m http.server 8000` → `http://localhost:8000`
+
+---
+
+## 9. External Links Reference
 
 | Label                   | URL                                                                 |
 |-------------------------|---------------------------------------------------------------------|
