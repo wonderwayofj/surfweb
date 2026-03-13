@@ -1,6 +1,6 @@
 var TRANSLATIONS_EN = {
-  "hero_headline": "landlocked surfer,<br>international ambitions",
-  "hero_subtext": "A Czech on his way to the ISA World Surfing Games in El Salvador",
+  "hero_headline": "a czech surfer,<br>international ambitions",
+  "hero_subtext": "A czech guy on his way to the ISA World Surfing Games in El Salvador",
   "hero_cta": "→ check the plan",
 
   "who_title": "who is jan vítek?",
@@ -9,7 +9,7 @@ var TRANSLATIONS_EN = {
   "who_tab_btn_kratce": "In brief",
   "who_tab_btn_pribeh": "Story",
   "who_tab_kratce": "<p>I'm a surfer from Czechia. I train in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I work as a brand designer and build creative projects. I've travelled through New Zealand, Oceania, California and around Europe.</p><p>Now I'm heading for ISA World Surfing Games qualification. I'm looking for a partner who wants to be part of this journey.</p>",
-  "who_tab_pribeh": "<p>I come from Svratka in the Highlands – a place far from the ocean. That's exactly why surfing always meant more to me than just a sport. It was a path that taught me persistence, patience and the courage to go after what I want.</p><p>Thanks to surfing I gradually travelled different parts of the world – from European coastlines to surf destinations like New Zealand or Hawaii. I've been self-funding my surfing all along, combining it with remote work as a brand designer and <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>.</p><p>I spend most of my time training in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I compete in the Czech-Slovak Surf Cup and my goal is to qualify for the ISA World Surfing Games in El Salvador.</p><p>Surfing is my way of discovering the world and myself. I love inspiring others – persistence and patience bring results.</p><p>Now I'm looking for a partner who wants to be part of this journey.</p>",
+  "who_tab_pribeh": "<p>I come from a small town called Svratka in the Vysočina region of the Czech Republic – a place far from the ocean. That's exactly why surfing always meant more to me than just a sport. It was a path that taught me persistence, patience and the courage to go after what I want.</p><p>Thanks to surfing I gradually travelled different parts of the world – from European coastlines to surf destinations like New Zealand or Hawaii. I've been self-funding my surfing all along, combining it with remote work as a brand designer and <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>.</p><p>I spend most of my time training in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I compete in the Czech-Slovak Surf Cup and my goal is to qualify for the ISA World Surfing Games in El Salvador.</p><p>Surfing is my way of discovering the world and myself. I love inspiring others – persistence and patience bring results.</p><p>Now I'm looking for a partner who wants to be part of this journey.</p>",
   "who_video_cta": "→ watch the teaser",
 
   "why_title": "why do I do this?",
@@ -72,5 +72,9 @@ var TRANSLATIONS_EN = {
 
   "social_title": "follow my journey 👣",
 
-  "nav_contact": "→ contact"
+  "nav_contact": "→ contact",
+
+  "partners_main": "main partners",
+  "partners_official": "official partners",
+  "partners_media": "media partners"
 };

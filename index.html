@@ -538,17 +538,62 @@
     </div>
   </section>
 
-  <!-- N. Sponsor Logos Footer -->
-  <section class="bg-white py-12 lg:py-20 px-6 lg:px-20">
-    <div class="flex flex-wrap justify-center items-center gap-10 lg:gap-[97px]">
-      <img src="Assets/Logos/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
-      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
-      <img src="Assets/Logos/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
-      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
-      <img src="Assets/Logos/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
-      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
-      <img src="Assets/Logos/image-27.png" alt="Sponsor" class="w-16 lg:w-[129px] h-auto object-contain" />
-      <p class="text-xl lg:text-[38px] font-semibold text-center leading-tight">your<br>logo<br>here</p>
+  <!-- N. Partner Logos Footer -->
+  <!--
+    JAK PŘIDAT / PŘESUNOUT PARTNERA:
+    ① Hlavní partneři  → největší loga, max 2–3
+    ② Oficiální partneři → střední loga, 3–6
+    ③ Mediální partneři  → malá loga, libovolný počet
+
+    Pro přidání loga zkopíruj a odkomentuj vzorový <img> tag v dané sekci.
+    Pro odebrání placeholderu jednoduše smaž příslušný <span class="logo-placeholder"> blok.
+  -->
+  <section class="bg-white py-16 lg:py-24 px-6 lg:px-[168px]">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-0">
+
+      <!-- ① HLAVNÍ PARTNEŘI — levý sloupec -->
+      <div class="flex flex-col items-center gap-5 lg:w-1/2 lg:pr-16">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[#aaa]">
+          <span data-key="partners_main" data-cs="hlavní partneři" data-en="main partners">hlavní partneři</span>
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-10 lg:gap-16 flex-grow">
+          <!-- VZOR: <img src="Assets/Logos/SOUBOR.png" alt="Název partnera" class="w-32 lg:w-44 h-16 object-contain" /> -->
+          <span class="logo-placeholder text-2xl lg:text-4xl font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+          <span class="logo-placeholder text-2xl lg:text-4xl font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+        </div>
+      </div>
+
+      <!-- Pravý sloupec: ② + ③ -->
+      <div class="flex flex-col gap-10 lg:w-1/2 lg:pl-16">
+
+        <!-- ② OFICIÁLNÍ PARTNEŘI -->
+        <div class="flex flex-col items-center gap-5">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[#aaa]">
+            <span data-key="partners_official" data-cs="oficiální partneři" data-en="official partners">oficiální partneři</span>
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-6 lg:gap-10">
+            <img src="Assets/Logos/image-27.png" alt="Partner" class="w-28 lg:w-40 h-16 object-contain" />
+            <!-- VZOR: <img src="Assets/Logos/SOUBOR.png" alt="Název partnera" class="w-28 lg:w-40 h-16 object-contain" /> -->
+            <span class="logo-placeholder text-lg lg:text-xl font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+            <span class="logo-placeholder text-lg lg:text-xl font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+            <span class="logo-placeholder text-lg lg:text-xl font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+          </div>
+        </div>
+
+        <!-- ③ MEDIÁLNÍ PARTNEŘI -->
+        <div class="flex flex-col items-center gap-5">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[#aaa]">
+            <span data-key="partners_media" data-cs="mediální partneři" data-en="media partners">mediální partneři</span>
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-4 lg:gap-8">
+            <!-- VZOR: <img src="Assets/Logos/SOUBOR.png" alt="Název partnera" class="w-12 lg:w-20 h-8 object-contain" /> -->
+            <span class="logo-placeholder text-base lg:text-lg font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+            <span class="logo-placeholder text-base lg:text-lg font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+            <span class="logo-placeholder text-base lg:text-lg font-semibold text-center leading-tight text-[#ddd]">your<br>logo<br>here</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 

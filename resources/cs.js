@@ -72,5 +72,9 @@ var TRANSLATIONS_CS = {
 
   "social_title": "sleduj moji cestu 👣",
 
-  "nav_contact": "→ kontakt"
+  "nav_contact": "→ kontakt",
+
+  "partners_main": "hlavní partneři",
+  "partners_official": "oficiální partneři",
+  "partners_media": "mediální partneři"
 };
