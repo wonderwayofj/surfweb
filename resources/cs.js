@@ -59,9 +59,7 @@ var TRANSLATIONS_CS = {
   "partner_web": "🌐 logo na webu — připravená sekce \"your logo here\"",
 
   "partner_cat4": "branding & design",
-  "partner_brand_identity": "🎨 vizuální identita — logo, barvy, typografie, brand manuál",
-  "partner_brand_consult": "💡 brandingová konzultace — audit značky, poziování, strategie",
-  "partner_brand_materials": "🖥️ grafické materiály — prezentace, sociální sítě, tiskoviny",
+  "partner_brand_consult": "💡 brandingová konzultace — audit značky, brand strategie, vizuální identita",
 
   "stats_title": "reach & audience",
   "stats_subtitle": "proč spolupracovat",

@@ -59,9 +59,7 @@ var TRANSLATIONS_EN = {
   "partner_web": "🌐 logo on the website — dedicated \"your logo here\" section",
 
   "partner_cat4": "branding & design",
-  "partner_brand_identity": "🎨 visual identity — logo, colours, typography, brand guidelines",
-  "partner_brand_consult": "💡 branding consultation — brand audit, positioning, strategy",
-  "partner_brand_materials": "🖥️ graphic materials — presentations, social media visuals, print",
+  "partner_brand_consult": "💡 branding consultation — brand audit, brand strategy, visual identity",
 
   "stats_title": "reach & audience",
   "stats_subtitle": "why work together",
