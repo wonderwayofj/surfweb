@@ -65,7 +65,6 @@ SurfWeb/
 │   ├── Logos Partners Jan Vitek.jpg (surfboard with "your logo here" spots — Sponsorship)
 │   ├── Nahled Champion...jpg        (results video thumbnail — podium photo)
 │   ├── screenshot-2026-02-05-...png (teaser video thumbnail)
-│   ├── Jan Vitek Hero Surf.jpg      (carousel 1)
 │   ├── Fitnes JV.jpg                (carousel 1)
 │   ├── Backside Turn Jan Vitek.jpg  (carousel 1)
 │   ├── 2nd place feeling...jpg      (carousel 1)
@@ -329,14 +328,15 @@ navigator.clipboard.writeText('wonderwayofj@gmail.com')
 // Chevron is an SVG with sharp corners (stroke-linecap="square", stroke-linejoin="miter")
 ```
 
-**Carousel drag/swipe**
+**Carousel auto-scroll + drag/swipe**
 ```js
-initCarouselDrag(track)
-// Direction-lock: 8px threshold detects horizontal vs vertical gesture
-// Horizontal swipe: pauses CSS animation, tracks finger/mouse position
-// Vertical scroll: passes through normally (no preventDefault)
-// touchstart is passive (no scroll jank)
-// On release: normalizes position and resumes CSS animation from dragged offset
+// Each .carousel-section has native overflow-x: scroll + requestAnimationFrame auto-scroll
+// speed = 0.4 px/frame (gentle drift)
+// paused = true on mousedown/touchstart; resumes 800ms after release
+// Mouse drag: tracks pageX delta, multiplies by 1.5 for responsiveness
+// Touch: native browser scroll handles momentum; auto-scroll pauses during touch
+// Images are duplicated in HTML for seamless loop — JS resets scrollLeft at halfway point
+// pointer-events: none on images prevents browser drag-ghost
 ```
 
 ---
@@ -563,11 +563,17 @@ Example:
 
 ### 6.6 Photo Carousels
 
-Each carousel contains **images doubled** for seamless looping. To add a photo:
-1. Put image in `Assets/`
-2. Add `<img>` in both halves of the track
+Each carousel uses **native `overflow-x: scroll`** with `requestAnimationFrame` auto-scroll. Images are **doubled** in the HTML for seamless looping — when `scrollLeft` reaches the halfway point, JS resets it to 0 (invisible because both halves are identical).
 
-To change speed, adjust `animation-duration` (lower = faster).
+**To add a photo:**
+1. Put image in `Assets/`
+2. Add `<img>` tag in **both** the original and duplicate halves of the track (before and after `<!-- Duplicates for seamless loop -->`)
+
+**To change scroll speed:** adjust `speed` in the carousel JS (default `0.4` px/frame). Lower = slower.
+
+**To disable auto-scroll on one carousel:** remove its `id` from `carouselSection1` / `carouselSection2`, or set `speed = 0`.
+
+**Interaction:** mouse drag and touch swipe both work natively. Auto-scroll pauses during interaction and resumes 800ms after release.
 
 ### 6.7 Sponsor Logos
 
@@ -588,7 +594,7 @@ Note: CTA buttons ("mrkni na plán", "pusť si teaser") use **RealistWide Medium
 
 ### Accent Link (underline in font color)
 ```html
-<a href="https://example.com" target="_blank" class="accent-link">link text></a>
+<a href="https://example.com" target="_blank" class="accent-link">link text</a>
 ```
 
 ### Heading (any size)
