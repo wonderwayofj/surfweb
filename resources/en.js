@@ -16,8 +16,8 @@ var TRANSLATIONS_EN = {
   "why_text": "🏄🏼 surfing is a huge part of my life. it's my path of discovery ✨, i push my limits and find out who i am 🧘‍♂️. i love inspiring others along the way – to chase their dreams and goals 🌊.",
 
   "results_title": "results",
-  "result_1": "🥈 2nd place Berber Cup 2025 Morocco CZ/SK",
-  "result_2": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
+  "result_1": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
+  "result_2": "🥈 2nd place Berber Cup 2025 Morocco CZ/SK",
   "result_3": "🥉 3rd place in CZ/SK Surf Cup 24–25 rankings",
   "result_4": "🌊 Semifinal Bali Big Wave 2024",
   "goals_label": "What am I going for?",
