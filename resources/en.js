@@ -45,7 +45,7 @@ var TRANSLATIONS_EN = {
 
   "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
-  "partner_title": "what I offer partners",
+  "partner_title": "things i offer",
   "partner_cat1": "experiences & content",
   "partner_talk": "🎤 talk/workshop at your company — personal growth, overcoming obstacles, chasing goals",
   "partner_content": "📸 co-created content — your brand in reels/stories straight from training and competitions",

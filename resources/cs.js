@@ -45,7 +45,7 @@ var TRANSLATIONS_CS = {
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
-  "partner_title": "co nabízím partnerům",
+  "partner_title": "co nabízím",
   "partner_cat1": "zážitky & obsah",
   "partner_talk": "🎤 přednáška/workshop ve firmě — osobní rozvoj, překonávání překážek, cesta za cílem",
   "partner_content": "📸 společný obsah — partnerská značka v reels/stories přímo z tréninků a závodů",
