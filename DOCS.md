@@ -253,7 +253,7 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | I    | Collaboration Text     | —         |
 | I3   | Partner Benefits (dropdown) | —    |
 | J    | Photo Carousel 2       | —         |
-| I2   | Sponsor Stats (reach) + CTA | `#stats`  |
+| I2   | Sponsor Stats (reach)  | `#stats`  |
 | K    | Contact CTA            | `#contact` |
 | L2   | Buy Me a Wave (donations) | —      |
 | L    | Social Links           | —         |
