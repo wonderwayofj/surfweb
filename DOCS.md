@@ -55,7 +55,7 @@ SurfWeb/
 ├── DOCS.md                 ← This file
 ├── Assets/                 ← All images used on the site
 │   ├── Video/
-│   │   ├── hero surf jan vitek.mp4  (hero looping background video, H.264, 720p, ~1.1 MB)
+│   │   ├── hero-video-jan-vitek-1080p.mp4  (hero looping background video, H.264, 1080p, ~5.4 MB)
 │   │   └── results.mp4              (results video, H.264 + AAC, 720×1280 portrait, ~4.7 MB — loads on click only)
 │   ├── Logos/
 │   │   ├── captain-kombucha.png     (Captain Kombucha — oficiální partner)
@@ -253,7 +253,7 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | I    | Collaboration Text     | —         |
 | I3   | Partner Benefits (dropdown) | —    |
 | J    | Photo Carousel 2       | —         |
-| I2   | Sponsor Stats (reach)  | `#stats`  |
+| I2   | Sponsor Stats (reach) + CTA | `#stats`  |
 | K    | Contact CTA            | `#contact` |
 | L2   | Buy Me a Wave (donations) | —      |
 | L    | Social Links           | —         |
@@ -483,7 +483,7 @@ SurfWeb/
 **Performance budget (current state):**
 | Asset | Size |
 |---|---|
-| hero video | ~1.1 MB |
+| hero video | ~5.4 MB |
 | teaser video | ~12 MB (loads on click only) |
 | results video | ~4.7 MB (loads on click only) |
 | carousel images (14 unique) | ~2.5 MB total (lazy loaded) |
@@ -543,7 +543,7 @@ The hero section uses a looping background video instead of a static image:
 <video class="absolute inset-0 w-full h-full object-cover"
        autoplay muted loop playsinline
        poster="Assets/Top Turn Jan Vitek.jpg">
-  <source src="Assets/Video/hero surf jan vitek.mp4" type="video/mp4">
+  <source src="Assets/Video/hero-video-jan-vitek-1080p.mp4" type="video/mp4">
   <img src="Assets/Top Turn Jan Vitek.jpg" alt="Surfing hero" class="w-full h-full object-cover" />
 </video>
 ```
@@ -555,11 +555,11 @@ The hero section uses a looping background video instead of a static image:
 - `poster` — shown while video loads (`Top Turn Jan Vitek.jpg`, ~120 KB)
 - `<img>` fallback — shown in browsers without video support
 
-**Current file:** `hero surf jan vitek.mp4` — 720p, H.264, no audio, ~1.1 MB (compressed with ffmpeg CRF 35)
+**Current file:** `hero-video-jan-vitek-1080p.mp4` — 1080p, H.264, no audio, ~5.4 MB (compressed with ffmpeg CRF 30)
 
 **To replace the video:**
-1. Compress to H.264 MP4, no audio, target ≤ 2 MB
-2. Use: `ffmpeg -i input.mov -vcodec libx264 -crf 32 -preset slow -vf "scale=-2:720" -movflags +faststart -an output.mp4`
+1. Compress to H.264 MP4, no audio, target ≤ 6 MB
+2. Use: `ffmpeg -i input.mov -vcodec libx264 -crf 30 -preset slow -vf "scale=-2:1080" -movflags +faststart -an output.mp4`
 3. Keep `poster` pointing to a representative frame as JPEG fallback
 
 ### 6.5 Video Modal
@@ -622,7 +622,9 @@ The footer sponsor section (Section N) is split into **three tiers**:
 - **Captain Kombucha** — `Assets/Logos/captain-kombucha.png` → links to `https://www.gutsycaptain.cz/`
 - **Jdi do hor** — `Assets/Logos/jdidohor.png` → links to `https://www.jdidohor.cz/home`
 
-**To add a logo:** place file in `Assets/Logos/` and add an `<img>` inside the appropriate tier section.
+Each tier has **one "your logo here" placeholder** to signal openness to new partners.
+
+**To add a logo:** place file in `Assets/Logos/`, replace the placeholder `<span class="logo-placeholder">` with an `<img>` inside the appropriate tier section.
 Wrap in `<a href="..." target="_blank" class="hover:opacity-70 transition-opacity">` for a clickable link.
 
 **Logo sizes by tier:**
