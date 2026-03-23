@@ -255,6 +255,7 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | J    | Photo Carousel 2       | —         |
 | I2   | Sponsor Stats (reach)  | `#stats`  |
 | K    | Contact CTA            | `#contact` |
+| L2   | Buy Me a Wave (donations) | —      |
 | L    | Social Links           | —         |
 | M    | Media / Press          | —         |
 | N    | Sponsor Logos          | —         |
@@ -483,9 +484,10 @@ SurfWeb/
 | Asset | Size |
 |---|---|
 | hero video | ~1.1 MB |
+| teaser video | ~12 MB (loads on click only) |
 | results video | ~4.7 MB (loads on click only) |
 | carousel images (14 unique) | ~2.5 MB total (lazy loaded) |
-| thumbnails + logos | ~350 KB |
+| thumbnails + logos + QR | ~400 KB |
 
 ### 6.2 Bilingual Content (Czech / English)
 
@@ -575,9 +577,13 @@ The modal supports two modes configured via data attributes on `.video-trigger` 
 
 Portrait mode sets the modal to 9:16 aspect ratio (max 420px wide, max 85vh tall).
 
+**Current videos:**
+- **Teaser** — `Assets/Video/wonderway-of-j-teaser.mp4` (12 MB, 720p, landscape, loads on click)
+- **Results** — `Assets/Video/results.mp4` (4.7 MB, portrait, loads on click)
+
 Example:
 ```html
-<div class="video-trigger" data-video-url="Assets/results.mp4" data-video-type="native" data-video-aspect="portrait">
+<div class="video-trigger" data-video-url="Assets/Video/wonderway-of-j-teaser.mp4" data-video-type="native" data-video-aspect="landscape">
 ```
 
 ### 6.6 Photo Carousels
@@ -594,7 +600,15 @@ Each carousel uses **native `overflow-x: scroll`** with `requestAnimationFrame` 
 
 **Interaction:** mouse drag and touch swipe both work natively. Auto-scroll pauses during interaction and resumes 800ms after release.
 
-### 6.7 Sponsor Logos
+### 6.7 Buy Me a Wave (Donations)
+
+Section L2 allows visitors to support Jan with micro-donations via [buymeacoffee.com/wonderwayofj](https://buymeacoffee.com/wonderwayofj).
+
+- QR code image: `Assets/qr-code.png` with `mix-blend-multiply` (blends white background with cream page)
+- Bilingual title + description (keys: `bmaw_title`, `bmaw_desc`)
+- Positioned before Social Links section
+
+### 6.8 Sponsor Logos
 
 The footer sponsor section (Section N) is split into **three tiers**:
 
