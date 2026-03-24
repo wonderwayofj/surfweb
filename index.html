@@ -199,7 +199,7 @@
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-baseline">
-        <a href="#bmaw" class="inline-block bg-[#ff4448] px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity no-underline">
+        <a href="#sponsor" class="inline-block bg-[#ff4448] px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity no-underline">
           <span data-key="hero_support_cta" data-cs="→ podpoř mě 💪" data-en="→ support me 💪">→ podpoř mě 💪</span>
         </a>
         <a href="#plan" class="inline-block bg-transparent px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-70 transition-opacity no-underline">
@@ -377,7 +377,7 @@
   </section>
 
   <!-- H. Sponsorship -->
-  <section class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
+  <section id="sponsor" class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
     <div class="flex flex-col lg:flex-row gap-12 items-center">
       <!-- Left: surfboard image with logo spots -->
       <div class="lg:w-1/2">
@@ -389,9 +389,8 @@
           <p class="text-h2 font-semibold font-heading">
             <span data-key="sponsor_heading" data-cs="kolik dáš, tak velký logo budeš :)" data-en="the more you give, the bigger your logo gets :)">kolik dáš, tak velký logo budeš :)</span>
           </p>
-          <a href="https://drive.google.com/file/d/19Yh2qsSkr0uOspydHlQ4xS0_9AnXIeHa/view?usp=sharing" target="_blank" class="text-body font-semibold hover:opacity-70 transition-opacity no-underline">
-            <span data-key="sponsor_pdf" data-cs="📄 stáhni si prezentaci (PDF)" data-en="📄 download the presentation (PDF)">📄 stáhni si prezentaci (PDF)</span>
-          </a>
+          <a href="https://drive.google.com/file/d/19Yh2qsSkr0uOspydHlQ4xS0_9AnXIeHa/view?usp=sharing" target="_blank" class="text-body font-semibold hover:opacity-70 transition-opacity no-underline lang-cs">📄 stáhni si prezentaci (PDF)</a>
+          <a href="https://drive.google.com/file/d/1m8g4wWu3mRs8ef9P-OC9-2U6XGQKEDS1/view?usp=sharing" target="_blank" class="text-body font-semibold hover:opacity-70 transition-opacity no-underline lang-en hidden">📄 download the presentation (PDF)</a>
           <div class="flex flex-col gap-10">
             <p class="text-body font-semibold">
               <span data-key="sponsor_body" data-cs="Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody." data-en="I've managed on my own until now, but I'd like to focus on an intensive three-month training with professionals to qualify for the world championships.">Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody.</span>
@@ -710,6 +709,13 @@
         // Update all translatable text
         document.querySelectorAll('[data-cs][data-en]').forEach(function(el) {
           el.innerHTML = el.getAttribute('data-' + currentLang);
+        });
+        // Toggle lang-cs / lang-en elements
+        document.querySelectorAll('.lang-cs').forEach(function(el) {
+          el.classList.toggle('hidden', currentLang !== 'cs');
+        });
+        document.querySelectorAll('.lang-en').forEach(function(el) {
+          el.classList.toggle('hidden', currentLang !== 'en');
         });
         // Update active button state
         langBtns.forEach(function(b) {
