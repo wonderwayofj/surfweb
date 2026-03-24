@@ -38,6 +38,7 @@ var TRANSLATIONS_CS = {
   "plan_8": "🌎 září – <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
 
   "sponsor_heading": "kolik dáš, tak velký logo budeš :)",
+  "sponsor_pdf": "📄 stáhni si prezentaci (PDF)",
   "sponsor_body": "Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody.",
   "sponsor_cost_1": "1. část mě výjde přibližně na 4 500 Eur 💸",
   "sponsor_cost_2": "2. část mě výjde přibližně na 5 500 Eur 💸",
