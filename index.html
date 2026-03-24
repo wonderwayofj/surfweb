@@ -251,11 +251,10 @@
               <div id="who-tab-pribeh" class="who-tab-content text-body font-semibold flex flex-col gap-4" style="display:none;" data-key="who_tab_pribeh"></div>
             </div>
           </div>
-          <!-- Video teaser – opens YouTube -->
-          <a href="https://youtu.be/Yhb0-fAYV5w" target="_blank" class="block cursor-pointer hover:opacity-90 transition-opacity">
+          <!-- Video teaser – opens YouTube in modal -->
+          <div class="cursor-pointer video-trigger" data-video-url="https://www.youtube.com/embed/Yhb0-fAYV5w" data-video-type="iframe" data-video-aspect="landscape">
             <div class="thumb-wrap relative w-full max-w-[375px] rounded-3xl overflow-hidden">
-              <img src="Assets/Video/teaser-thumbnail.jpg" alt="Teaser video" class="w-full h-auto object-cover" loading="lazy"
-                onerror="this.outerHTML='<video class=\'w-full h-auto object-cover\' autoplay muted loop playsinline><source src=\'Assets/Video/hero-video-jan-vitek-1080p.mp4\' type=\'video/mp4\'></video>'" />
+              <img src="Assets/Video/teaser-thumbnail.jpg" alt="Teaser video" class="w-full h-auto object-cover" loading="lazy" />
               <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 play-btn z-[2]" width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M33 19.0525L0 38.1051L0 0L33 19.0525Z" fill="#FF4448"/>
               </svg>
@@ -263,7 +262,7 @@
             <p class="text-body font-medium font-heading mt-2">
               <span data-key="who_video_cta" data-cs="→ pusť si teaser" data-en="→ watch the teaser">→ pusť si teaser</span>
             </p>
-          </a>
+          </div>
         </div>
         <!-- Right column: portrait -->
         <div class="lg:w-1/2">
