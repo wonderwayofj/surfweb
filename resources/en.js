@@ -51,7 +51,7 @@ var TRANSLATIONS_EN = {
   "partner_content": "📸 co-created content — your brand in reels/stories straight from training and competitions",
   "partner_bts": "🎥 behind-the-scenes series — authentic prep content your brand can share",
   "partner_cat2": "for your team",
-  "partner_surf": "🏄 surf experience day — team building with an intro to surfing (Munich wavepool?)",
+  "partner_surf": "🏄 surf experience — team building with an intro to surfing (Munich wavepool, a week by the ocean)",
   "partner_qa": "💪 motivational Q&A — online or in-person, ideal for corporate events",
   "partner_cat3": "visibility",
   "partner_logo": "👕 logo on surfboard and apparel — visible in media and at competitions",

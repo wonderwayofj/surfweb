@@ -51,7 +51,7 @@ var TRANSLATIONS_CS = {
   "partner_content": "📸 společný obsah — partnerská značka v reels/stories přímo z tréninků a závodů",
   "partner_bts": "🎥 behind-the-scenes série — autentický content z přípravy, který partner může sdílet",
   "partner_cat2": "pro zaměstnance partnera",
-  "partner_surf": "🏄 surf experience den — teambuilding s úvodem do surfingu (wavepool v Mnichově?)",
+  "partner_surf": "🏄 surf experience — teambuilding s úvodem do surfingu (wavepool v Mnichově, týden u oceánu)",
   "partner_qa": "💪 motivační Q&A — online nebo naživo, ideální pro firemní eventy",
   "partner_cat3": "viditelnost",
   "partner_logo": "👕 logo na surfboardu a případně oblečení — viditelné v médiích a na závodech",
