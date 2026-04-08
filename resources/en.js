@@ -34,8 +34,7 @@ var TRANSLATIONS_EN = {
   "plan_5": "🏆 June 20 – <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp surf contest in France (ISA qualification)</a>",
   "plan_part2_title": "part 2 – ISA preparation",
   "plan_6": "🏄‍ july/august – training in Ericeira, Portugal",
-  "plan_7": "🏄‍ august/september – training in El Salvador",
-  "plan_8": "🌎 september – <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
+  "plan_7": "🌎 september – <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
 
   "sponsor_heading": "the more you give, the bigger your logo gets :)",
   "sponsor_pdf": "📄 download the presentation (PDF)",
