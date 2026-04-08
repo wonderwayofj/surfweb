@@ -22,7 +22,7 @@ var TRANSLATIONS_CS = {
   "result_4": "🌊 Semifinále Bali Big Wave 2024",
   "goals_label": "Pro co si jdu?",
   "goal_1": "🥇 1. místo <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp 2026 Francie</a>",
-  "goal_2": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
+  "goal_2": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>",
   "results_video_cta": "→ 2. místo Berber Cup 2026",
 
   "plan_title": "plán 2026",
@@ -34,7 +34,7 @@ var TRANSLATIONS_CS = {
   "plan_5": "🏆 20. 6. – <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp surf závod ve Francii (ISA kvalifikace)</a>",
   "plan_part2_title": "2. část – příprava na ISA",
   "plan_6": "🏄‍ červenec/srpen – trénink Ericeira, Portugalsko",
-  "plan_7": "🌎 září – <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games El Salvador</a>",
+  "plan_7": "🌎 září – <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>",
 
   "sponsor_heading": "kolik dáš, tak velký logo budeš :)",
   "sponsor_pdf": "📄 stáhni si prezentaci (PDF)",
