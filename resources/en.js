@@ -76,7 +76,7 @@ var TRANSLATIONS_EN = {
   "social_title": "follow my journey 👣",
 
   "bmaw_title": "buy me a wave 🌊",
-  "bmaw_desc": "Want to support me? Send any amount via the link or scan the QR code. Every wave counts.",
+  "bmaw_desc": "Do you like my journey and want to support me? Feel free here through this link. 🙂",
 
   "nav_contact": "→ contact",
 
