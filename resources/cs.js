@@ -76,7 +76,7 @@ var TRANSLATIONS_CS = {
   "social_title": "sleduj moji cestu 👣",
 
   "bmaw_title": "buy me a wave 🌊",
-  "bmaw_desc": "Chceš mě podpořit? Pošli jakoukoliv částku přes odkaz nebo naskenuj QR kód. Každá vlna se počítá.",
+  "bmaw_desc": "Jestli tě moje cesta baví a chceš mě podpořit, tak můžeš skrz tento odkaz. 🙂",
 
   "nav_contact": "→ kontakt",
 
