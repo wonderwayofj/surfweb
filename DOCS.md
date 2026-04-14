@@ -58,7 +58,6 @@ SurfWeb/
 │   │   ├── hero-video-jan-vitek-1080p.mp4  (hero looping background video, H.264, 1080p, ~5.4 MB)
 │   │   └── results.mp4              (results video, H.264 + AAC, 720×1280 portrait, ~4.7 MB — loads on click only)
 │   ├── Logos/
-│   │   ├── captain-kombucha.png     (Captain Kombucha — oficiální partner)
 │   │   └── jdidohor.png             (Jdi do hor — oficiální partner)
 │   ├── Jan Vitek Face.jpg           (Jan's portrait — About section)
 │   ├── Logos Partners Jan Vitek.jpg (surfboard with "your logo here" spots — Sponsorship)
@@ -255,7 +254,7 @@ The page starts with a fixed `<header>` (overlays the hero), followed by section
 | J    | Photo Carousel 2       | —         |
 | I2   | Sponsor Stats (reach)  | `#stats`  |
 | K    | Contact CTA            | `#contact` |
-| L2   | Buy Me a Wave (donations) | —      |
+| L2   | Consultation 1-on-1 (Calendly booking + donation link) | —      |
 | L    | Social Links           | —         |
 | M    | Media / Press          | —         |
 | N    | Sponsor Logos          | —         |
@@ -530,6 +529,7 @@ Text content can be edited via JS files without touching HTML:
 - `partner_*` — Partner benefits dropdown section
 - `stats_*` — Sponsor stats / reach & audience section
 - `contact_*`, `copy_*` — Contact section
+- `bmaw_*` — Consultation 1-on-1 section (Calendly booking + donation link)
 - `social_*` — Social links section
 - `nav_*` — Header / navigation
 
@@ -600,13 +600,20 @@ Each carousel uses **native `overflow-x: scroll`** with `requestAnimationFrame` 
 
 **Interaction:** mouse drag and touch swipe both work natively. Auto-scroll pauses during interaction and resumes 800ms after release.
 
-### 6.7 Buy Me a Wave (Donations)
+### 6.7 Consultation 1-on-1 (Calendly booking)
 
-Section L2 allows visitors to support Jan with micro-donations via [buymeacoffee.com/wonderwayofj](https://buymeacoffee.com/wonderwayofj).
+Section L2 offers paid 1-on-1 consultations (brand, logo, web, personal advice, surfing/sport breakdowns). Framed as a value exchange rather than a donation — the primary ask is professional, with a small secondary donation link for fans who want to support "just because".
 
-- QR code image: `Assets/qr-code.png` with `mix-blend-multiply` (blends white background with cream page)
-- Bilingual title + description (keys: `bmaw_title`, `bmaw_desc`)
-- Positioned before Social Links section
+**Structure:**
+- Title (`bmaw_title`) — `spolupráce 1-on-1, která má smysl ☕`
+- Description (`bmaw_desc`) — lists what kinds of topics are welcome
+- Price line (`bmaw_price`) — `50 € / hod konzultace — jde na moji přípravu na kvalifikaci. 💪`
+- Primary CTA (`bmaw_cta`) — red button linking to **Calendly**: https://calendly.com/wonderwayofj/ (opens in new tab)
+- Secondary donation line (`bmaw_donate`) — small, 70% opacity, with inline link to [buymeacoffee.com/wonderwayofj](https://buymeacoffee.com/wonderwayofj)
+
+**To change the booking URL:** update the `href` of the `<a>` tag wrapping the `bmaw_cta` span. Calendly free tier works fine — just create an event type (e.g. 30/45/60 min consultation) and paste the link.
+
+Positioned before Social Links section.
 
 ### 6.8 Sponsor Logos
 
@@ -619,7 +626,6 @@ The footer sponsor section (Section N) is split into **three tiers**:
 | Mediální partneři | mediální partneři | media partners | Right column bottom — small logos |
 
 **Current official partners:**
-- **Captain Kombucha** — `Assets/Logos/captain-kombucha.png` → links to `https://www.gutsycaptain.cz/`
 - **Jdi do hor** — `Assets/Logos/jdidohor.png` → links to `https://www.jdidohor.cz/home`
 
 Each tier has **one "your logo here" placeholder** to signal openness to new partners.
@@ -639,7 +645,6 @@ Wrap in `<a href="..." target="_blank" class="hover:opacity-70 transition-opacit
 **Partner logos also appear in the hero section** (bottom-left corner, absolute position):
 ```html
 <div class="absolute bottom-8 left-6 lg:left-[168px] flex items-center gap-12 z-20">
-  <a href="..."><img src="Assets/Logos/captain-kombucha.png" class="h-12 lg:h-16 w-auto object-contain" /></a>
   <a href="..."><img src="Assets/Logos/jdidohor.png" class="h-12 lg:h-16 w-auto object-contain" /></a>
 </div>
 ```

@@ -75,8 +75,11 @@ var TRANSLATIONS_CS = {
 
   "social_title": "sleduj moji cestu 👣",
 
-  "bmaw_title": "buy me a wave 🌊",
-  "bmaw_desc": "Jestli tě moje cesta baví a chceš mě podpořit, tak můžeš skrz tento odkaz. 🙂",
+  "bmaw_title": "spolupráce 1-on-1, která má smysl ☕",
+  "bmaw_desc": "Řešíš svoji značku, logo nebo web? Chceš se poradit v osobní rovině? Nebo chceš rozebrat svůj surfing / sport? Máš třeba projekt, kde by se ti hodil můj pohled? Rád si na tebe udělám čas.",
+  "bmaw_price": "50 € / hod konzultace — jde na moji přípravu na kvalifikaci. 💪",
+  "bmaw_cta": "→ bookni si termín ⏰",
+  "bmaw_donate": "Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>. :)",
 
   "nav_contact": "→ kontakt",
 
