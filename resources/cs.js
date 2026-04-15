@@ -21,7 +21,7 @@ var TRANSLATIONS_CS = {
   "result_3": "🥉 3. místo v žebříčku CZ/SK Surf Cup 24–25",
   "result_4": "🌊 Semifinále Bali Big Wave 2024",
   "goals_label": "Pro co si jdu?",
-  "goal_1": "🥇 1. místo <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp 2026 Francie</a>",
+  "goal_1": "🎯 <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp 2026 Francie</a> – kvalifikace na ISA",
   "goal_2": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>",
   "results_video_cta": "→ 2. místo Berber Cup 2026",
 
