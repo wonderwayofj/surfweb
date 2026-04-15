@@ -602,16 +602,31 @@ Each carousel uses **native `overflow-x: scroll`** with `requestAnimationFrame` 
 
 ### 6.7 Consultation 1-on-1 (Calendly booking)
 
-Section L2 offers paid 1-on-1 consultations (brand, logo, web, personal advice, surfing/sport breakdowns). Framed as a value exchange rather than a donation — the primary ask is professional, with a small secondary donation link for fans who want to support "just because".
+Section L2 offers structured paid 1-on-1 consultations. Framed as a value exchange rather than a donation — the primary ask is professional, with a small secondary donation link for fans who want to support "just because".
 
-**Structure:**
-- Title (`bmaw_title`) — `spolupráce 1-on-1, která má smysl ☕`
-- Description (`bmaw_desc`) — lists what kinds of topics are welcome
-- Price line (`bmaw_price`) — `50 € / hod konzultace — jde na moji přípravu na kvalifikaci. 💪`
+**Layout:**
+- Main title (`bmaw_title`) — `spolupráce 1-on-1, která má smysl ☕`
+- Two service blocks side-by-side on desktop (stacked on mobile) in a `grid-cols-1 lg:grid-cols-2` grid with `max-w-[900px]`
+- Reservation block below, full width, centered (`max-w-[620px]`)
+- Red CTA button → Calendly
+- Small donation link at the bottom (70% opacity)
+
+**Service blocks:**
+
+| Block | Keys | Content |
+|-------|------|---------|
+| 🧠 Projects / brand / business / personal growth | `bmaw_block1_title`, `bmaw_block1_body`, `bmaw_block1_price_label`, `bmaw_block1_price1`, `bmaw_block1_price2` | 30 € / 30 min, 50 € / 60 min |
+| 🌊 Surfing / sport | `bmaw_block2_title`, `bmaw_block2_body`, `bmaw_block2_price_label`, `bmaw_block2_price` | Surf video coaching, 20 € / call |
+| 🤝 Reservation | `bmaw_block3_title`, `bmaw_block3_body`, `bmaw_block3_support` | Hourly slot booking info + support line |
+
+**Sub-block title size:** `text-[22px] lg:text-[26px] font-semibold font-heading` — sits between `text-body` and `text-h3` for visual hierarchy inside the section.
+
+**Calendly:**
 - Primary CTA (`bmaw_cta`) — red button linking to **Calendly**: https://calendly.com/wonderwayofj/ (opens in new tab)
-- Secondary donation line (`bmaw_donate`) — small, 70% opacity, with inline link to [buymeacoffee.com/wonderwayofj](https://buymeacoffee.com/wonderwayofj)
+- To change the booking URL: update the `href` on the `<a>` wrapping `bmaw_cta`. Calendly free tier is enough — create an event type and paste the link.
 
-**To change the booking URL:** update the `href` of the `<a>` tag wrapping the `bmaw_cta` span. Calendly free tier works fine — just create an event type (e.g. 30/45/60 min consultation) and paste the link.
+**Secondary donation:**
+- `bmaw_donate` — small, 70% opacity line below the button, with inline accent-link to [buymeacoffee.com/wonderwayofj](https://buymeacoffee.com/wonderwayofj)
 
 Positioned before Social Links section.
 
