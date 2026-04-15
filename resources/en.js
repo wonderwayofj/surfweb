@@ -86,7 +86,7 @@ var TRANSLATIONS_EN = {
   "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "€20 / call",
   "bmaw_block3_title": "🤝 booking",
-  "bmaw_block3_body": "Booking goes through an hourly slot — if you only want 30 min, just add a note.<br><br>You can book the call with no commitment — if it feels right, you can support me online afterwards.",
+  "bmaw_block3_body": "Booking goes through an hourly slot — if you only want 30 min, just add a note, along with the topic we'll cover.<br><br>You can book the call with no commitment — if it feels right, you can support me online afterwards.",
   "bmaw_block3_support": "→ supports my qualification preparation 💪",
   "bmaw_cta": "→ book a slot ⏰",
   "bmaw_donate": "Do you enjoy what I do and want to support me just because? You can <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">here</a>. 🙂",
