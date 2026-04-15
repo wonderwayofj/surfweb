@@ -79,7 +79,7 @@ var TRANSLATIONS_EN = {
   "bmaw_block1_price1": "€30 / 30 min",
   "bmaw_block1_price2": "€50 / 60 min",
   "bmaw_block2_title": "🌊 surfing / sport",
-  "bmaw_block2_body": "Want advice on your surfing — or on your competition prep?",
+  "bmaw_block2_body": "Want advice on your surfing — or on your physical / mental prep?",
   "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "€20 / call",
   "bmaw_block3_title": "🤝 booking",
