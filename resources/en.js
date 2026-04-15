@@ -91,9 +91,6 @@ var TRANSLATIONS_EN = {
   "nav_contact": "→ contact",
 
   "partners_main": "main partners",
-  "partners_main_desc": "logo on board • featured section on site • dedicated content",
   "partners_official": "official partners",
-  "partners_official_desc": "logo on site • social mentions • co-created content",
-  "partners_media": "media partners",
-  "partners_media_desc": "shared content • media coverage • backlinks"
+  "partners_media": "media partners"
 };

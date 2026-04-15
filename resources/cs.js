@@ -91,9 +91,6 @@ var TRANSLATIONS_CS = {
   "nav_contact": "→ kontakt",
 
   "partners_main": "hlavní partneři",
-  "partners_main_desc": "logo na boardu • featured sekce na webu • dedikovaný obsah",
   "partners_official": "oficiální partneři",
-  "partners_official_desc": "logo na webu • zmínky na soc. sítích • společný obsah",
-  "partners_media": "mediální partneři",
-  "partners_media_desc": "sdílený obsah • mediální výstupy • backlinky"
+  "partners_media": "mediální partneři"
 };
