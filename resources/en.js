@@ -77,19 +77,19 @@ var TRANSLATIONS_EN = {
 
   "bmaw_title": "1-on-1 consultation that matters ☕",
   "bmaw_block1_title": "🧠 projects / brand / business / personal growth",
-  "bmaw_block1_body": "Working on a brand, project or wondering where to move next?<br>Need to clarify direction, strategy — or just get a fresh perspective?<br><br>Let's talk it through — open, concrete, no bullshit.",
+  "bmaw_block1_body": "Working on a brand, project or wondering where to move next?<br>Need to clarify direction, strategy — or just get a fresh perspective?<br><br>Let's talk it through.",
   "bmaw_block1_price_label": "1-on-1 consultation ☕",
   "bmaw_block1_price1": "€30 / 30 min",
   "bmaw_block1_price2": "€50 / 60 min",
   "bmaw_block2_title": "🌊 surfing / sport",
-  "bmaw_block2_body": "Want to level up your surfing?<br>Not sure where you're losing speed or control on the wave?<br><br>Let's jump on a call — I'll give you concrete feedback on what to improve and how to work on it.",
-  "bmaw_block2_price_label": "surf video coaching",
+  "bmaw_block2_body": "Want advice on your surfing — or on your competition prep?",
+  "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "€20 / call",
   "bmaw_block3_title": "🤝 booking",
   "bmaw_block3_body": "Booking goes through an hourly slot — if you only want 30 min, just add a note.<br><br>You can book the call with no commitment — if it feels right, you can support me online afterwards.",
   "bmaw_block3_support": "→ supports my qualification preparation 💪",
   "bmaw_cta": "→ book a slot ⏰",
-  "bmaw_donate": "Do you enjoy what I do and want to support me just because? You can <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">here</a>. :)",
+  "bmaw_donate": "Do you enjoy what I do and want to support me just because? You can <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">here</a>. 🙂",
 
   "nav_contact": "→ contact",
 

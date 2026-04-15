@@ -77,19 +77,19 @@ var TRANSLATIONS_CS = {
 
   "bmaw_title": "spolupráce 1-on-1, která má smysl ☕",
   "bmaw_block1_title": "🧠 projekty / brand / business / osobní rozvoj",
-  "bmaw_block1_body": "Řešíš značku, projekt nebo kam se posunout dál?<br>Potřebuješ si ujasnit směr, strategii nebo jen získat nový pohled?<br><br>Můžeme to spolu projít — otevřeně, konkrétně a bez bullshitů.",
+  "bmaw_block1_body": "Řešíš značku, projekt nebo kam se posunout dál?<br>Potřebuješ si ujasnit směr, strategii nebo jen získat nový pohled?<br><br>Můžeme to spolu projít.",
   "bmaw_block1_price_label": "1-on-1 konzultace ☕",
   "bmaw_block1_price1": "30 € / 30 min",
   "bmaw_block1_price2": "50 € / 60 min",
   "bmaw_block2_title": "🌊 surfing / sport",
-  "bmaw_block2_body": "Chceš posunout svoje surfování?<br>Nevíš, kde ztrácíš rychlost nebo kontrolu na vlně?<br><br>Spojíme se na call — dám ti konkrétní feedback, co zlepšit a jak na tom pracovat.",
-  "bmaw_block2_price_label": "surf video coaching",
+  "bmaw_block2_body": "Chceš poradit se svým surfingem nebo se svojí závodní přípravou?",
+  "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "20 € / call",
   "bmaw_block3_title": "🤝 rezervace",
   "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky.<br><br>Call si můžeš rezervovat bez závazku — pokud ti to dává smysl, podpoříš mě po něm online.",
   "bmaw_block3_support": "→ podporuje moji přípravu na kvalifikaci 💪",
   "bmaw_cta": "→ bookni si termín ⏰",
-  "bmaw_donate": "Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>. :)",
+  "bmaw_donate": "Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>. 🙂",
 
   "nav_contact": "→ kontakt",
 
