@@ -37,9 +37,7 @@ var TRANSLATIONS_CS = {
 
   "sponsor_heading": "kolik dáš, tak velký logo budeš :)",
   "sponsor_pdf": "📄 stáhni si prezentaci (PDF)",
-  "sponsor_body": "Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní tříměsíční přípravu s profíky, abych se kvalifikoval na světový závody.",
-  "sponsor_cost_1": "1. část mě výjde přibližně na 4 500 Eur 💸",
-  "sponsor_cost_2": "2. část mě výjde zhruba na 6 500 Eur 💸",
+  "sponsor_body": "Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní přípravu s profíky, abych se kvalifikoval na světový závody.",
   "sponsor_cta": "→ podpoř mě 💪",
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
