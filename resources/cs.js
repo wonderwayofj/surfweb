@@ -83,7 +83,7 @@ var TRANSLATIONS_CS = {
   "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "17 € / call",
   "bmaw_block3_title": "🤝 rezervace",
-  "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky, stejně tak i téma, které budeme řešit.<br><br>Call si můžeš rezervovat bez závazku — pokud ti to dává smysl, podpoříš mě po něm online.",
+  "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky, stejně tak i téma, které budeme řešit.<br><br>Call si můžeš rezervovat bez závazku — pokud ti to bude dávat smysl, podpoříš mě po něm.",
   "bmaw_block3_support": "→ podpoříš tím moji přípravu na kvalifikaci 💪",
   "bmaw_cta": "→ bookni si termín ⏰",
   "bmaw_donate": "⭐ Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>. 🙂",
