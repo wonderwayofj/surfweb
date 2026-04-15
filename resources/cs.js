@@ -5,7 +5,7 @@ var TRANSLATIONS_CS = {
 
   "who_title": "kdo je jan vítek?",
   "who_heading": "<a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a>, <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">tvůrce</a>,<br>a reprezentant<br>mířící na ISA",
-  "who_body": "Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám sponsora/partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>.",
+  "who_body": "Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám partnera. Trénuji mezi Portugalskem, Francíí a Českem. Mířím na <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>.",
   "who_tab_btn_kratce": "Krátce",
   "who_tab_btn_pribeh": "Příběh",
   "who_tab_kratce": "<p>Jsem surfař z Česka. Trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Pracuji jako brand designér a tvořím projekty. Procestoval jsem Nový Zéland, oceánii, Kalifornii a okolí Evropy.</p><p>Teď mířím na kvalifikaci na ISA World Surfing Games. Hledám partnera, který chce být součástí téhle cesty.</p>",
@@ -38,7 +38,7 @@ var TRANSLATIONS_CS = {
   "sponsor_heading": "kolik dáš, tak velký logo budeš :)",
   "sponsor_pdf": "📄 stáhni si prezentaci (PDF)",
   "sponsor_body": "Doteď jsem to zvládl sám, ale rád bych se zaměřil na intenzivní přípravu s profíky, abych se kvalifikoval na světový závody.",
-  "sponsor_cta": "→ podpoř mě 💪",
+  "sponsor_cta": "→ pojďme spolupracovat 💪",
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
@@ -91,6 +91,9 @@ var TRANSLATIONS_CS = {
   "nav_contact": "→ kontakt",
 
   "partners_main": "hlavní partneři",
+  "partners_main_desc": "logo na boardu • featured sekce na webu • dedikovaný obsah",
   "partners_official": "oficiální partneři",
-  "partners_media": "mediální partneři"
+  "partners_official_desc": "logo na webu • zmínky na soc. sítích • společný obsah",
+  "partners_media": "mediální partneři",
+  "partners_media_desc": "sdílený obsah • mediální výstupy • backlinky"
 };

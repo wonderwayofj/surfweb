@@ -5,7 +5,7 @@ var TRANSLATIONS_EN = {
 
   "who_title": "who is jan vítek?",
   "who_heading": "<a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a>, <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>,<br>a surfer heading to ISA",
-  "who_body": "I've been self-funding my surfing until now. I work remotely. Now I'm looking for a sponsor/partner. I train between Portugal, France and Czechia. Heading to the <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>.",
+  "who_body": "I've been self-funding my surfing until now. I work remotely. Now I'm looking for a partner. I train between Portugal, France and Czechia. Heading to the <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>.",
   "who_tab_btn_kratce": "In brief",
   "who_tab_btn_pribeh": "Story",
   "who_tab_kratce": "<p>I'm a surfer from Czechia. I train in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I work as a brand designer and build creative projects. I've travelled through New Zealand, Oceania, California and around Europe.</p><p>Now I'm heading for ISA World Surfing Games qualification. I'm looking for a partner who wants to be part of this journey.</p>",
@@ -38,9 +38,9 @@ var TRANSLATIONS_EN = {
   "sponsor_heading": "the more you give, the bigger your logo gets :)",
   "sponsor_pdf": "📄 download the presentation (PDF)",
   "sponsor_body": "I've managed on my own until now, but I'd like to focus on intensive training with professionals to qualify for the world championships.",
-  "sponsor_cta": "→ support me 💪",
+  "sponsor_cta": "→ let's work together 💪",
 
-  "collab_text": "i know how to collaborate with brands like surfr, captain kombucha, jdi do hor, i'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
+  "collab_text": "I know how to collaborate with brands like surfr, captain kombucha, jdi do hor, I'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
 
   "partner_title": "things i offer",
   "partner_cat1": "experiences & content",
@@ -91,6 +91,9 @@ var TRANSLATIONS_EN = {
   "nav_contact": "→ contact",
 
   "partners_main": "main partners",
+  "partners_main_desc": "logo on board • featured section on site • dedicated content",
   "partners_official": "official partners",
-  "partners_media": "media partners"
+  "partners_official_desc": "logo on site • social mentions • co-created content",
+  "partners_media": "media partners",
+  "partners_media_desc": "shared content • media coverage • backlinks"
 };
