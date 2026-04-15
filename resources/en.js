@@ -81,7 +81,7 @@ var TRANSLATIONS_EN = {
   "bmaw_block2_title": "🌊 surfing / sport",
   "bmaw_block2_body": "Want advice on your surfing — or on your physical / mental prep?",
   "bmaw_block2_price_label": "sport / surf video coaching 🏄",
-  "bmaw_block2_price": "€20 / call",
+  "bmaw_block2_price": "€17 / call",
   "bmaw_block3_title": "🤝 booking",
   "bmaw_block3_body": "Booking goes through an hourly slot — if you only want 30 min, just add a note, along with the topic we'll cover.<br><br>You can book the call with no commitment — if it feels right, you can support me online afterwards.",
   "bmaw_block3_support": "→ you'll support my qualification preparation 💪",
