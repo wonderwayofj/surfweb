@@ -27,8 +27,7 @@ var TRANSLATIONS_EN = {
 
   "plan_title": "plan 2026",
   "plan_part1_title": "part 1 – qualification",
-  "plan_1": "🏋️ march/april – dry training in Czechia",
-  "plan_2": "🏄🏼‍️️ april/may – training in Spain",
+  "plan_1": "🏋️ april – dry training in Czechia (recovery)",
   "plan_3": "📍 May 19 – <a href=\"https://www.prazskejserf.cz/serfovej-open\" target=\"_blank\" class=\"accent-link\">PSK wavepool contest in Munich</a>",
   "plan_4": "🏄 may/june – training in France",
   "plan_5": "🏆 June 20 – <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp surf contest in France (ISA qualification)</a>",

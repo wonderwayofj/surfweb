@@ -27,8 +27,7 @@ var TRANSLATIONS_CS = {
 
   "plan_title": "plán 2026",
   "plan_part1_title": "1. část – kvalifikace",
-  "plan_1": "🏋️ březen/duben – suchá příprava ČR",
-  "plan_2": "🏄🏼‍️️ duben/květen – trénink ve Španělsku",
+  "plan_1": "🏋️ duben – suchá příprava ČR (regenerace)",
   "plan_3": "📍 19. 5. – <a href=\"https://www.prazskejserf.cz/serfovej-open\" target=\"_blank\" class=\"accent-link\">PSK wavepool závod v Mnichově</a>",
   "plan_4": "🏄 květen/červen – tréning ve Francii",
   "plan_5": "🏆 20. 6. – <a href=\"https://www.surfchamp.cz/\" target=\"_blank\" class=\"accent-link\">Surfchamp surf závod ve Francii (ISA kvalifikace)</a>",
