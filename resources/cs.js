@@ -73,7 +73,7 @@ var TRANSLATIONS_CS = {
   "social_title": "sleduj moji cestu 👣",
 
   "bmaw_title": "spolupráce 1-on-1, která má smysl ☕",
-  "bmaw_block1_title": "🧠 brand / business / osobní rozvoj",
+  "bmaw_block1_title": "🧠 brand / business / brain",
   "bmaw_block1_body": "Řešíš značku, projekt nebo kam se posunout dál?<br>Potřebuješ si ujasnit směr, strategii nebo jen získat nový pohled? Můžeme to spolu projít.",
   "bmaw_block1_price_label": "1-on-1 konzultace ☕",
   "bmaw_block1_price1": "30 € / 30 min",

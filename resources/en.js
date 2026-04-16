@@ -73,7 +73,7 @@ var TRANSLATIONS_EN = {
   "social_title": "follow my journey 👣",
 
   "bmaw_title": "1-on-1 consultation that matters ☕",
-  "bmaw_block1_title": "🧠 brand / business / personal growth",
+  "bmaw_block1_title": "🧠 brand / business / brain",
   "bmaw_block1_body": "Working on a brand, project or wondering where to move next?<br>Need to clarify direction, strategy — or just get a fresh perspective? Let's talk it through.",
   "bmaw_block1_price_label": "1-on-1 consultation ☕",
   "bmaw_block1_price1": "€30 / 30 min",
