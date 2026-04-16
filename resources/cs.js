@@ -82,6 +82,7 @@ var TRANSLATIONS_CS = {
   "bmaw_block2_body": "Chceš poradit se svým surfingem nebo se svojí sportovní / mentální přípravou?",
   "bmaw_block2_price_label": "sport / surf video coaching 🏄",
   "bmaw_block2_price": "20 € / call",
+  "bmaw_price_flexible": "💸 cenu si určíš sám po callu",
   "bmaw_block3_title": "🤝 rezervace",
   "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky, stejně tak i téma, které budeme řešit.<br><br>Call si můžeš rezervovat bez závazku — pokud ti to bude dávat smysl, podpoříš mě po něm a cenu si nakonec určíš sám po callu, jak ti to bude vyhovovat.",
   "bmaw_block3_support": "→ podpoříš tím moji přípravu na kvalifikaci 💪",
