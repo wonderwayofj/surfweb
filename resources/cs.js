@@ -1,6 +1,6 @@
 var TRANSLATIONS_CS = {
-  "hero_headline": "vnitrozemský surfař,<br>mezinárodní ambice",
-  "hero_subtext": "Čech na cestě na mezinárodní závody ISA World Surfing Games v El Salvadoru",
+  "hero_headline": "český pravák<br>surfuje do světa",
+  "hero_subtext": "Jan Vítek ze Svratky 🍄‍🟫 na cestě na ISA World Surfing Games v El Salvadoru 🌊",
   "hero_cta": "→ mrkni na plán",
 
   "who_title": "kdo je jan vítek?",
