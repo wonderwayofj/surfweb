@@ -1,5 +1,5 @@
 var TRANSLATIONS_CS = {
-  "hero_headline": "český <span class='pravak-hover'>pravák</span><br>surfuje do světa",
+  "hero_headline": "český <span class='pravak-hover'>pravák<sup class='pravak-sup'>🍄</sup></span><br>surfuje do světa",
   "hero_subtext": "Jan Vítek 🍄‍🟫 na cestě na ISA World Surfing Games v El Salvadoru",
   "hero_cta": "→ mrkni na plán",
 
