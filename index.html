@@ -162,6 +162,29 @@
     .lang-btn.active { opacity: 1; }
     .lang-btn:not(.active) { opacity: 0.4; }
     .lang-btn:hover { opacity: 0.7; }
+
+    /* Pravák hover tooltip */
+    .pravak-hover {
+      cursor: default;
+      border-bottom: 1px dashed currentColor;
+      opacity: 0.9;
+    }
+    #pravak-tooltip {
+      position: fixed;
+      display: none;
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 9999;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    #pravak-tooltip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body class="overflow-x-hidden font-body">
@@ -200,7 +223,7 @@
     <div class="hero-content relative z-10 flex flex-col justify-center h-full px-6 lg:px-[168px] gap-10 lg:gap-[60px]">
       <div class="hero-text-group flex flex-col gap-6 lg:gap-[60px]">
         <h1 class="text-h1-display font-semibold font-heading text-[#0c1313]">
-          <span data-key="hero_headline" data-cs="český pravák<br>surfuje do světa" data-en="a czech goofy<br>surfing the world">český pravák<br>surfuje do světa</span>
+          <span data-key="hero_headline" data-cs="český <span class='pravak-hover'>pravák</span><br>surfuje do světa" data-en="a czech goofy<br>surfing the world">český <span class='pravak-hover'>pravák</span><br>surfuje do světa</span>
         </h1>
         <p class="text-body font-semibold text-[#0c1313]">
           <span data-key="hero_subtext" data-cs="Jan Vítek 🍄‍🟫 na cestě na ISA World Surfing Games v El Salvadoru" data-en="Jan Vítek on his way to the ISA World Surfing Games in El Salvador">Jan Vítek 🍄‍🟫 na cestě na ISA World Surfing Games v El Salvadoru</span>
@@ -933,6 +956,26 @@
       section.addEventListener('touchend', function() { resume(); });
       section.addEventListener('touchcancel', function() { resume(); });
     });
+  </script>
+
+  <!-- Pravák image tooltip -->
+  <div id="pravak-tooltip"><img src="Assets/pravak.jpg" alt="pravák" /></div>
+  <script>
+    (function() {
+      var tooltip = document.getElementById('pravak-tooltip');
+      document.addEventListener('mouseover', function(e) {
+        var el = e.target.closest('.pravak-hover');
+        if (el) tooltip.style.display = 'block';
+      });
+      document.addEventListener('mouseout', function(e) {
+        var el = e.target.closest('.pravak-hover');
+        if (el) tooltip.style.display = 'none';
+      });
+      document.addEventListener('mousemove', function(e) {
+        tooltip.style.left = (e.clientX + 16) + 'px';
+        tooltip.style.top  = (e.clientY + 16) + 'px';
+      });
+    })();
   </script>
 
 </body>
