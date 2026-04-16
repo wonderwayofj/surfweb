@@ -1,6 +1,6 @@
 var TRANSLATIONS_EN = {
   "hero_headline": "a czech goofy<br>surfing the world",
-  "hero_subtext": "Jan Vítek 🍄‍🟫 on his way to the ISA World Surfing Games in El Salvador",
+  "hero_subtext": "Jan Vítek on his way to the ISA World Surfing Games in El Salvador",
   "hero_cta": "→ check the plan",
 
   "who_title": "who is jan vítek?",
