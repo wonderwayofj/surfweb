@@ -90,7 +90,7 @@ var TRANSLATIONS_CS = {
 
   "nav_contact": "→ kontakt",
 
-  "partners_main": "hlavní partneři",
+  "partners_main": "partneři",
   "partners_official": "oficiální partneři",
   "partners_media": "mediální partneři"
 };

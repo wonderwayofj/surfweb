@@ -90,7 +90,7 @@ var TRANSLATIONS_EN = {
 
   "nav_contact": "→ contact",
 
-  "partners_main": "main partners",
+  "partners_main": "partners",
   "partners_official": "official partners",
   "partners_media": "media partners"
 };
