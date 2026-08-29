@@ -5,7 +5,7 @@ var TRANSLATIONS_EN = {
   "hero_cta": "→ check the plan",
 
   "who_title": "who is jan vítek?",
-  "who_heading": "<a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a>, <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>,<br>a Czech team rider<br>at the ISA in Peru",
+  "who_heading": "czech team rider<br>at the ISA in Peru,<br><a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a> and <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>",
   "who_body": "I've been self-funding my surfing until now. I work remotely. Now I'm looking for a partner. I train between Portugal, France and Czechia. I qualified for the <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> in Peru.",
   "who_tab_btn_kratce": "In brief",
   "who_tab_btn_pribeh": "Story",
