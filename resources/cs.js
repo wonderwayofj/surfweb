@@ -1,5 +1,5 @@
 var TRANSLATIONS_CS = {
-  "hero_badge": "kvalifikován · isa world surfing games · peru 2026",
+  "hero_badge": "kvalifikován na isa · peru 2026",
   "hero_headline": "český <span class='pravak-hover'>pravák<sup class='pravak-sup'>*</sup></span><br>surfuje do světa",
   "hero_subtext": "Jan Vítek 🍄‍🟫 reprezentuje Česko na ISA World Surfing Games v Peru · 6.–15. 11. 2026",
   "hero_cta": "→ mrkni na plán",
