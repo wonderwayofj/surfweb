@@ -23,7 +23,7 @@ var TRANSLATIONS_EN = {
   "result_4": "🥉 3rd place in CZ/SK Surf Cup 24–25 rankings",
   "result_5": "🌊 Semifinal Bali Big Wave 2024",
   "results_qual": "→ these results got me to the ISA",
-  "goals_label": "What am I going for?",
+  "goals_label": "What's ahead",
   "goal_1": "🌎 <a href=\"https://isasurf.org/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> – Peru, Nov 6–15, 2026",
   "goal_2": "🇨🇿 represent Czechia as well as I can",
   "results_video_cta": "→ 2nd place Berber Cup 2026",
