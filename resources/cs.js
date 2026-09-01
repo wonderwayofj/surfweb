@@ -30,7 +30,7 @@ var TRANSLATIONS_CS = {
   "plan_title": "plán 2026",
   "plan_part1_title": "✅ 1. část – kvalifikace (splněno)",
   "plan_1": "🥈 Berber Cup Maroko – 2. místo",
-  "plan_3": "🏄 Caparica, Francie – 7. místo",
+  "plan_3": "🏄 Caparica, Portugalsko – 7. místo",
   "plan_4": "🎟️ místo na mistrovství světa v Peru",
   "plan_part2_title": "2. část – příprava na Peru",
   "plan_6": "🏄 září – příprava Portugalsko",

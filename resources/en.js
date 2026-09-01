@@ -30,7 +30,7 @@ var TRANSLATIONS_EN = {
   "plan_title": "plan 2026",
   "plan_part1_title": "✅ part 1 – qualification (done)",
   "plan_1": "🥈 Berber Cup Morocco – 2nd place",
-  "plan_3": "🏄 Caparica, France – 7th place",
+  "plan_3": "🏄 Caparica, Portugal – 7th place",
   "plan_4": "🎟️ a spot at the world championship in Peru",
   "plan_part2_title": "part 2 – road to Peru",
   "plan_6": "🏄 september – training in Portugal",
