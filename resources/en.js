@@ -27,6 +27,11 @@ var TRANSLATIONS_EN = {
   "goal_2": "🇨🇿 represent Czechia as well as I can",
   "results_video_cta": "→ 2nd place Berber Cup 2026",
 
+  "team_title": "the czech team to ISA in Peru",
+  "team_isa": "The <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> are surfing's world championship, run by the International Surfing Association — the sport's international federation, recognised by the International Olympic Committee. You don't compete for a club or for yourself, but for your country: every nation sends a national team and results also count towards a team ranking. The 2026 edition runs at Punta Rocas, Peru.",
+  "team_role": "czech national team",
+  "team_role2": "czech national team",
+
   "plan_title": "plan 2026",
   "plan_part1_title": "✅ part 1 – qualification (done)",
   "plan_1": "🥈 Berber Cup Morocco – 2nd place",

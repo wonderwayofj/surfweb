@@ -27,6 +27,11 @@ var TRANSLATIONS_CS = {
   "goal_2": "🇨🇿 reprezentovat Česko co nejlíp",
   "results_video_cta": "→ 2. místo Berber Cup 2026",
 
+  "team_title": "český tým na ISA v Peru",
+  "team_isa": "<a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> jsou mistrovství světa v surfingu. Pořádá je International Surfing Association — mezinárodní federace uznaná Mezinárodním olympijským výborem. Nejezdí se za klub ani sám za sebe, ale za zemi: každý stát vysílá národní tým a výsledky se sčítají i do týmového pořadí. V roce 2026 se závodí v peruánském Punta Rocas.",
+  "team_role": "reprezentant ČR",
+  "team_role2": "reprezentant ČR",
+
   "plan_title": "plán 2026",
   "plan_part1_title": "✅ 1. část – kvalifikace (splněno)",
   "plan_1": "🥈 Berber Cup Maroko – 2. místo",
