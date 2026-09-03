@@ -43,10 +43,11 @@ var TRANSLATIONS_EN = {
   "plan_8": "🏄 october/november – training in Peru",
   "plan_9": "🌎 Nov 6–15 – <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>, Peru",
 
+  "sponsor_eyebrow": "looking for partners",
   "sponsor_heading": "the more you give, the bigger your logo gets :)",
   "sponsor_logo_note": "your logo travels to the world championship in Peru 🇵🇪",
   "sponsor_pdf": "📄 download the presentation (PDF)",
-  "sponsor_body": "I paid for the qualification myself. Now the world championship in Peru is ahead — and I'd like to get there properly prepared with pros, not half-ready.",
+  "sponsor_body": "I've self-funded this whole journey so far. I'd love to head to the ISA with the backing of a partner who sees the story in this journey. Grab my pitch deck below, or just email me directly.",
   "sponsor_cta": "→ let's work together 💪",
 
   "collab_text": "I know how to collaborate with brands like surfr, captain kombucha, jdi do hor, I'm a model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",

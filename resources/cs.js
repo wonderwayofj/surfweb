@@ -43,10 +43,11 @@ var TRANSLATIONS_CS = {
   "plan_8": "🏄 říjen/listopad – příprava Peru",
   "plan_9": "🌎 6.–15. 11. – <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>, Peru",
 
+  "sponsor_eyebrow": "hledám partnery",
   "sponsor_heading": "kolik dáš, tak velký logo budeš :)",
   "sponsor_logo_note": "logo pojede na mistrovství světa v Peru 🇵🇪",
   "sponsor_pdf": "📄 stáhni si prezentaci (PDF)",
-  "sponsor_body": "Kvalifikaci jsem si zaplatil sám. Teď mě čeká mistrovství světa v Peru — a rád bych na něj jel připravený s profíky, ne na půl plynu.",
+  "sponsor_body": "Veškerou cestu jsem si dosud financoval sám. Budu rád, když se na ISA vydám s podporou partnera, kterému bude tahle cesta dávat smysl. Stáhni si můj pitch, nebo mi rovnou napiš e-mail.",
   "sponsor_cta": "→ pojďme spolupracovat 💪",
 
   "collab_text": "umím spolupracovat se značkama, jako třeba surfr, captain kombucha, jdi do hor, jsem model → <a href=\"https://www.elitelisbon.com/en/jan-vitek/\" target=\"_blank\" class=\"accent-link\">Elite Lisbon</a>",
