@@ -65,7 +65,7 @@ var TRANSLATIONS_EN = {
   "tier_partner_b2": "🎥 mentions in competition & training content",
   "tier_partner_b3": "🌐 logo on website and in the deck",
   "tier_supporter_name": "🌱 supporter",
-  "tier_supporter_price": "from €120",
+  "tier_supporter_price": "whatever feels right to you",
   "tier_supporter_who": "any number",
   "tier_supporter_b1": "🌐 logo on website",
   "tier_supporter_b2": "📱 mention on social media",

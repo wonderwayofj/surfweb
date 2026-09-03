@@ -65,7 +65,7 @@ var TRANSLATIONS_CS = {
   "tier_partner_b2": "🎥 zmínky v obsahu ze závodů a tréninků",
   "tier_partner_b3": "🌐 logo na webu a v prezentaci",
   "tier_supporter_name": "🌱 podporovatel",
-  "tier_supporter_price": "od 3 000 Kč",
+  "tier_supporter_price": "kolik uznáš za vhodné",
   "tier_supporter_who": "libovolně",
   "tier_supporter_b1": "🌐 logo na webu",
   "tier_supporter_b2": "📱 zmínka na sociálních sítích",
