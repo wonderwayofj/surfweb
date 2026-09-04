@@ -6,15 +6,14 @@ var TRANSLATIONS_EN = {
 
   "who_title": "who is jan vítek?",
   "who_heading": "czech team rider<br>at the ISA in Peru,<br><a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a> and <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>",
-  "who_body": "I've been self-funding my surfing until now. I work remotely. Now I'm looking for a partner. I train between Portugal, France and Czechia. I qualified for the <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> in Peru.",
   "who_tab_btn_kratce": "In brief",
   "who_tab_btn_pribeh": "Story",
-  "who_tab_kratce": "<p>I'm a surfer from Czechia. I train in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I work as a brand designer and build creative projects. I've travelled through New Zealand, Oceania, California and around Europe.</p><p>I qualified for the ISA World Surfing Games in Peru. I'm looking for a partner who wants to be part of this journey.</p>",
-  "who_tab_pribeh": "<p>I come from a small town called Svratka in the Vysočina region of the Czech Republic – a place far from the ocean. That's exactly why surfing always meant more to me than just a sport. It was a path that taught me persistence, patience and the courage to go after what I want.</p><p>Thanks to surfing I gradually travelled different parts of the world – from European coastlines to surf destinations like New Zealand or Hawaii. I've been self-funding my surfing all along, combining it with remote work as a brand designer and <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>.</p><p>I spend most of my time training in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I compete in the Czech-Slovak Surf Cup and in 2026 I qualified for the ISA World Surfing Games in Peru.</p><p>Surfing is my way of discovering the world and myself. I love inspiring others – persistence and patience bring results.</p><p>Now I'm looking for a partner who wants to be part of this journey.</p>",
+  "who_tab_kratce": "<p>A bit like a coconut in the snow — that's me: a Czech surfer heading to the world championships in Peru. Looking for partners who want to be part of this unique journey.</p>",
+  "who_tab_pribeh": "<p>I come from a small town called Svratka in the Vysočina region of the Czech Republic – a place far from the ocean. That's exactly why surfing always meant more to me than just a sport. It was a path that taught me persistence, patience and the courage to go after what I want.</p><p>Thanks to surfing I gradually travelled different parts of the world – from European coastlines to surf destinations like New Zealand or Hawaii. I've been self-funding my surfing all along, combining it with remote work as a brand designer and <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">entrepreneur</a>.</p><p>I spend most of my time training in Portugal with <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. I compete in the Czech-Slovak Surf Cup and in 2026 I qualified for the ISA World Surfing Games in Peru. I feel a bit like the Jamaican bobsled team at the Olympics — a coconut in the snow. My goal: find out how far I can get against the best surfers on the planet.</p><p>Surfing is my way of discovering the world and myself. I love inspiring others – persistence and patience bring results.</p><p>Now I'm looking for a partner who wants to be part of this journey.</p>",
   "who_video_cta": "→ watch the teaser",
 
   "why_title": "my journey",
-  "why_text": "🏄 surfing is my path of discovery. i push my limits ✨, explore the world 🌍 and share this journey with others 🧘. because i believe adventure can inspire people to pursue their dreams 🌊.",
+  "why_text": "🏄 surfing is my path of discovery. i push my limits ✨, explore the world 🌍 and share this journey with others 🧘. because i believe adventure can inspire people to pursue their dreams 🌊. next up: the world championships in peru 🇵🇪 — what a ride.",
 
   "results_title": "results",
   "result_1": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
@@ -24,11 +23,11 @@ var TRANSLATIONS_EN = {
   "result_5": "🌊 Semifinal Bali Big Wave 2024",
   "goals_label": "What's ahead",
   "goal_1": "🌎 <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> – Peru, Nov 6–15, 2026",
-  "goal_2": "🇨🇿 represent Czechia as well as I can",
+  "goal_2": "💪 arrive in Peru prepared enough that the only limit is my surfing — not fitness, gear or nerves",
   "results_video_cta": "→ 2nd place Berber Cup 2026",
 
   "team_title": "🇨🇿 the czech team to ISA in Peru",
-  "team_isa": "The <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> are surfing's world championship, run by the International Surfing Association — the sport's international federation, recognised by the International Olympic Committee. You don't compete for a club or for yourself, but for your country: every nation sends a national team and results also count towards a team ranking. The 2026 edition runs at Punta Rocas, Peru.",
+  "team_isa": "The <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> are surfing's world championship, run by the International Surfing Association — the sport's international federation, recognised by the International Olympic Committee. You don't compete for a club or for yourself, but for your country: every nation sends a national team and results also count towards a team ranking. The 2026 edition runs at Punta Rocas, Peru. The 2026 edition also doubles as one of the first qualifying steps toward the LA28 Olympic Games: the top teams earn their country a spot at the Games.",
   "team_role": "czech national team",
   "team_role2": "czech national team",
 

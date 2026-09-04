@@ -6,15 +6,14 @@ var TRANSLATIONS_CS = {
 
   "who_title": "kdo je jan vítek?",
   "who_heading": "reprezentant ČR<br>na ISA v Peru,<br><a href=\"https://humanscollective.com/\" target=\"_blank\" class=\"accent-link\">designer</a> a <a href=\"https://linktr.ee/janvitek\" target=\"_blank\" class=\"accent-link\">tvůrce</a>",
-  "who_body": "Surfování jsem si do teď financoval sám. Pracuji na dálku. Nyní hledám partnera. Trénuji mezi Portugalskem, Francií a Českem. Kvalifikoval jsem se na <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> v Peru.",
   "who_tab_btn_kratce": "Krátce",
   "who_tab_btn_pribeh": "Příběh",
-  "who_tab_kratce": "<p>Ve skutečnosti jsem levák, ale „* český pravák\" = vtípek = hřib pravý – jsem z Vysočiny. Trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Pracuji jako brand designér a tvořím projekty. Procestoval jsem Nový Zéland, oceánii, Kalifornii a okolí Evropy.</p><p>Kvalifikoval jsem se na ISA World Surfing Games v Peru. Hledám partnera, který chce být součástí téhle cesty.</p>",
-  "who_tab_pribeh": "<p>Pocházím ze Svratky na Vysočině – místa daleko od oceánu. S bráchou si říkáme „* Svratečtí praváci\" — od tohoto potom slovo pravák (hřib, člověk na svém místě). Surfování pro mě vždycky znamenalo víc než jen sport. Byla to cesta, která mě naučila vytrvalosti, trpělivosti a odvaze jít za svým.</p><p>Díky surfingu jsem postupně procestoval různé části světa – od evropských pobřeží až po surfové destinace jako Nový Zéland nebo Hawaii. Surfování jsem si do teď financoval sám a kombinoval ho s prací na dálku jako brand designér a <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">podnikatel</a>.</p><p>Většinu času trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Závodím v česko-slovenském surfovém poháru a v roce 2026 jsem se kvalifikoval na ISA World Surfing Games v Peru.</p><p>Surfování je pro mě způsob, jak poznávat svět i sebe. Rád tím inspiruji ostatní – píle a trpělivost přináší výsledky.</p><p>Teď hledám partnera, který chce být součástí téhle cesty.</p>",
+  "who_tab_kratce": "<p>Jako kokosy na sněhu, tak já jsem český pravák * (hříbek) jedoucí na surfové mistrovství světa do Peru. Hledám partnery, kteří by chtěli být na této unikátní cestě.</p>",
+  "who_tab_pribeh": "<p>Pocházím ze Svratky na Vysočině – místa daleko od oceánu. S bráchou si říkáme „* Svratečtí praváci\" — od tohoto potom slovo pravák (hřib, člověk na svém místě). Surfování pro mě vždycky znamenalo víc než jen sport. Byla to cesta, která mě naučila vytrvalosti, trpělivosti a odvaze jít za svým.</p><p>Díky surfingu jsem postupně procestoval různé části světa – od evropských pobřeží až po surfové destinace jako Nový Zéland nebo Hawaii. Surfování jsem si do teď financoval sám a kombinoval ho s prací na dálku jako brand designér a <a href=\"https://www.jdidohor.cz/home\" target=\"_blank\" class=\"accent-link\">podnikatel</a>.</p><p>Většinu času trénuji v Portugalsku s <a href=\"https://www.highintensitysurf.com/\" target=\"_blank\" class=\"accent-link\">HIST</a>. Závodím v česko-slovenském surfovém poháru a v roce 2026 jsem se kvalifikoval na ISA World Surfing Games v Peru. Cítím se trochu jako jamajský bobový tým na olympiádě — kokos na sněhu. Můj cíl: zjistit, jak daleko se dostanu proti nejlepším surfařům planety.</p><p>Surfování je pro mě způsob, jak poznávat svět i sebe. Rád tím inspiruji ostatní – píle a trpělivost přináší výsledky.</p><p>Teď hledám partnera, který chce být součástí téhle cesty.</p>",
   "who_video_cta": "→ pusť si teaser",
 
   "why_title": "moje cesta",
-  "why_text": "🏄 surfování je moje cesta poznání. posouvám své limity ✨, objevuji svět 🌍 a sdílím tuhle cestu s ostatními 🧘. protože věřím, že dobrodružství může inspirovat lidi plnit si své sny 🌊.",
+  "why_text": "🏄 surfování je moje cesta poznání. posouvám své limity ✨, objevuji svět 🌍 a sdílím tuhle cestu s ostatními 🧘. protože věřím, že dobrodružství může inspirovat lidi plnit si své sny 🌊. nyní mě čeká mistrovství světa v peru 🇵🇪 úlet.",
 
   "results_title": "výsledky",
   "result_1": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
@@ -24,11 +23,11 @@ var TRANSLATIONS_CS = {
   "result_5": "🌊 Semifinále Bali Big Wave 2024",
   "goals_label": "Co mě čeká",
   "goal_1": "🌎 <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> – Peru, 6.–15. 11. 2026",
-  "goal_2": "🇨🇿 reprezentovat Česko co nejlíp",
+  "goal_2": "💪 přijet do Peru připravený tak, aby jediným limitem byl můj surfing — ne fyzička, vybavení ani nervy",
   "results_video_cta": "→ 2. místo Berber Cup 2026",
 
   "team_title": "🇨🇿 český tým na ISA v Peru",
-  "team_isa": "<a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> jsou mistrovství světa v surfingu. Pořádá je International Surfing Association — mezinárodní federace uznaná Mezinárodním olympijským výborem. Nejezdí se za klub ani sám za sebe, ale za zemi: každý stát vysílá národní tým a výsledky se sčítají i do týmového pořadí. V roce 2026 se závodí v peruánském Punta Rocas.",
+  "team_isa": "<a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a> jsou mistrovství světa v surfingu. Pořádá je International Surfing Association — mezinárodní federace uznaná Mezinárodním olympijským výborem. Nejezdí se za klub ani sám za sebe, ale za zemi: každý stát vysílá národní tým a výsledky se sčítají i do týmového pořadí. V roce 2026 se závodí v peruánském Punta Rocas. Ročník 2026 je navíc jedním z prvních kvalifikačních kroků k olympijským hrám LA28: nejlepší týmy si tu vybojují místenku pro svou zemi.",
   "team_role": "reprezentant ČR",
   "team_role2": "reprezentant ČR",
 
