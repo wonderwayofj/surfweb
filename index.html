@@ -204,7 +204,7 @@
 
   <!-- Header -->
   <header class="fixed top-0 left-0 z-50 w-full">
-    <div class="flex items-center justify-between px-4 lg:px-6 py-3 lg:py-4">
+    <div class="relative flex items-center justify-between px-4 lg:px-6 py-3 lg:py-4">
       <!-- Left: wonderway of j [symbol] jan vítek — click scrolls to top -->
       <a href="#" class="flex items-center gap-1.5 lg:gap-3 no-underline" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
         <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">wonderway of j</span>
@@ -215,10 +215,10 @@
       </a>
       <!-- Right: navigace · cz | en · hamburger -->
       <div class="flex items-center gap-4 lg:gap-10">
-        <nav class="hidden lg:flex items-center gap-8">
+        <nav class="hidden min-[1440px]:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-6">
           <a href="#kdo" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_kdo" data-cs="kdo jsem" data-en="who i am">kdo jsem</span></a>
           <a href="#vysledky" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_vysledky" data-cs="výsledky" data-en="results">výsledky</span></a>
-          <a href="#plan" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap hidden xl:inline-block"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
+          <a href="#plan" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
           <a href="#sponsor" class="font-heading font-semibold text-nav text-[#ff4448] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_partneri" data-cs="hledám partnery" data-en="looking for partners">hledám partnery</span></a>
           <a href="#contact" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_contact" data-cs="kontakt" data-en="contact">kontakt</span></a>
         </nav>
@@ -228,7 +228,7 @@
           <button class="lang-btn font-heading font-semibold text-nav text-[#0c1313]" data-lang="en">en</button>
         </div>
         <button id="menuOpen" type="button" aria-label="menu" aria-expanded="false" aria-controls="mobileMenu"
-                class="lg:hidden flex items-center justify-center w-8 h-8 -mr-1 hover:opacity-70 transition-opacity">
+                class="min-[1440px]:hidden flex items-center justify-center w-8 h-8 -mr-1 hover:opacity-70 transition-opacity">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="2" stroke-linecap="round">
             <path d="M3 6h18M3 12h18M3 18h18"/>
           </svg>
@@ -238,51 +238,58 @@
   </header>
 
   <!-- B0. Mobilní menu (překryv) -->
-  <div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-[#f0f1ea] lg:hidden">
+  <div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-[#f0f1ea] min-[1440px]:hidden">
     <div class="flex flex-col h-full px-4 py-3">
 
-      <!-- horní lišta: kopíruje hlavičku, jen se zavíracím křížkem -->
-      <div class="flex items-center justify-end">
+      <!-- horní lišta: logo zůstává vidět + zavírací křížek -->
+      <div class="flex items-center justify-between">
+          <a href="#" class="flex items-center gap-1.5 lg:gap-3 no-underline" onclick="document.getElementById('menuClose').click();window.scrollTo({top:0,behavior:'smooth'});return false;">
+            <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">wonderway of j</span>
+            <svg class="w-auto flex-shrink-0" style="height: clamp(15.6px, 0.99vw + 11.7px, 26px)" viewBox="222 17.5 98 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M235 17.5C242.18 17.5 248 23.3203 248 30.5C248 37.6797 242.18 43.5 235 43.5C227.82 43.5 222 37.6797 222 30.5C222 23.3203 227.82 17.5 235 17.5ZM271 17.5C278.18 17.5 284 23.3203 284 30.5C284 37.6797 278.18 43.5 271 43.5C263.82 43.5 258 37.6797 258 30.5C258 23.3203 263.82 17.5 271 17.5ZM307 17.5C314.18 17.5 320 23.3203 320 30.5C320 37.6797 314.18 43.5 307 43.5C299.82 43.5 294 37.6797 294 30.5C294 23.3203 299.82 17.5 307 17.5ZM235 34.7734C231.752 34.7734 228.853 35.9728 226.824 37.8584C228.838 40.094 231.754 41.5 235 41.5C238.245 41.5 241.161 40.0938 243.175 37.8584C241.146 35.9731 238.248 34.7734 235 34.7734ZM264.378 39.2822C266.22 40.6736 268.513 41.5 271 41.5C276.738 41.5 281.448 37.1064 281.953 31.5H272.161L264.378 39.2822ZM306.527 24.6904C303.092 24.6906 300.621 27.4507 298.615 30.5391C298.335 30.9701 297.88 31.6183 297.37 32.2412C297.072 32.6055 296.728 32.995 296.37 33.332C297.62 38.0345 301.904 41.5 307 41.5C310.264 41.5 313.194 40.0765 315.209 37.8184C314.098 38.2684 312.904 38.4775 311.524 38.4775C307.858 38.4774 304.662 35.9112 304.662 32.1201C304.662 30.2678 305.412 28.6867 306.678 27.5811C307.581 26.7918 308.722 26.2673 309.991 26.0352C309.78 25.7676 309.53 25.5405 309.239 25.3555C308.589 24.9414 307.688 24.6905 306.527 24.6904ZM262.896 23.0635C261.098 25.0215 260 27.6324 260 30.5C260 33.3674 261.098 35.9775 262.896 37.9355L270.332 30.5L262.896 23.0635ZM307 19.5C300.925 19.5 296 24.4249 296 30.5C296 30.581 296.004 30.6616 296.006 30.7422C296.387 30.2577 296.726 29.7773 296.938 29.4502C298.935 26.3762 301.932 22.6906 306.527 22.6904C307.965 22.6905 309.264 23.001 310.313 23.6689C311.377 24.3463 312.122 25.3546 312.485 26.623L312.851 27.8975H311.524C310.053 27.8975 308.832 28.3555 307.994 29.0869C307.168 29.8088 306.662 30.8388 306.662 32.1201C306.662 34.5976 308.741 36.4774 311.524 36.4775C312.86 36.4775 313.895 36.2506 314.829 35.8027C315.709 35.3806 316.549 34.7354 317.494 33.8027C317.822 32.7601 318 31.6509 318 30.5C318 24.4249 313.075 19.5 307 19.5ZM235 19.5C228.925 19.5 224 24.4249 224 30.5C224 32.6071 224.594 34.5752 225.621 36.248C228.022 34.0916 231.349 32.7734 235 32.7734C238.651 32.7734 241.977 34.0919 244.378 36.248C245.406 34.5751 246 32.6073 246 30.5C246 24.4249 241.075 19.5 235 19.5ZM271 19.5C268.514 19.5 266.22 20.3256 264.378 21.7168L272.161 29.5H281.953C281.448 23.8936 276.738 19.5 271 19.5Z" fill="#0C1313"/>
+            </svg>
+            <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">jan vítek</span>
+          </a>
         <button id="menuClose" type="button" aria-label="zavřít menu"
-                class="flex items-center justify-center w-8 h-8 -mr-1 hover:opacity-70 transition-opacity">
+                class="flex items-center justify-center w-8 h-8 -mr-1 flex-shrink-0 hover:opacity-70 transition-opacity">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="2" stroke-linecap="round">
             <path d="M5 5l14 14M19 5L5 19"/>
           </svg>
         </button>
       </div>
 
-      <!-- odkazy -->
-      <nav class="flex flex-col gap-6 mt-12 px-2">
-          <a href="#kdo" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_kdo" data-cs="kdo jsem" data-en="who i am">kdo jsem</span></a>
-          <a href="#vysledky" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_vysledky" data-cs="výsledky" data-en="results">výsledky</span></a>
-          <a href="#plan" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
-          <a href="#sponsor" class="menu-link text-menu font-heading font-semibold text-[#ff4448] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_partneri" data-cs="hledám partnery" data-en="looking for partners">hledám partnery</span></a>
-          <a href="#contact" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_contact" data-cs="kontakt" data-en="contact">kontakt</span></a>
-      </nav>
-
-      <!-- spodek: cz | en  +  sociální sítě -->
-      <div class="mt-auto flex items-center justify-between px-2 pb-6">
+      <!-- střed: odkazy a pod nimi jazyk -->
+      <div class="flex-1 flex flex-col items-center justify-center gap-12">
+        <nav class="flex flex-col items-center gap-6">
+            <a href="#kdo" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity"><span data-key="nav_kdo" data-cs="kdo jsem" data-en="who i am">kdo jsem</span></a>
+            <a href="#vysledky" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity"><span data-key="nav_vysledky" data-cs="výsledky" data-en="results">výsledky</span></a>
+            <a href="#plan" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
+            <a href="#sponsor" class="menu-link text-menu font-heading font-semibold text-[#ff4448] no-underline hover:opacity-70 transition-opacity"><span data-key="nav_partneri" data-cs="hledám partnery" data-en="looking for partners">hledám partnery</span></a>
+            <a href="#contact" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity"><span data-key="nav_contact" data-cs="kontakt" data-en="contact">kontakt</span></a>
+        </nav>
         <div class="flex items-center gap-2">
           <button class="lang-btn active font-heading font-semibold text-nav text-[#0c1313]" data-lang="cs">cz</button>
           <span class="font-heading font-semibold text-nav text-[#0c1313]">|</span>
           <button class="lang-btn font-heading font-semibold text-nav text-[#0c1313]" data-lang="en">en</button>
         </div>
-        <div class="flex items-center gap-6">
-          <a href="https://www.instagram.com/wonderwayofj/" target="_blank" aria-label="Instagram" class="hover:opacity-70 transition-opacity">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
-              <circle cx="12" cy="12" r="4.2"/>
-              <circle cx="17.6" cy="6.4" r="1.15" fill="#0c1313" stroke="none"/>
-            </svg>
-          </a>
-          <a href="https://linktr.ee/janvitek" target="_blank" aria-label="Linktree" class="hover:opacity-70 transition-opacity">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5.5 3 L12 9.5 L18.5 3"/>
-              <path d="M3.5 13.5 H20.5"/>
-              <path d="M12 9.5 V21"/>
-            </svg>
-          </a>
-        </div>
+      </div>
+
+      <!-- dole: sociální sítě -->
+      <div class="flex items-center justify-center gap-6 pb-8">
+        <a href="https://www.instagram.com/wonderwayofj/" target="_blank" aria-label="Instagram" class="hover:opacity-70 transition-opacity">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+            <circle cx="12" cy="12" r="4.2"/>
+            <circle cx="17.6" cy="6.4" r="1.15" fill="#0c1313" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://linktr.ee/janvitek" target="_blank" aria-label="Linktree" class="hover:opacity-70 transition-opacity">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5.5 3 L12 9.5 L18.5 3"/>
+            <path d="M3.5 13.5 H20.5"/>
+            <path d="M12 9.5 V21"/>
+          </svg>
+        </a>
       </div>
 
     </div>
@@ -955,8 +962,10 @@
       });
 
       // po otočení na šířku / zvětšení na desktop menu zavřít, ať nezůstane viset
+      // 1440 = hranice, kde hamburger střídá navigaci v hlavičce. Níž se vystředěná
+      // navigace (603 px) nevejde vedle loga (360 px) — potřebuje okno od ~1419 px.
       window.addEventListener('resize', function () {
-        if (window.innerWidth >= 1024 && !menu.classList.contains('hidden')) setMenu(false);
+        if (window.innerWidth >= 1440 && !menu.classList.contains('hidden')) setMenu(false);
       });
     })();
 
