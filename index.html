@@ -163,6 +163,10 @@
     }
 
     /* Lang toggle in header */
+    /* aby nadpis neskončil pod fixní hlavičkou při skoku na kotvu */
+    section[id] { scroll-margin-top: 76px; }
+    @media (min-width: 1024px) { section[id] { scroll-margin-top: 92px; } }
+
     .lang-btn { cursor: pointer; background: none; border: none; padding: 0; }
     .lang-btn.active { opacity: 1; }
     .lang-btn:not(.active) { opacity: 0.4; }
@@ -200,7 +204,7 @@
 
   <!-- Header -->
   <header class="fixed top-0 left-0 z-50 w-full">
-    <div class="flex items-start lg:items-center justify-between px-4 lg:px-6 py-3 lg:py-4">
+    <div class="flex items-center justify-between px-4 lg:px-6 py-3 lg:py-4">
       <!-- Left: wonderway of j [symbol] jan vítek — click scrolls to top -->
       <a href="#" class="flex items-center gap-1.5 lg:gap-3 no-underline" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
         <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">wonderway of j</span>
@@ -209,19 +213,80 @@
         </svg>
         <span class="font-heading font-semibold text-nav text-[#0c1313] whitespace-nowrap">jan vítek</span>
       </a>
-      <!-- Right: cz | en   → kontakt -->
-      <div class="flex flex-col-reverse lg:flex-row items-end lg:items-center gap-3 lg:gap-16">
+      <!-- Right: navigace · cz | en · hamburger -->
+      <div class="flex items-center gap-4 lg:gap-10">
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#kdo" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_kdo" data-cs="kdo jsem" data-en="who i am">kdo jsem</span></a>
+          <a href="#vysledky" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_vysledky" data-cs="výsledky" data-en="results">výsledky</span></a>
+          <a href="#plan" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap hidden xl:inline-block"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
+          <a href="#sponsor" class="font-heading font-semibold text-nav text-[#ff4448] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_partneri" data-cs="hledám partnery" data-en="looking for partners">hledám partnery</span></a>
+          <a href="#contact" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap"><span data-key="nav_contact" data-cs="kontakt" data-en="contact">kontakt</span></a>
+        </nav>
         <div class="flex items-center gap-1 lg:gap-2">
           <button class="lang-btn active font-heading font-semibold text-nav text-[#0c1313]" data-lang="cs">cz</button>
           <span class="font-heading font-semibold text-nav text-[#0c1313]">|</span>
           <button class="lang-btn font-heading font-semibold text-nav text-[#0c1313]" data-lang="en">en</button>
         </div>
-        <a href="#contact" class="font-heading font-semibold text-nav text-[#0c1313] hover:opacity-70 transition-opacity whitespace-nowrap">
-          <span data-key="nav_contact" data-cs="→ kontakt" data-en="→ contact">→ kontakt</span>
-        </a>
+        <button id="menuOpen" type="button" aria-label="menu" aria-expanded="false" aria-controls="mobileMenu"
+                class="lg:hidden flex items-center justify-center w-8 h-8 -mr-1 hover:opacity-70 transition-opacity">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="2" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- B0. Mobilní menu (překryv) -->
+  <div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-[#f0f1ea] lg:hidden">
+    <div class="flex flex-col h-full px-4 py-3">
+
+      <!-- horní lišta: kopíruje hlavičku, jen se zavíracím křížkem -->
+      <div class="flex items-center justify-end">
+        <button id="menuClose" type="button" aria-label="zavřít menu"
+                class="flex items-center justify-center w-8 h-8 -mr-1 hover:opacity-70 transition-opacity">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="2" stroke-linecap="round">
+            <path d="M5 5l14 14M19 5L5 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- odkazy -->
+      <nav class="flex flex-col gap-6 mt-12 px-2">
+          <a href="#kdo" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_kdo" data-cs="kdo jsem" data-en="who i am">kdo jsem</span></a>
+          <a href="#vysledky" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_vysledky" data-cs="výsledky" data-en="results">výsledky</span></a>
+          <a href="#plan" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_plan" data-cs="plán" data-en="plan">plán</span></a>
+          <a href="#sponsor" class="menu-link text-menu font-heading font-semibold text-[#ff4448] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_partneri" data-cs="hledám partnery" data-en="looking for partners">hledám partnery</span></a>
+          <a href="#contact" class="menu-link text-menu font-heading font-semibold text-[#0c1313] no-underline hover:opacity-70 transition-opacity w-fit"><span data-key="nav_contact" data-cs="kontakt" data-en="contact">kontakt</span></a>
+      </nav>
+
+      <!-- spodek: cz | en  +  sociální sítě -->
+      <div class="mt-auto flex items-center justify-between px-2 pb-6">
+        <div class="flex items-center gap-2">
+          <button class="lang-btn active font-heading font-semibold text-nav text-[#0c1313]" data-lang="cs">cz</button>
+          <span class="font-heading font-semibold text-nav text-[#0c1313]">|</span>
+          <button class="lang-btn font-heading font-semibold text-nav text-[#0c1313]" data-lang="en">en</button>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="https://www.instagram.com/wonderwayofj/" target="_blank" aria-label="Instagram" class="hover:opacity-70 transition-opacity">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+              <circle cx="12" cy="12" r="4.2"/>
+              <circle cx="17.6" cy="6.4" r="1.15" fill="#0c1313" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://linktr.ee/janvitek" target="_blank" aria-label="Linktree" class="hover:opacity-70 transition-opacity">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0c1313" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5.5 3 L12 9.5 L18.5 3"/>
+              <path d="M3.5 13.5 H20.5"/>
+              <path d="M12 9.5 V21"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- B. Hero -->
   <section class="relative w-full h-screen overflow-hidden">
@@ -275,7 +340,7 @@
   </div>
 
   <!-- C. Kdo je Jan Vítek? -->
-  <section class="px-6 lg:px-[168px] py-20 lg:py-[260px]">
+  <section id="kdo" class="px-6 lg:px-[168px] py-20 lg:py-[260px]">
     <div class="flex flex-col gap-10 lg:gap-[60px]">
       <h2 class="text-h3 font-semibold font-heading">
         <span data-key="who_title" data-cs="kdo je jan vítek?" data-en="who is jan vítek?">kdo je jan vítek?</span>
@@ -333,7 +398,7 @@
   </section>
 
   <!-- E. Výsledky -->
-  <section class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
+  <section id="vysledky" class="px-6 lg:px-[168px] pb-20 lg:pb-[260px]">
     <div class="flex flex-col lg:flex-row gap-12 items-center">
       <!-- Left: results -->
       <div class="flex flex-col gap-12 lg:w-1/2 lg:px-20 lg:py-10">
@@ -861,6 +926,39 @@
       });
     }
     fixOrphans();
+
+    // Mobilní menu (překryv)
+    (function () {
+      var menu = document.getElementById('mobileMenu');
+      var openBtn = document.getElementById('menuOpen');
+      var closeBtn = document.getElementById('menuClose');
+      if (!menu || !openBtn || !closeBtn) return;
+
+      function setMenu(open) {
+        menu.classList.toggle('hidden', !open);
+        // zamknout scroll pozadí, dokud je menu otevřené
+        document.body.style.overflow = open ? 'hidden' : '';
+        openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      openBtn.addEventListener('click', function () { setMenu(true); });
+      closeBtn.addEventListener('click', function () { setMenu(false); });
+
+      // Klik na odkaz menu zavře; skok na kotvu obslouží prohlížeč sám.
+      // (Jazyková tlačítka jsou <button>, ta menu nechají otevřené.)
+      menu.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) setMenu(false);
+      });
+
+      // po otočení na šířku / zvětšení na desktop menu zavřít, ať nezůstane viset
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024 && !menu.classList.contains('hidden')) setMenu(false);
+      });
+    })();
 
     // Language toggle (header buttons)
     var langBtns = document.querySelectorAll('.lang-btn');

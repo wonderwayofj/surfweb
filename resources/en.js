@@ -118,7 +118,11 @@ var TRANSLATIONS_EN = {
   "bmaw_cta": "→ book a slot ⏰",
   "bmaw_donate": "Do you enjoy what I do and want to support me just because? You can <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">here</a>.",
 
-  "nav_contact": "→ contact",
+  "nav_kdo": "who i am",
+  "nav_vysledky": "results",
+  "nav_plan": "plan",
+  "nav_partneri": "looking for partners",
+  "nav_contact": "contact",
 
   "partners_main": "partners",
   "partners_official": "official partners",

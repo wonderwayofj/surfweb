@@ -118,7 +118,11 @@ var TRANSLATIONS_CS = {
   "bmaw_cta": "→ bookni si termín ⏰",
   "bmaw_donate": "Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>.",
 
-  "nav_contact": "→ kontakt",
+  "nav_kdo": "kdo jsem",
+  "nav_vysledky": "výsledky",
+  "nav_plan": "plán",
+  "nav_partneri": "hledám partnery",
+  "nav_contact": "kontakt",
 
   "partners_main": "partneři",
   "partners_official": "oficiální partneři",
