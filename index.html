@@ -646,11 +646,26 @@
           <span data-key="bmaw_support_title" data-cs="🌊 podpoř moji cestu do Peru 🤙" data-en="🌊 support my road to Peru 🤙">🌊 podpoř moji cestu do Peru 🤙</span>
         </h3>
         <p class="text-sm lg:text-link leading-[1.8] lg:leading-[1.8] font-semibold">
-          <span data-key="bmaw_support_body" data-cs="Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to se cení." data-en="Enjoy what I do and want to support me just because? Throw in a few coins toward a new board or a piece of the plane ticket — it all goes straight into the prep and the trip to the world championships. Or just share my story, that counts too.">Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to se cení.</span>
+          <span data-key="bmaw_support_body" data-cs="Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to je asi to nejcennější." data-en="Enjoy what I do and want to support me just because? Throw in a few coins toward a new board or a piece of the plane ticket — it all goes straight into the prep and the trip to the world championships. Or just share my story — that's probably worth the most.">Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to je asi to nejcennější.</span>
         </p>
         <a href="https://buymeacoffee.com/wonderwayofj" target="_blank" class="inline-block bg-[#ff4448] px-4 pt-1 pb-1.5 text-body font-medium font-heading text-[#0c1313] w-fit hover:opacity-90 transition-opacity no-underline">
           <span data-key="bmaw_support_cta" data-cs="→ podpoř mě ☕" data-en="→ support me ☕">→ podpoř mě ☕</span>
         </a>
+      </div>
+
+      <!-- Poděkování podporovatelům (rozbalovací, stejný mechanismus jako "co nabízím") -->
+      <div class="w-full max-w-[620px] flex flex-col items-center">
+        <div id="supportersDropdown" class="cursor-pointer w-full hover:opacity-70 transition-opacity">
+          <p class="text-body font-semibold font-heading flex items-center justify-center gap-3">
+            <span data-key="supporters_title" data-cs="podporovatelé" data-en="supporters">podporovatelé</span>
+            <svg class="partner-arrow flex-shrink-0" style="width:0.75em;height:0.75em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><polyline points="3 7 12 17 21 7"/></svg>
+          </p>
+        </div>
+        <div id="supportersContent" class="partner-content w-full">
+          <div class="flex flex-col items-center gap-2 pt-6 text-center">
+            <p class="text-sm lg:text-link lg:leading-[1.8] font-semibold">Sýsa + Káťa</p>
+          </div>
+        </div>
       </div>
   </section>
 
@@ -1063,6 +1078,21 @@
         wrapper.classList.add('partner-open');
       }
     });
+
+    // Rozbalovací seznam podporovatelů
+    var supDrop = document.getElementById('supportersDropdown');
+    if (supDrop) {
+      supDrop.addEventListener('click', function () {
+        var content = document.getElementById('supportersContent');
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+          content.style.maxHeight = '0px';
+          this.classList.remove('partner-open');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          this.classList.add('partner-open');
+        }
+      });
+    }
 
     // Scroll to email center
     document.querySelectorAll('.scroll-to-email, a[href="#contact"]').forEach(function(link) {
