@@ -118,7 +118,6 @@ var TRANSLATIONS_CS = {
   "bmaw_support_title": "🌊 podpoř moji cestu do Peru 🤙",
   "bmaw_support_body": "Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to je asi to nejcennější.",
   "bmaw_support_cta": "→ podpoř mě ☕",
-  "supporters_title": "podporovatelé",
   "bmaw_cta": "→ bookni si termín ⏰",
 
   "nav_kdo": "kdo jsem",

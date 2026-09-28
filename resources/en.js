@@ -118,7 +118,6 @@ var TRANSLATIONS_EN = {
   "bmaw_support_title": "🌊 support my road to Peru 🤙",
   "bmaw_support_body": "Enjoy what I do and want to support me just because? Throw in a few coins toward a new board or a piece of the plane ticket — it all goes straight into the prep and the trip to the world championships. Or just share my story — that's probably worth the most.",
   "bmaw_support_cta": "→ support me ☕",
-  "supporters_title": "supporters",
   "bmaw_cta": "→ book a slot ⏰",
 
   "nav_kdo": "who i am",

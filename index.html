@@ -652,21 +652,6 @@
           <span data-key="bmaw_support_cta" data-cs="→ podpoř mě ☕" data-en="→ support me ☕">→ podpoř mě ☕</span>
         </a>
       </div>
-
-      <!-- Poděkování podporovatelům (rozbalovací, stejný mechanismus jako "co nabízím") -->
-      <div class="w-full max-w-[620px] flex flex-col items-center">
-        <div id="supportersDropdown" class="cursor-pointer w-full hover:opacity-70 transition-opacity">
-          <p class="text-body font-semibold font-heading flex items-center justify-center gap-3">
-            <span data-key="supporters_title" data-cs="podporovatelé" data-en="supporters">podporovatelé</span>
-            <svg class="partner-arrow flex-shrink-0" style="width:0.75em;height:0.75em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><polyline points="3 7 12 17 21 7"/></svg>
-          </p>
-        </div>
-        <div id="supportersContent" class="partner-content w-full">
-          <div class="flex flex-col items-center gap-2 pt-6 text-center">
-            <p class="text-sm lg:text-link lg:leading-[1.8] font-semibold">Sýsa + Káťa</p>
-          </div>
-        </div>
-      </div>
   </section>
 
   <!-- I. Collaboration Text -->
@@ -1078,21 +1063,6 @@
         wrapper.classList.add('partner-open');
       }
     });
-
-    // Rozbalovací seznam podporovatelů
-    var supDrop = document.getElementById('supportersDropdown');
-    if (supDrop) {
-      supDrop.addEventListener('click', function () {
-        var content = document.getElementById('supportersContent');
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-          content.style.maxHeight = '0px';
-          this.classList.remove('partner-open');
-        } else {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          this.classList.add('partner-open');
-        }
-      });
-    }
 
     // Scroll to email center
     document.querySelectorAll('.scroll-to-email, a[href="#contact"]').forEach(function(link) {
