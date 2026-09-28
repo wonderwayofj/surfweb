@@ -115,7 +115,7 @@ var TRANSLATIONS_CS = {
   "bmaw_block3_title": "🤝 rezervace",
   "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky, stejně tak i téma, které budeme řešit.<br><br>* 💸 Call si můžeš rezervovat bez závazku — pokud ti to bude dávat smysl, podpoříš mě po něm a cenu si nakonec určíš sám po callu, jak ti to bude vyhovovat.",
   "bmaw_block3_support": "→ podpoříš tím moji přípravu na mistrovství světa 💪",
-  "bmaw_support_title": "☕ podpoř moji cestu do Peru",
+  "bmaw_support_title": "🌊 podpoř moji cestu do Peru 🤙",
   "bmaw_support_body": "Líbí se ti, co dělám, a chceš mě podpořit jen tak? Pošli nějaké drobné na nové prkno nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa. Nebo prostě jen sdílej můj příběh, to se cení.",
   "bmaw_support_cta": "→ podpoř mě ☕",
   "bmaw_cta": "→ bookni si termín ⏰",
