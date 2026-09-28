@@ -115,8 +115,10 @@ var TRANSLATIONS_CS = {
   "bmaw_block3_title": "🤝 rezervace",
   "bmaw_block3_body": "Rezervace probíhá přes hodinový slot — pokud chceš jen 30 min, napiš to do poznámky, stejně tak i téma, které budeme řešit.<br><br>* 💸 Call si můžeš rezervovat bez závazku — pokud ti to bude dávat smysl, podpoříš mě po něm a cenu si nakonec určíš sám po callu, jak ti to bude vyhovovat.",
   "bmaw_block3_support": "→ podpoříš tím moji přípravu na mistrovství světa 💪",
+  "bmaw_support_title": "☕ podpoř moji cestu do Peru",
+  "bmaw_support_body": "Nechceš partnerství ani konzultaci, ale chceš být u toho? Kafe, sada vosků nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa.",
+  "bmaw_support_cta": "→ kup mi kafe ☕",
   "bmaw_cta": "→ bookni si termín ⏰",
-  "bmaw_donate": "Baví tě to co dělám a chceš mě podpořit jen tak? Můžeš <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">zde</a>.",
 
   "nav_kdo": "kdo jsem",
   "nav_vysledky": "výsledky",

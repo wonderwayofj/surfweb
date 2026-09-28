@@ -115,8 +115,10 @@ var TRANSLATIONS_EN = {
   "bmaw_block3_title": "🤝 booking",
   "bmaw_block3_body": "Booking goes through an hourly slot — if you only want 30 min, just add a note, along with the topic we'll cover.<br><br>* 💸 You can book the call with no commitment — if it feels right, you can support me afterwards and set the price yourself, whatever works for you.",
   "bmaw_block3_support": "→ you'll support my preparation for the world championship 💪",
+  "bmaw_support_title": "☕ support my road to Peru",
+  "bmaw_support_body": "Not after a partnership or a call, but want to be part of it? A coffee, a block of wax or a piece of the plane ticket — it all goes straight into the prep and the trip to the world championships.",
+  "bmaw_support_cta": "→ buy me a coffee ☕",
   "bmaw_cta": "→ book a slot ⏰",
-  "bmaw_donate": "Do you enjoy what I do and want to support me just because? You can <a href=\"https://buymeacoffee.com/wonderwayofj\" target=\"_blank\" class=\"accent-link\">here</a>.",
 
   "nav_kdo": "who i am",
   "nav_vysledky": "results",
