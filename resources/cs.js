@@ -117,7 +117,7 @@ var TRANSLATIONS_CS = {
   "bmaw_block3_support": "→ podpoříš tím moji přípravu na mistrovství světa 💪",
   "bmaw_support_title": "☕ podpoř moji cestu do Peru",
   "bmaw_support_body": "Nechceš partnerství ani konzultaci, ale chceš být u toho? Kafe, sada vosků nebo kus letenky — všechno jde přímo do přípravy a na cestu na mistrovství světa.",
-  "bmaw_support_cta": "→ kup mi kafe ☕",
+  "bmaw_support_cta": "→ podpoř mě ☕",
   "bmaw_cta": "→ bookni si termín ⏰",
 
   "nav_kdo": "kdo jsem",

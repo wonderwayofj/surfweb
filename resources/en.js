@@ -117,7 +117,7 @@ var TRANSLATIONS_EN = {
   "bmaw_block3_support": "→ you'll support my preparation for the world championship 💪",
   "bmaw_support_title": "☕ support my road to Peru",
   "bmaw_support_body": "Not after a partnership or a call, but want to be part of it? A coffee, a block of wax or a piece of the plane ticket — it all goes straight into the prep and the trip to the world championships.",
-  "bmaw_support_cta": "→ buy me a coffee ☕",
+  "bmaw_support_cta": "→ support me ☕",
   "bmaw_cta": "→ book a slot ⏰",
 
   "nav_kdo": "who i am",
