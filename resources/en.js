@@ -17,7 +17,7 @@ var TRANSLATIONS_EN = {
 
   "results_title": "results",
   "result_1": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
-  "result_2": "🏄 7th place Caparica 2025",
+  "result_2": "🏄 4th place Caparica 2026",
   "result_3": "🥈 2nd place Berber Cup 2025 Morocco CZ/SK",
   "result_4": "🥉 3rd place in CZ/SK Surf Cup 24–25 rankings",
   "result_5": "🌊 Semifinal Bali Big Wave 2024",
