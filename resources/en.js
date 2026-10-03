@@ -16,8 +16,8 @@ var TRANSLATIONS_EN = {
   "why_text": "🏄 surfing is my path of discovery. it pushes me past my own limits ✨, teaches me to accept uncertainty, to lose, to try again and to see the world a little differently 🌍. wonderway of j is about finding your own path — and the courage to find out where it leads 🌊. next up: the world championships in peru 🇵🇪 — what a ride.",
 
   "results_title": "results",
-  "result_1": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
-  "result_2": "🏄 4th place Caparica 2026",
+  "result_1": "🏄 4th place Caparica 2026",
+  "result_2": "🥈 2nd place Berber Cup 2026 Morocco CZ/SK",
   "result_3": "🥈 2nd place Berber Cup 2025 Morocco CZ/SK",
   "result_4": "🥉 3rd place in CZ/SK Surf Cup 24–25 rankings",
   "result_5": "🌊 Semifinal Bali Big Wave 2024",

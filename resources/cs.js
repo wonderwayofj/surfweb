@@ -16,8 +16,8 @@ var TRANSLATIONS_CS = {
   "why_text": "🏄 surfování je moje cesta poznání. nutí mě překračovat vlastní limity ✨, přijímat nejistotu, prohrávat, zkoušet to znovu a poznávat svět trochu jinak 🌍. wonderway of j je o hledání vlastní cesty — a o odvaze zjistit, kam může vést 🌊. nyní mě čeká mistrovství světa v peru 🇵🇪 úlet.",
 
   "results_title": "výsledky",
-  "result_1": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
-  "result_2": "🏄 4. místo Caparica 2026",
+  "result_1": "🏄 4. místo Caparica 2026",
+  "result_2": "🥈 2. místo Berber Cup 2026 Maroko CZ/SK",
   "result_3": "🥈 2. místo Berber Cup 2025 Maroko CZ/SK",
   "result_4": "🥉 3. místo v žebříčku CZ/SK Surf Cup 24–25",
   "result_5": "🌊 Semifinále Bali Big Wave 2024",
