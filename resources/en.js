@@ -38,7 +38,7 @@ var TRANSLATIONS_EN = {
   "plan_4": "🎟️ a spot at the world championship in Peru",
   "plan_part2_title": "part 2 – road to Peru",
   "plan_6": "🏄 september – training in Portugal",
-  "plan_7": "🏆 Oct 1–6 – Caparica contest",
+  "plan_7": "🏆 Oct 1–6 – Caparica contest – 4th place",
   "plan_8": "🏄 october/november – training in Peru",
   "plan_9": "🌎 Nov 6–15 – <a href=\"https://isasurf.org/peru-will-host-2026-isa-world-surfing-games-at-punta-rocas/\" target=\"_blank\" class=\"accent-link\">ISA World Surfing Games</a>, Peru",
 
